@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="sfml_game"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml_game">
+				<Option output="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml_game/fast">
+				<Option output="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Asteroid.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Asteroid.h">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Game.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Game.h">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Object.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Object.h">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Player.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Player.h">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/main.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

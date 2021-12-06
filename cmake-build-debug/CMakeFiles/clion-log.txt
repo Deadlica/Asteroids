@@ -1,0 +1,5 @@
+/home/samuel/clion-2021.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/samuel/Documents/c++/DT079G/sfml_game
+-- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug
