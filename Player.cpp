@@ -4,82 +4,74 @@
 
 #include "Player.h"
 
-Player::Player(): accelerate(false), rotation(0), maxSpeed(5), speed(0), coords(200, 200), deltaCoords(0, 0) {
-    tSpaceship.loadFromFile("images/spaceship.png");
-    sSpaceship.setTexture(tSpaceship);
-    sSpaceship.setOrigin(20, 20);
-}
-
-sf::Sprite& Player::GetSprite() {
-    return sSpaceship;
+Player::Player(float x, float y, float angle, float radius): Object(x, y, angle, radius), accelerate(false), maxSpeed(5), speed(0) {
+    texture.loadFromFile("images/spaceship.png");
+    sprite.setTexture(texture);
+    sprite.setOrigin(20, 20);
+    coordsDelta = {0, 0};
 }
 
 void Player::setBorder(const unsigned int width, const unsigned int height) {
     //Tells the Player object the size of the window
-    windowWidth = width;
-    windowHeight = height;
+    Object::setBorder(width, height);
+    coords.first = windowWidth / 2;
+    coords.second = windowHeight / 2;
 }
 
-void Player::checkBorderCoordinates() {
-    //Checks x-axis bounds
-    if(coords.first > windowWidth)
-        coords.first = 0;
-    if(coords.first < 0)
-        coords.first = windowWidth;
-
-    //Checks y-axis bounds
-    if(coords.second > windowHeight)
-        coords.second = 0;
-    if(coords.second < 0)
-        coords.second = windowHeight;
-}
-
-void Player::updateCoordinates(Player::Movement move) {
-    //Rotate right
-    if(move == Movement::RIGHT)
-        rotation += 3;
-
-    //Rotate left
-    if(move == Movement::LEFT)
-        rotation -= 3;
-
-    //Accelerate
-    if(move == Movement::UP)
-        accelerate = true;
-    //Brake
-    else
-        accelerate = false;
-
+void Player::update() {
     updateOffset(); //Calculates the offset for the new x,y positions
     updateSpeed(); //Increases speed
 
     //Sets new coordinate values
-    coords.first += deltaCoords.first;
-    coords.second += deltaCoords.second;
+    coords.first += coordsDelta.first;
+    coords.second += coordsDelta.second;
 
     //Checks that player is not out of bounds
     checkBorderCoordinates();
+    sprite.setPosition(coords.first, coords.second);
+    sprite.setRotation(angle + 90);
+}
 
-    sSpaceship.setPosition(coords.first, coords.second);
-    sSpaceship.setRotation(rotation + 90);
+void Player::checkMove(Player::Movement move) {
+    //Checks which movement was inputted
 
+    //Rotate right
+    if(move == Movement::RIGHT)
+        angle += 3;
+
+    //Rotate left
+    if(move == Movement::LEFT)
+        angle -= 3;
+
+    //Accelerate
+    if(move == Movement::UP) {
+        accelerate = true;
+    }
+    //Brake
+    else {
+        accelerate = false;
+    }
+    //performs the coordinate updates
+    update();
 }
 
 void Player::updateOffset() {
     if(accelerate) {
-        deltaCoords.first += std::cos(rotation * DTR) * 0.1;
-        deltaCoords.second += std::sin(rotation * DTR) * 0.1;
+        GetTexture().loadFromFile("images/spaceship_boost.png");
+        GetSprite().setTexture(GetTexture());
+        coordsDelta.first += std::cos(angle * DTR) * 0.1;
+        coordsDelta.second += std::sin(angle * DTR) * 0.1;
     }
     else {
-        deltaCoords.first *= 0.99;
-        deltaCoords.second *= 0.99;
+        coordsDelta.first *= 0.99;
+        coordsDelta.second *= 0.99;
     }
 }
 
 void Player::updateSpeed() {
-    speed = std::sqrt(deltaCoords.first * deltaCoords.first + deltaCoords.second * deltaCoords.second);
+    speed = std::sqrt(coordsDelta.first * coordsDelta.first + coordsDelta.second * coordsDelta.second);
     if(speed > maxSpeed) {
-        deltaCoords.first *= maxSpeed / speed;
-        deltaCoords.second *= maxSpeed / speed;
+        coordsDelta.first *= maxSpeed / speed;
+        coordsDelta.second *= maxSpeed / speed;
     }
 }

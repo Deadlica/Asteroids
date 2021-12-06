@@ -5,14 +5,18 @@
 #include "Game.h"
 
 Game::Game(const unsigned int width, const unsigned int height):
-window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close),
-windowWidth(width), windowHeight(height){
+window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close) {
     window.setFramerateLimit(60);
+    centerWindowPosition();
     gameMusic.openFromFile(Arcade_Bit_Rush);
     gameMusic.play();
+    gameMusic.setLoop(true);
     spaceship.setBorder(width, height);
     initTextures();
     initSprites();
+    asteroids.resize(30);
+    generateAsteroids();
+    //projectiles.resize(20);
 }
 
 const bool Game::running() const {
@@ -25,21 +29,20 @@ void Game::pollEvents() {
                 gameMusic.stop();
                 window.close();
             }
+            if(event.type == sf::Event::KeyPressed) {
+                if(event.key.code == sf::Keyboard::Space) {
+                    generateProjectile();
+                }
+            }
     }
 }
 
 void Game::update() {
     pollEvents();
     updatePlayerPosition();
-    spaceship.updateCoordinates(Player::DOWN);
-
-    for(int i = 0; i < 10; i++) {
-        asteroids[i]->update();
-
-        if(!asteroids[i]->Alive()) {
-            asteroids[i].reset(nullptr);
-        }
-    }
+    spaceship.checkMove(Player::DOWN);
+    updateAsteroids();
+    updateProjectiles();
 }
 
 void Game::render() {
@@ -47,32 +50,91 @@ void Game::render() {
 
     window.draw(sBackground);
     window.draw(spaceship.GetSprite());
-    for(int i = 0; i < 10; i++) {
-        window.draw(asteroids[i]->GetSprite());
-    }
+    drawAsteroids();
+    drawProjectiles();
     window.display();
 }
 
+void Game::centerWindowPosition() {
+    window.setPosition(sf::Vector2i(sf::VideoMode::getDesktopMode().width * 0.5 - window.getSize().x * 0.5,
+                                            sf::VideoMode::getDesktopMode().height * 0.5 - window.getSize().y * 0.5));
+}
+
 void Game::generateAsteroids() {
-    /*asteroids = std::unique_ptr<Asteroid[]>(new Asteroid[10]);
-    for(int i = 0; i < 10; i++) {
-        asteroids[i].settings(rand() % windowWidth, rand() % windowHeight, rand() % 360, 25);
-    }*/
-    for(int i = 0; i < 10; i++) {
-        asteroids[i] = std::unique_ptr<Asteroid>(new Asteroid);
-        asteroids[i]->settings(rand() % windowWidth, rand() % windowHeight, rand() % 360, 25);
-    }
+    auto generator = [this]() {
+        return std::make_unique<Asteroid> (rand() % window.getSize().x,
+                                           rand() % window.getSize().y,
+                                           rand() % 360, 25);
+    };
+    std::generate(asteroids.begin(), asteroids.end(), generator);
+    auto setBorder = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {return a->setBorder(window.getSize().x, window.getSize().y);};
+    std::for_each(asteroids.begin(), asteroids.end(), setBorder);
+}
+
+void Game::updateAsteroids() {
+    auto updater = [](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
+        a->update();
+        if(!a->Alive()) { //Issue with removing unique_ptr from vector
+            a.reset(nullptr);
+            std::cout << "Dead" << std::endl;
+        }
+    };
+    std::for_each(asteroids.begin(), asteroids.end(), updater);
+}
+
+void Game::drawAsteroids() {
+    auto drawer = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
+        return a->draw(window);
+    };
+    std::for_each(asteroids.begin(), asteroids.end(), drawer);
+}
+
+void Game::generateProjectile() {
+    std::unique_ptr<Projectile> p(new Projectile(spaceship.GetPosition().first, spaceship.GetPosition().second,spaceship.GetAngle(),10));
+    p->setBorder(window.getSize().x, window.getSize().y);
+    projectiles.push_back(std::move(p));
+}
+
+void Game::updateProjectiles() {
+    auto updater = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p)  {
+        p->update();
+        if(!p->Alive()) { //Issue with removing unique_ptr from vector
+            //projectiles.erase(std::remove(projectiles.begin(), projectiles.end(), p));
+            std::cout << "Dead" << std::endl;
+        }
+    };
+    std::for_each(projectiles.begin(), projectiles.end(), updater);
+}
+
+void Game::drawProjectiles() {
+    auto drawer = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p) {
+        return p->draw(window);
+    };
+    std::for_each(projectiles.begin(), projectiles.end(), drawer);
 }
 
 void Game::updatePlayerPosition() {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        spaceship.updateCoordinates(Player::UP);
+        spaceship.checkMove(Player::UP);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        spaceship.updateCoordinates(Player::RIGHT);
+        spaceship.checkMove(Player::RIGHT);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        spaceship.updateCoordinates(Player::LEFT);
+        spaceship.checkMove(Player::LEFT);
+
+    if(!isAnyKeyPressed()) {
+        spaceship.GetTexture().loadFromFile("images/spaceship.png");
+        spaceship.GetSprite().setTexture(spaceship.GetTexture());
+    }
+}
+
+bool Game::isAnyKeyPressed() {
+    for(int k = -1; k < sf::Keyboard::KeyCount; ++k) {
+        if(sf::Keyboard::isKeyPressed(static_cast<sf::Keyboard::Key>(k)))
+            return true;
+    }
+    return false;
 }
 
 void Game::initTextures() {

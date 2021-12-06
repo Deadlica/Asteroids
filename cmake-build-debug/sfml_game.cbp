@@ -106,6 +106,12 @@
 		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Player.h">
 			<Option target="sfml_game"/>
 		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Projectile.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/Projectile.h">
+			<Option target="sfml_game"/>
+		</Unit>
 		<Unit filename="/home/samuel/Documents/c++/DT079G/sfml_game/main.cpp">
 			<Option target="sfml_game"/>
 		</Unit>

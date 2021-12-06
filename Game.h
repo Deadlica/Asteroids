@@ -5,9 +5,12 @@
 #ifndef SFML_GAME_GAME_H
 #define SFML_GAME_GAME_H
 
+#include "Object.h"
 #include "Player.h"
 #include "Asteroid.h"
+#include "Projectile.h"
 #include <vector>
+#include <algorithm>
 
 class Game {
 public:
@@ -25,7 +28,6 @@ private:
     //Members
     sf::RenderWindow window;
     sf::Event event;
-    unsigned int windowWidth, windowHeight;
 
     //Game objects
 
@@ -37,16 +39,31 @@ private:
     sf::Sprite sBackground;
 
     //Container for objects
-    //std::unique_ptr<Asteroid[]> asteroids;
-    std::vector<std::unique_ptr<Object>> asteroids;
+    std::vector<std::unique_ptr<Asteroid>> asteroids;
+    std::vector<std::unique_ptr<Projectile>> projectiles;
 
-    //Game music {Teminite & MDK - Space Invaders} :D
+    //Game music
     sf::Music gameMusic;
     std::string Space_Invaders = "sounds/Teminite & MDK - Space Invaders [Monstercat Remake].ogg";
     std::string Arcade_Bit_Rush = "sounds/Bit Rush - Arcade 2015 _ Login Screen - League of Legends.ogg";
 
+    void centerWindowPosition();
+
+    //Asteroids
     void generateAsteroids();
+    void updateAsteroids();
+    void drawAsteroids();
+
+    //Projectiles
+    void generateProjectile();
+    void updateProjectiles();
+    void drawProjectiles();
+
+    //Player
     void updatePlayerPosition();
+    bool isAnyKeyPressed();
+
+    //Initialization
     void initTextures();
     void initSprites();
 };

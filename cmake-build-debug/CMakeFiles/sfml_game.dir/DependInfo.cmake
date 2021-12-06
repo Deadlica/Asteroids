@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/samuel/Documents/c++/DT079G/sfml_game/Game.cpp" "/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles/sfml_game.dir/Game.cpp.o"
   "/home/samuel/Documents/c++/DT079G/sfml_game/Object.cpp" "/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles/sfml_game.dir/Object.cpp.o"
   "/home/samuel/Documents/c++/DT079G/sfml_game/Player.cpp" "/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles/sfml_game.dir/Player.cpp.o"
+  "/home/samuel/Documents/c++/DT079G/sfml_game/Projectile.cpp" "/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles/sfml_game.dir/Projectile.cpp.o"
   "/home/samuel/Documents/c++/DT079G/sfml_game/main.cpp" "/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles/sfml_game.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

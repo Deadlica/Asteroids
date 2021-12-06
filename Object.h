@@ -12,27 +12,37 @@
 #include <SFML/Network.hpp>
 #include <utility>
 #include <string>
+#include <ctime>
+#include <cmath>
 
 class Object {
 public:
-    Object();
+    Object(float x, float y, float angle, float radius);
 
     void settings(int x, int y, float angle, int radius);
 
+    virtual void setBorder(const unsigned int width, const unsigned int height);
     virtual void update() = 0;
+    void draw(sf::RenderWindow &window);
 
     sf::Sprite& GetSprite();
+    sf::Texture& GetTexture();
+    const std::string GetName() const;
+    const std::pair<float, float> GetPosition() const;
+    const float GetAngle() const;
 
     const bool Alive() const;
 
 protected:
+    void checkBorderCoordinates();
     sf::Texture texture;
     sf::Sprite sprite;
     //Coordinates, offset coordinates
     std::pair<float, float> coords, coordsDelta;
-    float radius, angle;
+    float radius, angle, spriteWidth, spriteHeight;
     bool life;
     std::string name;
+    unsigned int windowWidth, windowHeight;
 private:
     static int count;
 };

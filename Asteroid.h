@@ -6,19 +6,15 @@
 #define SFML_GAME_ASTEROID_H
 
 #include "Object.h"
-#include <ctime>
 
 class Asteroid : public Object {
 public:
-    Asteroid();
+    Asteroid(float x, float y, float angle, float radius);
 
     void update() override;
 
-    void setBorder(const unsigned int width, const unsigned int height);
-
 private:
-    void checkBorder();
-    unsigned int windowWidth, windowHeight;
+
 };
 
 

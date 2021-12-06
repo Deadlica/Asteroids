@@ -5,40 +5,28 @@
 #ifndef SFML_GAME_PLAYER_H
 #define SFML_GAME_PLAYER_H
 
-#include <SFML/Graphics.hpp>
+#include "Object.h"
 #include <iostream>
-#include <cmath>
 
-class Player {
+class Player : public Object {
 public:
-    Player();
+    Player(float x = 0, float y = 0, float angle = 0, float radius = 20);
     enum Movement {UP, DOWN, LEFT, RIGHT};
 
-    sf::Sprite& GetSprite();
-
-    void setBorder(const unsigned int width, const unsigned int height);
-    void checkBorderCoordinates();
-    void updateCoordinates(Player::Movement move);
+    void setBorder(const unsigned int width, const unsigned int height) override;
+    void checkMove(Player::Movement move);
 
 private:
+    void update() override;
     void updateOffset();
     void updateSpeed();
-
-    //Player object
-    sf::Texture tSpaceship;
-    sf::Sprite sSpaceship;
 
     //Player  movement
     bool accelerate;
     static constexpr float DTR = 0.0174532925;
-    float rotation;
     int maxSpeed;
     float speed;
 
-    //Coordinates
-    unsigned int windowWidth, windowHeight; //The windows border
-    std::pair<float, float> coords;
-    std::pair<float, float> deltaCoords;
 
 };
 

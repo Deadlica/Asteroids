@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml_game.dir/Game.cpp.o"
   "CMakeFiles/sfml_game.dir/Object.cpp.o"
   "CMakeFiles/sfml_game.dir/Player.cpp.o"
+  "CMakeFiles/sfml_game.dir/Projectile.cpp.o"
   "CMakeFiles/sfml_game.dir/main.cpp.o"
   "sfml_game"
   "sfml_game.pdb"

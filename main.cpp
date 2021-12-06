@@ -2,8 +2,9 @@
 #include "Game.h"
 
 int main() {
+    srand((unsigned) time(0));
     //Game wrapper
-    Game asteroids(1200, 800);
+    Game asteroids(1600, 900);
 
     //Game loop
     while(asteroids.running()) {
