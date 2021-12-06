@@ -16,7 +16,6 @@ window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Styl
     initSprites();
     asteroids.resize(30);
     generateAsteroids();
-    //projectiles.resize(20);
 }
 
 const bool Game::running() const {
@@ -99,7 +98,7 @@ void Game::updateProjectiles() {
     auto updater = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p)  {
         p->update();
         if(!p->Alive()) { //Issue with removing unique_ptr from vector
-            //projectiles.erase(std::remove(projectiles.begin(), projectiles.end(), p));
+            projectiles.erase(std::remove(projectiles.begin(), projectiles.end(), p));
             std::cout << "Dead" << std::endl;
         }
     };
