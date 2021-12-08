@@ -49,6 +49,8 @@ private:
     std::string cigg_pk = "sounds/cigg_pk.ogg";
 
     void centerWindowPosition();
+    void checkCollission();
+    bool isCollission(std::vector<std::unique_ptr<Projectile>>::value_type &p, std::vector<std::unique_ptr<Asteroid>>::value_type &a);
 
     //Asteroids
     void generateAsteroids();

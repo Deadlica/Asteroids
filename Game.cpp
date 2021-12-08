@@ -14,7 +14,6 @@ window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Styl
     spaceship.setBorder(width, height);
     initTextures();
     initSprites();
-    asteroids.resize(30);
     generateAsteroids();
 }
 
@@ -38,10 +37,12 @@ void Game::pollEvents() {
 
 void Game::update() {
     pollEvents();
+    checkCollission();
     updatePlayerPosition();
     spaceship.checkMove(Player::DOWN);
     updateAsteroids();
     updateProjectiles();
+
 }
 
 void Game::render() {
@@ -59,23 +60,52 @@ void Game::centerWindowPosition() {
                                             sf::VideoMode::getDesktopMode().height * 0.5 - window.getSize().y * 0.5));
 }
 
+void Game::checkCollission() {
+    auto collide = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p) {
+        for(auto &a: asteroids) {
+            if(isCollission(p, a)) {
+                p->Alive() = false;
+                if(rand() % 5 == 4)
+                    a->Alive() = false;
+            }
+        }
+    };
+    std::for_each(projectiles.begin(), projectiles.end(), collide);
+}
+
+bool Game::isCollission(std::vector<std::unique_ptr<Projectile>>::value_type &p, std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
+    float x2 = pow(p->GetPosition().first - a->GetPosition().first, 2);
+    float y2 = pow(p->GetPosition().second - a->GetPosition().second, 2);
+    float r2 = pow(p->GetRadius() + a->GetRadius(), 2);
+    return x2 + y2 < r2;
+}
+
 void Game::generateAsteroids() {
-    auto generator = [this]() {
+    /*auto generator = [this]() {
         return std::make_unique<Asteroid> (rand() % window.getSize().x,
                                            rand() % window.getSize().y,
                                            rand() % 360, 25);
     };
     std::generate(asteroids.begin(), asteroids.end(), generator);
     auto setBorder = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {return a->setBorder(window.getSize().x, window.getSize().y);};
-    std::for_each(asteroids.begin(), asteroids.end(), setBorder);
+    std::for_each(asteroids.begin(), asteroids.end(), setBorder);*/
+    while(spaceship.GetCount() - 1 - projectiles.size() < 30) {
+        asteroids.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25));
+        asteroids.back().get()->setBorder(window.getSize().x, window.getSize().y);
+    }
 }
 
 void Game::updateAsteroids() {
-    auto updater = [](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
-        a->update();
-        if(!a->Alive()) { //Issue with removing unique_ptr from vector
-            a.reset(nullptr);
-            std::cout << "Dead" << std::endl;
+    auto updater = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
+        if(a.get() != nullptr) {
+            a->update();
+            if (!a->Alive()) { //Issue with removing unique_ptr from vector
+                a->GetCount() -= 1;
+                std::unique_ptr<Asteroid> temp;
+                temp = std::move(a);
+                asteroids.erase(std::find(asteroids.begin(), asteroids.end(), nullptr));
+                generateAsteroids();
+            }
         }
     };
     std::for_each(asteroids.begin(), asteroids.end(), updater);
@@ -96,9 +126,11 @@ void Game::updateProjectiles() {
         if(p.get() != nullptr) {
             p->update();
             if (!p->Alive()) {
+                p->GetCount()-= 1;
                 std::unique_ptr<Projectile> temp;
                 temp = std::move(p);
                 projectiles.erase(std::find(projectiles.begin(), projectiles.end(), nullptr));
+                generateAsteroids();
             }
         }
     };

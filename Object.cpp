@@ -49,7 +49,15 @@ const float Object::GetAngle() const {
     return angle;
 }
 
-const bool Object::Alive() const {
+const float Object::GetRadius() const {
+    return radius;
+}
+
+int& Object::GetCount() const {
+    return count;
+}
+
+bool& Object::Alive() {
     return life;
 }
 

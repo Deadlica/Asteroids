@@ -30,8 +30,10 @@ public:
     const std::string GetName() const;
     const std::pair<float, float> GetPosition() const;
     const float GetAngle() const;
+    const float GetRadius() const;
+     int& GetCount() const;
 
-    const bool Alive() const;
+    bool& Alive();
 
 protected:
     void checkBorderCoordinates();

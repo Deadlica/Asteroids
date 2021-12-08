@@ -18,8 +18,8 @@ Projectile::Projectile(float x, float y, float angle, float radius) : Object(x, 
 }
 
 void Projectile::update() {
-    coordsDelta.first = std::cos(angle * DTR) * 6;
-    coordsDelta.second = std::sin(angle * DTR) * 6;
+    coordsDelta.first = std::cos(angle * DTR) * 12;
+    coordsDelta.second = std::sin(angle * DTR) * 12;
     coords.first += coordsDelta.first;
     coords.second += coordsDelta.second;
     if(coords.first > windowWidth || coords.first < 0 || coords.second > windowHeight || coords.second < 0) {
