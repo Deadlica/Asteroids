@@ -163,6 +163,11 @@ sfml_game: CMakeFiles/sfml_game.dir/Object.cpp.o
 sfml_game: CMakeFiles/sfml_game.dir/Asteroid.cpp.o
 sfml_game: CMakeFiles/sfml_game.dir/Projectile.cpp.o
 sfml_game: CMakeFiles/sfml_game.dir/build.make
+sfml_game: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+sfml_game: /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1
+sfml_game: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
+sfml_game: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+sfml_game: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 sfml_game: CMakeFiles/sfml_game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/c++/DT079G/sfml_game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable sfml_game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfml_game.dir/link.txt --verbose=$(VERBOSE)

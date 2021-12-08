@@ -8,7 +8,7 @@ Game::Game(const unsigned int width, const unsigned int height):
 window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close) {
     window.setFramerateLimit(60);
     centerWindowPosition();
-    gameMusic.openFromFile(Arcade_Bit_Rush);
+    gameMusic.openFromFile(cigg_pk);
     gameMusic.play();
     gameMusic.setLoop(true);
     spaceship.setBorder(width, height);
@@ -82,33 +82,31 @@ void Game::updateAsteroids() {
 }
 
 void Game::drawAsteroids() {
-    auto drawer = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {
-        return a->draw(window);
-    };
+    auto drawer = [this](std::vector<std::unique_ptr<Asteroid>>::value_type &a) {return a->draw(window);};
     std::for_each(asteroids.begin(), asteroids.end(), drawer);
 }
 
 void Game::generateProjectile() {
-    std::unique_ptr<Projectile> p(new Projectile(spaceship.GetPosition().first, spaceship.GetPosition().second,spaceship.GetAngle(),10));
-    p->setBorder(window.getSize().x, window.getSize().y);
-    projectiles.push_back(std::move(p));
+    projectiles.push_back(std::make_unique<Projectile> (spaceship.GetPosition().first, spaceship.GetPosition().second,spaceship.GetAngle(),10));
+    projectiles.back().get()->setBorder(window.getSize().x, window.getSize().y);
 }
 
 void Game::updateProjectiles() {
     auto updater = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p)  {
-        p->update();
-        if(!p->Alive()) { //Issue with removing unique_ptr from vector
-            projectiles.erase(std::remove(projectiles.begin(), projectiles.end(), p));
-            std::cout << "Dead" << std::endl;
+        if(p.get() != nullptr) {
+            p->update();
+            if (!p->Alive()) {
+                std::unique_ptr<Projectile> temp;
+                temp = std::move(p);
+                projectiles.erase(std::find(projectiles.begin(), projectiles.end(), nullptr));
+            }
         }
     };
     std::for_each(projectiles.begin(), projectiles.end(), updater);
 }
 
 void Game::drawProjectiles() {
-    auto drawer = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p) {
-        return p->draw(window);
-    };
+    auto drawer = [this](std::vector<std::unique_ptr<Projectile>>::value_type &p) {return p->draw(window);};
     std::for_each(projectiles.begin(), projectiles.end(), drawer);
 }
 

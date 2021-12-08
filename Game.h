@@ -46,6 +46,7 @@ private:
     sf::Music gameMusic;
     std::string Space_Invaders = "sounds/Teminite & MDK - Space Invaders [Monstercat Remake].ogg";
     std::string Arcade_Bit_Rush = "sounds/Bit Rush - Arcade 2015 _ Login Screen - League of Legends.ogg";
+    std::string cigg_pk = "sounds/cigg_pk.ogg";
 
     void centerWindowPosition();
 
