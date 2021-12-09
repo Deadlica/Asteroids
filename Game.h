@@ -28,39 +28,39 @@ private:
     //Members
     sf::RenderWindow window;
     sf::Event event;
-
-    //Game objects
+    sf::Text score;
 
     //Textures
-    Player spaceship;
+    //Player spaceship;
+    std::unique_ptr<Player> spaceship;
     sf::Texture tBackground;
 
     //Sprites
     sf::Sprite sBackground;
 
     //Container for objects
-    std::vector<std::unique_ptr<Asteroid>> asteroids;
-    std::vector<std::unique_ptr<Projectile>> projectiles;
+    std::vector<std::unique_ptr<Object>> objects;
 
     //Game music
     sf::Music gameMusic;
+    sf::SoundBuffer buffer;
+    sf::SoundBuffer buffer2;
+    sf::Sound asteroidDeath;
+    sf::Sound projectileFired;
     std::string Space_Invaders = "sounds/Teminite & MDK - Space Invaders [Monstercat Remake].ogg";
     std::string Arcade_Bit_Rush = "sounds/Bit Rush - Arcade 2015 _ Login Screen - League of Legends.ogg";
     std::string cigg_pk = "sounds/cigg_pk.ogg";
 
     void centerWindowPosition();
-    void checkCollission();
-    bool isCollission(std::vector<std::unique_ptr<Projectile>>::value_type &p, std::vector<std::unique_ptr<Asteroid>>::value_type &a);
+    void checkCollision();
+    bool isCollision(std::vector<std::unique_ptr<Object>>::value_type &p, std::vector<std::unique_ptr<Object>>::value_type &a);
+    void checkPlayerCollision();
 
-    //Asteroids
+    //Objects
     void generateAsteroids();
-    void updateAsteroids();
-    void drawAsteroids();
-
-    //Projectiles
     void generateProjectile();
-    void updateProjectiles();
-    void drawProjectiles();
+    void updateObjects();
+    void drawObjects();
 
     //Player
     void updatePlayerPosition();
@@ -69,6 +69,7 @@ private:
     //Initialization
     void initTextures();
     void initSprites();
+    void initSounds();
 };
 
 

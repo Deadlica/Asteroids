@@ -4,19 +4,10 @@
 
 #include "Object.h"
 
-int Object::count = 0;
+//int Object::count = 0;
 
 Object::Object(float x, float y, float angle, float radius):
-coords({x, y}), angle(angle), radius(radius), life(true) {
-    count++;
-}
-
-void Object::settings(int x, int y, float angle, int radius) {
-    coords.first = x;
-    coords.second = y;
-    this->angle = angle;
-    this->radius = radius;
-}
+coords({x, y}), angle(angle), radius(radius), life(true) {}
 
 void Object::setBorder(const unsigned int width, const unsigned int height) {
     windowWidth = width;
@@ -51,10 +42,6 @@ const float Object::GetAngle() const {
 
 const float Object::GetRadius() const {
     return radius;
-}
-
-int& Object::GetCount() const {
-    return count;
 }
 
 bool& Object::Alive() {

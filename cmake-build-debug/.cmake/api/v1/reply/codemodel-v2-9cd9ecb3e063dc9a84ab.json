@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -49,12 +48,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug",
-		"source" : "/home/samuel/Documents/c++/programmeringsmetodik/Asteroids"
+		"build" : "/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/cmake-build-debug",
+		"source" : "/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 2
 	}
 }

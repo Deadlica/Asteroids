@@ -13,6 +13,8 @@ public:
     Player(float x = 0, float y = 0, float angle = 0, float radius = 20);
     enum Movement {UP, DOWN, LEFT, RIGHT};
 
+    int& GetCount() const override;
+
     void setBorder(const unsigned int width, const unsigned int height) override;
     void checkMove(Player::Movement move);
 
@@ -20,6 +22,8 @@ private:
     void update() override;
     void updateOffset();
     void updateSpeed();
+
+    static int count;
 
     //Player  movement
     bool accelerate;

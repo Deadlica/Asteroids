@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Asteroid.h
+Object.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Object.h
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Game.cpp
+Game.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Game.h
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Game.h
+Object.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Object.h
+Player.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Player.h
+Asteroid.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Asteroid.h
+Projectile.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Projectile.h
+vector
+-
+algorithm
+-
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Object.h
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
+utility
+-
+string
+-
+ctime
+-
+cmath
+-
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Player.h
+Object.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Object.h
+iostream
+-
+
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Projectile.h
+Object.h
+/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/Object.h
+

@@ -11,9 +11,12 @@ class Asteroid : public Object {
 public:
     Asteroid(float x, float y, float angle, float radius);
 
-    void update() override;
+    int& GetCount() const override;
 
+    void update() override;
+    static int count;
 private:
+
 
 };
 

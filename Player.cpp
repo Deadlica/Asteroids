@@ -4,11 +4,19 @@
 
 #include "Player.h"
 
+int Player::count = 0;
+
 Player::Player(float x, float y, float angle, float radius): Object(x, y, angle, radius), accelerate(false), maxSpeed(5), speed(0) {
+    count++;
     texture.loadFromFile("images/spaceship.png");
     sprite.setTexture(texture);
+    name = "spaceship";
     sprite.setOrigin(20, 20);
     coordsDelta = {0, 0};
+}
+
+int &Player::GetCount() const {
+    return count;
 }
 
 void Player::setBorder(const unsigned int width, const unsigned int height) {

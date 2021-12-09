@@ -19,10 +19,9 @@ class Object {
 public:
     Object(float x, float y, float angle, float radius);
 
-    void settings(int x, int y, float angle, int radius);
-
     virtual void setBorder(const unsigned int width, const unsigned int height);
     virtual void update() = 0;
+    virtual int& GetCount() const = 0;
     void draw(sf::RenderWindow &window);
 
     sf::Sprite& GetSprite();
@@ -31,7 +30,6 @@ public:
     const std::pair<float, float> GetPosition() const;
     const float GetAngle() const;
     const float GetRadius() const;
-     int& GetCount() const;
 
     bool& Alive();
 
@@ -46,7 +44,7 @@ protected:
     std::string name;
     unsigned int windowWidth, windowHeight;
 private:
-    static int count;
+
 };
 
 

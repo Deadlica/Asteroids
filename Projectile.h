@@ -11,9 +11,12 @@ class Projectile : public Object {
 public:
     Projectile(float x, float y, float angle, float radius);
 
+    int& GetCount() const override;
+
     void update() override;
 
 private:
+    static int count;
     static constexpr float DTR = 0.0174532925;
     sf::SoundBuffer buffer;
     sf::Sound gunBlast;

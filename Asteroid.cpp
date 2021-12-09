@@ -4,7 +4,10 @@
 
 #include "Asteroid.h"
 
+int Asteroid::count = 0;
+
 Asteroid::Asteroid(float x, float y, float angle, float radius): Object(x, y, angle, radius) {
+    count++;
     texture.loadFromFile("images/asteroid.png");
     sprite.setTexture(texture);
     spriteWidth = texture.getSize().x;
@@ -13,6 +16,10 @@ Asteroid::Asteroid(float x, float y, float angle, float radius): Object(x, y, an
     name = "asteroid";
     coordsDelta.first = (rand() % 8 - 4) + 1;
     coordsDelta.second = (rand() % 8 - 4) + 1;
+}
+
+int &Asteroid::GetCount() const {
+    return count;
 }
 
 void Asteroid::update() {
