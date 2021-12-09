@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Asteroid.h"
 #include "Projectile.h"
+#include "Menu.h"
 #include <vector>
 #include <algorithm>
 
@@ -29,6 +30,8 @@ private:
     sf::RenderWindow window;
     sf::Event event;
     sf::Text score;
+    int points = 0;
+    sf::Font textFont;
 
     //Textures
     //Player spaceship;

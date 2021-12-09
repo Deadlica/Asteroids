@@ -19,6 +19,8 @@ class Object {
 public:
     Object(float x, float y, float angle, float radius);
 
+    virtual ~Object() = default;
+
     virtual void setBorder(const unsigned int width, const unsigned int height);
     virtual void update() = 0;
     virtual int& GetCount() const = 0;

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(sfml_game)
 
 set(CMAKE_CXX_STANDARD 14)
-set(SOURCE_FILES main.cpp Game.cpp Game.h Player.cpp Player.h Object.cpp Object.h Asteroid.cpp Asteroid.h Projectile.cpp Projectile.h)
+set(SOURCE_FILES main.cpp Game.cpp Game.h Player.cpp Player.h Object.cpp Object.h Asteroid.cpp Asteroid.h Projectile.cpp Projectile.h Menu.cpp Menu.h)
 
 set(SFML_ROOT /usr/include/SFML)
 

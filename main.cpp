@@ -1,8 +1,10 @@
 #include <iostream>
 #include "Game.h"
+#include "Menu.h"
 
 int main() {
     srand((unsigned) time(0));
+
     //Game wrapper
     Game asteroids(1600, 900);
 

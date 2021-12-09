@@ -93,7 +93,7 @@ void Game::checkPlayerCollision() {
                pow(spaceship->GetRadius() + a->GetRadius(), 2)) {
                 a->Alive() = false;
                 asteroidDeath.play();
-                spaceship->GetSprite().scale(0.0001, 0.0001); //FIX THIS
+                //spaceship->GetSprite().scale(0.0001, 0.0001); //FIX THIS
                 break;
             }
         }
@@ -118,8 +118,11 @@ void Game::updateObjects() {
             o->update();
             if (!o->Alive()) {
                 o->GetCount() -= 1;
-                if(o->GetName() == "asteroid")
+                if(o->GetName() == "asteroid") {
                     generateAsteroids();
+                    points += 10;
+                    score.setString("SCORE: " + std::to_string(points));
+                }
                 auto temp = std::move(o);
                 objects.erase(std::find(objects.begin(), objects.end(), nullptr));
             }
@@ -162,10 +165,12 @@ bool Game::isAnyKeyPressed() {
 
 void Game::initTextures() {
     tBackground.loadFromFile("images/space.jpg");
-    score.setString("Score: 10");
-    score.setPosition(-24, -24);
-    score.setCharacterSize(24);
-    score.setColor(sf::Color::Red);
+    textFont.loadFromFile("fonts/Symtext.ttf");
+    score.setString("Score: " + std::to_string(points));
+    score.setFont(textFont);
+    score.setCharacterSize(50);
+    score.setPosition(0, -10);
+    score.setFillColor(sf::Color::Green);
 }
 
 void Game::initSprites() {

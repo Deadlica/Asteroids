@@ -6,6 +6,7 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -38,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sfml_game::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sfml_game-Debug-a084b6661a5e259e286c.json",
+					"jsonFile" : "target-sfml_game-Debug-c1c8c402357d2ed2f7d8.json",
 					"name" : "sfml_game",
 					"projectIndex" : 0
 				}
@@ -48,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS/cmake-build-debug",
-		"source" : "/home/samuel/Documents/c++/DT079G/BACK FOR ASTEROIDS"
+		"build" : "/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug",
+		"source" : "/home/samuel/Documents/c++/programmeringsmetodik/Asteroids"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 2
+		"minor" : 3
 	}
 }
