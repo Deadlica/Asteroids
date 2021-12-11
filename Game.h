@@ -32,6 +32,7 @@ private:
     sf::Text score;
     int points = 0;
     sf::Font textFont;
+    Menu menu;
 
     //Textures
     //Player spaceship;
@@ -58,6 +59,7 @@ private:
     void checkCollision();
     bool isCollision(std::vector<std::unique_ptr<Object>>::value_type &p, std::vector<std::unique_ptr<Object>>::value_type &a);
     void checkPlayerCollision();
+    void clearGame();
 
     //Objects
     void generateAsteroids();

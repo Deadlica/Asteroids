@@ -10,9 +10,6 @@ Projectile::Projectile(float x, float y, float angle, float radius) : Object(x, 
     count++;
     texture.loadFromFile("images/laser_beam.png");
     sprite.setTexture(texture);
-    //buffer.loadFromFile("sounds/har_du_cigg.ogg");
-    //gunBlast.setBuffer(buffer);
-    //gunBlast.play();
     spriteWidth = texture.getSize().x;
     spriteHeight = texture.getSize().y;
     sprite.setOrigin(spriteWidth / 2, spriteHeight / 2);

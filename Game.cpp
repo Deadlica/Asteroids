@@ -5,15 +5,20 @@
 #include "Game.h"
 
 Game::Game(const unsigned int width, const unsigned int height):
-window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close) {
+window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close),
+menu(width, height) {
     window.setFramerateLimit(60);
     centerWindowPosition();
+    menu.start(window);
     spaceship = std::make_unique<Player>();
     spaceship->setBorder(width, height);
-    initSounds();
     initTextures();
     initSprites();
-    generateAsteroids();
+    if(menu.GetDifficulty() == 4)
+        generateAsteroids();
+    updatePlayerPosition();
+    render();
+    initSounds();
 }
 
 const bool Game::running() const {
@@ -29,7 +34,11 @@ void Game::pollEvents() {
             if(event.type == sf::Event::KeyPressed)
                 if(event.key.code == sf::Keyboard::Escape) {
                     gameMusic.stop();
-                    window.close();
+                    //window.close();
+                    clearGame();
+                    menu.start(window);
+                    if (menu.GetDifficulty() == 4)
+                        generateAsteroids();
                 }
             if(event.type == sf::Event::KeyPressed) {
                 if(event.key.code == sf::Keyboard::Space) {
@@ -44,7 +53,7 @@ void Game::update() {
     pollEvents();
     checkCollision();
     updatePlayerPosition();
-    spaceship->checkMove(Player::DOWN);//spaceship.checkMove(Player::DOWN);
+    //spaceship->checkMove(Player::DOWN);
     updateObjects();
     checkPlayerCollision();
 
@@ -71,6 +80,8 @@ void Game::checkCollision() {
                         p->Alive() = false;
                         a->Alive() = false;
                         asteroidDeath.play();
+                        points += 10;
+                        score.setString("SCORE: " + std::to_string(points));
                     }
                 }
             }
@@ -91,17 +102,32 @@ void Game::checkPlayerCollision() {
             if(pow(spaceship->GetPosition().first - a->GetPosition().first, 2) +
                pow(spaceship->GetPosition().second - a->GetPosition().second, 2) <
                pow(spaceship->GetRadius() + a->GetRadius(), 2)) {
-                a->Alive() = false;
-                asteroidDeath.play();
-                //spaceship->GetSprite().scale(0.0001, 0.0001); //FIX THIS
-                break;
+                spaceship->Alive() = false;
+                clearGame();
+                menu.start(window);
+                gameMusic.play();
+                score.setString("SCORE: " + std::to_string(points));
+                if(menu.GetDifficulty() == 4)
+                    generateAsteroids();
+                else if(menu.GetDifficulty() == 5)
+                    //generateBoss();
+                    return;
             }
         }
     }
 }
 
+void Game::clearGame() {
+    gameMusic.stop();
+    while(objects.size() != 0) {objects.pop_back();}
+    objects.resize(0);
+    Asteroid::count = 0;
+    Projectile::count = 0;
+    points = 0;
+}
+
 void Game::generateAsteroids() {
-    while(Asteroid::count < 30) {
+    while(Asteroid::count < 15) {
         objects.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25));
         objects.back().get()->setBorder(window.getSize().x, window.getSize().y);
     }
@@ -118,11 +144,8 @@ void Game::updateObjects() {
             o->update();
             if (!o->Alive()) {
                 o->GetCount() -= 1;
-                if(o->GetName() == "asteroid") {
+                if(o->GetName() == "asteroid")
                     generateAsteroids();
-                    points += 10;
-                    score.setString("SCORE: " + std::to_string(points));
-                }
                 auto temp = std::move(o);
                 objects.erase(std::find(objects.begin(), objects.end(), nullptr));
             }
@@ -170,7 +193,7 @@ void Game::initTextures() {
     score.setFont(textFont);
     score.setCharacterSize(50);
     score.setPosition(0, -10);
-    score.setFillColor(sf::Color::Green);
+    score.setFillColor(sf::Color::Cyan);
 }
 
 void Game::initSprites() {
@@ -178,11 +201,11 @@ void Game::initSprites() {
 }
 
 void Game::initSounds() {
-    gameMusic.openFromFile(cigg_pk);
+    gameMusic.openFromFile(Arcade_Bit_Rush);
     gameMusic.play();
     gameMusic.setLoop(true);
     buffer.loadFromFile("sounds/ja_brorsan.ogg");
     asteroidDeath.setBuffer(buffer);
-    buffer2.loadFromFile("sounds/har_du_cigg.ogg");
+    buffer2.loadFromFile("sounds/Laser Gun.ogg");
     projectileFired.setBuffer(buffer2);
 }

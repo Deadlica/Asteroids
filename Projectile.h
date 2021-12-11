@@ -15,8 +15,8 @@ public:
 
     void update() override;
 
-private:
     static int count;
+private:
     static constexpr float DTR = 0.0174532925;
     sf::SoundBuffer buffer;
     sf::Sound gunBlast;

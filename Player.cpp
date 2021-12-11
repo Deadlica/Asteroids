@@ -36,6 +36,11 @@ void Player::update() {
 
     //Checks that player is not out of bounds
     checkBorderCoordinates();
+    if(life == false) {
+        coords.first = windowWidth / 2;
+        coords.second = windowHeight / 2;
+        life = true;
+    }
     sprite.setPosition(coords.first, coords.second);
     sprite.setRotation(angle + 90);
 }
