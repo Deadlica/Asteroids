@@ -10,6 +10,7 @@
 #include "Asteroid.h"
 #include "Projectile.h"
 #include "Menu.h"
+#include "Enemy.h"
 #include <vector>
 #include <algorithm>
 
@@ -37,6 +38,7 @@ private:
     //Textures
     //Player spaceship;
     std::unique_ptr<Player> spaceship;
+    std::unique_ptr<Enemy> enemy;
     sf::Texture tBackground;
 
     //Sprites
@@ -64,6 +66,7 @@ private:
     //Objects
     void generateAsteroids();
     void generateProjectile();
+    void generateBoss();
     void updateObjects();
     void drawObjects();
 

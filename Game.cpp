@@ -12,6 +12,7 @@ menu(width, height) {
     menu.start(window);
     spaceship = std::make_unique<Player>();
     spaceship->setBorder(width, height);
+    generateBoss();
     initTextures();
     initSprites();
     if(menu.GetDifficulty() == 4)
@@ -53,7 +54,11 @@ void Game::update() {
     pollEvents();
     checkCollision();
     updatePlayerPosition();
-    //spaceship->checkMove(Player::DOWN);
+    if(menu.GetDifficulty() == 5) {
+        enemy->GetPlayerCoordinates(spaceship->GetPosition().first, spaceship->GetPosition().second);
+        enemy->update();
+    }
+    spaceship->checkMove(Player::DOWN);
     updateObjects();
     checkPlayerCollision();
 
@@ -109,9 +114,7 @@ void Game::checkPlayerCollision() {
                 score.setString("SCORE: " + std::to_string(points));
                 if(menu.GetDifficulty() == 4)
                     generateAsteroids();
-                else if(menu.GetDifficulty() == 5)
-                    //generateBoss();
-                    return;
+                return;
             }
         }
     }
@@ -138,6 +141,11 @@ void Game::generateProjectile() {
     objects.back().get()->setBorder(window.getSize().x, window.getSize().y);
 }
 
+void Game::generateBoss() {
+    enemy = std::make_unique<Enemy>();
+    enemy->setBorder(window.getSize().x, window.getSize().y);
+}
+
 void Game::updateObjects() {
     auto updater = [this](std::vector<std::unique_ptr<Object>>::value_type &o) {
         if(o.get() != nullptr) {
@@ -159,6 +167,8 @@ void Game::drawObjects() {
     std::for_each(objects.begin(), objects.end(), drawer);
     if(spaceship != nullptr)
         window.draw(spaceship->GetSprite());
+    if(menu.GetDifficulty() == 5)
+        enemy->draw(window);
 
 }
 

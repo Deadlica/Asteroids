@@ -18,6 +18,9 @@ public:
     void setBorder(const unsigned int width, const unsigned int height) override;
     void checkMove(Player::Movement move);
 
+protected:
+    static constexpr float DTR = 0.0174532925;
+
 private:
     void update() override;
     void updateOffset();
@@ -27,7 +30,6 @@ private:
 
     //Player  movement
     bool accelerate;
-    static constexpr float DTR = 0.0174532925;
     int maxSpeed;
     float speed;
 

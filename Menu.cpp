@@ -47,7 +47,6 @@ void Menu::start(sf::RenderWindow &window) {
                     break;
                 }
                 if (event.key.code == sf::Keyboard::Return) {
-                    std::cout << "ENTER WAS PRESSED" << std::endl;
                     if(GetPosition() == PLAY) {
                         theme.stop();
                         return;
