@@ -58,7 +58,7 @@ private:
     std::string cigg_pk = "sounds/cigg_pk.ogg";
 
     void centerWindowPosition();
-    void checkCollision();
+    void checkObjectCollision();
     bool isCollision(std::vector<std::unique_ptr<Object>>::value_type &p, std::vector<std::unique_ptr<Object>>::value_type &a);
     void checkPlayerCollision();
     void clearGame();

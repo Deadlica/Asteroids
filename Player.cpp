@@ -6,12 +6,12 @@
 
 int Player::count = 0;
 
-Player::Player(float x, float y, float angle, float radius): Object(x, y, angle, radius), accelerate(false), maxSpeed(5), speed(0) {
+Player::Player(std::string file, float x, float y, float angle, float radius): Object(x, y, angle, radius), accelerate(false), maxSpeed(5), speed(0) {
     count++;
-    texture.loadFromFile("images/spaceship.png");
+    texture.loadFromFile(file);
     sprite.setTexture(texture);
     name = "spaceship";
-    sprite.setOrigin(20, 20);
+    sprite.setOrigin(radius, radius);
     coordsDelta = {0, 0};
 }
 

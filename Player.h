@@ -10,7 +10,7 @@
 
 class Player : public Object {
 public:
-    Player(float x = 0, float y = 0, float angle = 0, float radius = 20);
+    Player(std::string file, float x = 0, float y = 0, float angle = 0, float radius = 20);
     enum Movement {UP, DOWN, LEFT, RIGHT};
 
     int& GetCount() const override;

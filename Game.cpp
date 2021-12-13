@@ -10,7 +10,7 @@ menu(width, height) {
     window.setFramerateLimit(60);
     centerWindowPosition();
     menu.start(window);
-    spaceship = std::make_unique<Player>();
+    spaceship = std::make_unique<Player>("images/spaceship.png");
     spaceship->setBorder(width, height);
     generateBoss();
     initTextures();
@@ -52,11 +52,17 @@ void Game::pollEvents() {
 
 void Game::update() {
     pollEvents();
-    checkCollision();
+    checkObjectCollision();
+
     updatePlayerPosition();
     if(menu.GetDifficulty() == 5) {
         enemy->GetPlayerCoordinates(spaceship->GetPosition().first, spaceship->GetPosition().second);
         enemy->update();
+        for(auto &e: objects) {
+                if(e->GetName() == "projectile") {
+                    enemy->detectCollision(e);
+                }
+        }
     }
     spaceship->checkMove(Player::DOWN);
     updateObjects();
@@ -77,13 +83,13 @@ void Game::centerWindowPosition() {
                                             sf::VideoMode::getDesktopMode().height * 0.5 - window.getSize().y * 0.5));
 }
 
-void Game::checkCollision() {
+void Game::checkObjectCollision() {
         auto comparer = [this](std::vector<std::unique_ptr<Object>>::value_type &p) {
             for (auto &a: objects) {
                 if (p->GetName() == "projectile" && a->GetName() == "asteroid") {
-                    if (isCollision(p, a)) {
-                        p->Alive() = false;
-                        a->Alive() = false;
+                    if (p->checkCollision(a)) {
+                        p->kill();
+                        a->kill();
                         asteroidDeath.play();
                         points += 10;
                         score.setString("SCORE: " + std::to_string(points));
@@ -107,7 +113,7 @@ void Game::checkPlayerCollision() {
             if(pow(spaceship->GetPosition().first - a->GetPosition().first, 2) +
                pow(spaceship->GetPosition().second - a->GetPosition().second, 2) <
                pow(spaceship->GetRadius() + a->GetRadius(), 2)) {
-                spaceship->Alive() = false;
+                spaceship->kill();
                 clearGame();
                 menu.start(window);
                 gameMusic.play();

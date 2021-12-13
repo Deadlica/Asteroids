@@ -25,6 +25,7 @@ public:
     virtual void update() = 0;
     virtual int& GetCount() const = 0;
     void draw(sf::RenderWindow &window);
+    bool checkCollision(std::unique_ptr<Object> &object);
 
     sf::Sprite& GetSprite();
     sf::Texture& GetTexture();
@@ -33,7 +34,8 @@ public:
     const float GetAngle() const;
     const float GetRadius() const;
 
-    bool& Alive();
+    bool Alive();
+    void kill();
 
 protected:
     void checkBorderCoordinates();

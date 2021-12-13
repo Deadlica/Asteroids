@@ -20,6 +20,13 @@ void Object::draw(sf::RenderWindow &window) {
     window.draw(sprite);
 }
 
+bool Object::checkCollision(std::unique_ptr<Object> &object) {
+    float x2 = pow(coords.first - object->coords.first, 2);
+    float y2 = pow(coords.second - object->coords.second, 2);
+    float r2 = pow(radius + object->radius, 2);
+    return x2 + y2 < r2;
+}
+
 sf::Sprite& Object::GetSprite() {
     return sprite;
 }
@@ -44,8 +51,12 @@ const float Object::GetRadius() const {
     return radius;
 }
 
-bool& Object::Alive() {
+bool Object::Alive() {
     return life;
+}
+
+void Object::kill() {
+    life = false;
 }
 
 void Object::checkBorderCoordinates() {
