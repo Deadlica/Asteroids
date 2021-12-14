@@ -65,10 +65,14 @@ void Menu::run(sf::RenderWindow &window) {
                         showMainMenu();
                         difficulty = BOSS;
                     }
-                    else if(GetPosition() == SUBMIT)
+                    else if(GetPosition() == SUBMIT) {
                         submitScore();
+                        showMainMenu();
+                        topScores.clear();
+                    }
                     else if(GetPosition() == BACK) {
                         showMainMenu();
+                        topScores.clear();
                     }
                 }
             }
@@ -81,6 +85,7 @@ void Menu::run(sf::RenderWindow &window) {
 
 void Menu::displayWin(sf::RenderWindow &window) {
     hideButtons();
+    position = BACK;
     buttons[WIN].first.setOutlineColor(sf::Color::Transparent);
     buttons[WIN].second.setFillColor(sf::Color::White);
     buttons[position].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
@@ -99,7 +104,7 @@ void Menu::displayLoss(sf::RenderWindow &window, unsigned int score) {
         position = BACK;
     buttons[LOSE].first.setOutlineColor(sf::Color::Transparent);
     buttons[LOSE].second.setFillColor(sf::Color::White);
-    buttons[position].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+    buttons[position].first.setOutlineColor(sf::Color(54, 173, 207, 100));
     buttons[position].second.setFillColor(sf::Color::Cyan);
 }
 

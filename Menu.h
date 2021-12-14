@@ -49,6 +49,7 @@ private:
 
     sf::Font textFont;
     std::vector<std::pair<sf::RectangleShape, sf::Text>> buttons;
+    std::vector<sf::Text> topScores;
     sf::Music theme;
     sf::SoundBuffer buffer1, buffer2;
     sf::Sound hover, enter;
