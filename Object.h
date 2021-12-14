@@ -21,12 +21,16 @@ public:
 
     virtual ~Object() = default;
 
-    virtual void setBorder(const unsigned int width, const unsigned int height);
     virtual void update() = 0;
-    virtual int& GetCount() const = 0;
+    virtual bool checkCollision(std::unique_ptr<Object> &object);
     void draw(sf::RenderWindow &window);
-    bool checkCollision(std::unique_ptr<Object> &object);
 
+    // Setters
+    void setName(std::string name);
+    virtual void setBorder(const unsigned int width, const unsigned int height);
+
+    // Getters
+    virtual int& GetCount() const = 0;
     sf::Sprite& GetSprite();
     sf::Texture& GetTexture();
     const std::string GetName() const;
@@ -46,7 +50,7 @@ protected:
     float radius, angle, spriteWidth, spriteHeight;
     bool life;
     std::string name;
-    unsigned int windowWidth, windowHeight;
+    static unsigned int windowWidth, windowHeight;
 private:
 
 };

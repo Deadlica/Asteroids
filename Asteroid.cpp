@@ -18,7 +18,7 @@ Asteroid::Asteroid(float x, float y, float angle, float radius): Object(x, y, an
     coordsDelta.second = (rand() % 8 - 4) + 1;
 }
 
-int &Asteroid::GetCount() const {
+int& Asteroid::GetCount() const {
     return count;
 }
 

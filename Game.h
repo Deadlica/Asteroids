@@ -56,22 +56,27 @@ private:
     std::string Space_Invaders = "sounds/Teminite & MDK - Space Invaders [Monstercat Remake].ogg";
     std::string Arcade_Bit_Rush = "sounds/Bit Rush - Arcade 2015 _ Login Screen - League of Legends.ogg";
     std::string cigg_pk = "sounds/cigg_pk.ogg";
+    std::string Hopes_And_Dreams = "sounds/Undertale Ost - 087 - Hopes and Dreams.ogg";
 
+    // State checkers
     void centerWindowPosition();
     void checkObjectCollision();
-    bool isCollision(std::vector<std::unique_ptr<Object>>::value_type &p, std::vector<std::unique_ptr<Object>>::value_type &a);
     void checkPlayerCollision();
+    void startGame();
     void clearGame();
 
     //Objects
     void generateAsteroids();
     void generateProjectile();
+    void generatePlayer();
     void generateBoss();
     void updateObjects();
+    void updateEnemy();
+    void updateScore();
     void drawObjects();
 
     //Player
-    void updatePlayerPosition();
+    void updatePlayer();
     bool isAnyKeyPressed();
 
     //Initialization

@@ -6,7 +6,6 @@
 #define SFML_GAME_PLAYER_H
 
 #include "Object.h"
-#include <iostream>
 
 class Player : public Object {
 public:

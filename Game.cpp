@@ -9,17 +9,15 @@ window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Styl
 menu(width, height) {
     window.setFramerateLimit(60);
     centerWindowPosition();
-    menu.start(window);
-    spaceship = std::make_unique<Player>("images/spaceship.png");
-    spaceship->setBorder(width, height);
-    generateBoss();
+
+    // Prompts menu
+    menu.run(window);
+
+    // Initializations
     initTextures();
     initSprites();
-    if(menu.GetDifficulty() == 4)
-        generateAsteroids();
-    updatePlayerPosition();
-    render();
     initSounds();
+    startGame();
 }
 
 const bool Game::running() const {
@@ -28,21 +26,18 @@ const bool Game::running() const {
 
 void Game::pollEvents() {
     while(window.pollEvent(event)) {
-            if(event.type == sf::Event::Closed) {
+            if(event.type == sf::Event::Closed) { // Exit game
                 gameMusic.stop();
                 window.close();
             }
-            if(event.type == sf::Event::KeyPressed)
-                if(event.key.code == sf::Keyboard::Escape) {
-                    gameMusic.stop();
-                    //window.close();
-                    clearGame();
-                    menu.start(window);
-                    if (menu.GetDifficulty() == 4)
-                        generateAsteroids();
-                }
             if(event.type == sf::Event::KeyPressed) {
-                if(event.key.code == sf::Keyboard::Space) {
+                if(event.key.code == sf::Keyboard::Escape) { // Exits current gamemode
+                    clearGame();
+                    menu.run(window);
+                    startGame();
+                }
+
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) { // Fires a projectile
                     generateProjectile();
                     projectileFired.play();
                 }
@@ -51,23 +46,17 @@ void Game::pollEvents() {
 }
 
 void Game::update() {
-    pollEvents();
-    checkObjectCollision();
+    pollEvents(); // Checks events
 
-    updatePlayerPosition();
-    if(menu.GetDifficulty() == 5) {
-        enemy->GetPlayerCoordinates(spaceship->GetPosition().first, spaceship->GetPosition().second);
-        enemy->update();
-        for(auto &e: objects) {
-                if(e->GetName() == "projectile") {
-                    enemy->detectCollision(e);
-                }
-        }
-    }
-    spaceship->checkMove(Player::DOWN);
-    updateObjects();
+    // Collision detection
+    checkObjectCollision();
     checkPlayerCollision();
 
+    // Updates
+    updatePlayer();
+    updateObjects();
+    updateEnemy();
+    updateScore();
 }
 
 void Game::render() {
@@ -88,11 +77,10 @@ void Game::checkObjectCollision() {
             for (auto &a: objects) {
                 if (p->GetName() == "projectile" && a->GetName() == "asteroid") {
                     if (p->checkCollision(a)) {
+                        asteroidDeath.play();
                         p->kill();
                         a->kill();
-                        asteroidDeath.play();
                         points += 10;
-                        score.setString("SCORE: " + std::to_string(points));
                     }
                 }
             }
@@ -100,56 +88,72 @@ void Game::checkObjectCollision() {
         std::for_each(objects.begin(), objects.end(), comparer);
 }
 
-bool Game::isCollision(std::vector<std::unique_ptr<Object>>::value_type &p, std::vector<std::unique_ptr<Object>>::value_type &a) {
-    float x2 = pow(p->GetPosition().first - a->GetPosition().first, 2);
-    float y2 = pow(p->GetPosition().second - a->GetPosition().second, 2);
-    float r2 = pow(p->GetRadius() + a->GetRadius(), 2);
-    return x2 + y2 < r2;
-}
-
 void Game::checkPlayerCollision() {
-    for(auto &a: objects) {
-        if(a->GetName() == "asteroid") {
-            if(pow(spaceship->GetPosition().first - a->GetPosition().first, 2) +
-               pow(spaceship->GetPosition().second - a->GetPosition().second, 2) <
-               pow(spaceship->GetRadius() + a->GetRadius(), 2)) {
-                spaceship->kill();
+    for(auto &o: objects) {
+        if(o->GetName() == "asteroid" || o->GetName() == "enemy_projectile") {
+            if(spaceship->checkCollision(o)) {
                 clearGame();
-                menu.start(window);
-                gameMusic.play();
-                score.setString("SCORE: " + std::to_string(points));
-                if(menu.GetDifficulty() == 4)
-                    generateAsteroids();
+                menu.displayLoss(window, points);
+                menu.run(window);
+                startGame();
                 return;
             }
         }
     }
 }
 
+void Game::startGame() {
+    // Resets score
+    points = 0;
+
+    generatePlayer();
+
+    if(menu.GetDifficulty() == Menu::ASTEROIDS) {
+        gameMusic.openFromFile(Arcade_Bit_Rush);
+        generateAsteroids();
+    }
+    else if(menu.GetDifficulty() == Menu::BOSS) {
+        gameMusic.openFromFile(Hopes_And_Dreams);
+        generateBoss();
+    }
+    gameMusic.play();
+}
+
 void Game::clearGame() {
     gameMusic.stop();
-    while(objects.size() != 0) {objects.pop_back();}
-    objects.resize(0);
+
+    // Clears player
+    spaceship->kill();
+    auto tempSpaceship = std::move(spaceship);
+
+    // Clears enemy
+    if(menu.GetDifficulty() == Menu::BOSS) {
+        enemy->kill();
+        auto tempEnemy = std::move(enemy);
+    }
+
+    // Clears projectiles, asteroids
+    objects.clear();
     Asteroid::count = 0;
     Projectile::count = 0;
-    points = 0;
 }
 
 void Game::generateAsteroids() {
-    while(Asteroid::count < 15) {
+    while(Asteroid::count < 15)
         objects.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25));
-        objects.back().get()->setBorder(window.getSize().x, window.getSize().y);
-    }
 }
 
 void Game::generateProjectile() {
-    objects.push_back(std::make_unique<Projectile> (spaceship->GetPosition().first, spaceship->GetPosition().second,spaceship->GetAngle(),10));
-    objects.back().get()->setBorder(window.getSize().x, window.getSize().y);
+    objects.push_back(std::make_unique<Projectile> (spaceship->GetPosition().first, spaceship->GetPosition().second,spaceship->GetAngle(),10, 12.0));
+}
+
+void Game::generatePlayer() {
+    spaceship = std::make_unique<Player>("images/spaceship.png");
+    spaceship->setBorder(window.getSize().x, window.getSize().y);
 }
 
 void Game::generateBoss() {
     enemy = std::make_unique<Enemy>();
-    enemy->setBorder(window.getSize().x, window.getSize().y);
 }
 
 void Game::updateObjects() {
@@ -168,17 +172,41 @@ void Game::updateObjects() {
     std::for_each(objects.begin(), objects.end(), updater);
 }
 
+void Game::updateEnemy() {
+    if(menu.GetDifficulty() == Menu::BOSS) {
+        enemy->GetPlayerCoordinates(spaceship->GetPosition().first, spaceship->GetPosition().second);
+        enemy->update();
+        if(enemy->changeDirection())
+            enemy->attack(objects);
+        for(auto &p: objects) {
+            enemy->checkCollision(p);
+        }
+        if(enemy->GetHP() == 0) {
+            clearGame();
+            menu.displayWin(window);
+            menu.run(window);
+            startGame();
+        }
+    }
+}
+
+void Game::updateScore() {
+    if(menu.GetDifficulty() == Menu::ASTEROIDS)
+        score.setString("SCORE: " + std::to_string(points));
+    else if(menu.GetDifficulty() == Menu::BOSS)
+        score.setString("BOSS HP: " + std::to_string(enemy->GetHP()));
+}
+
 void Game::drawObjects() {
     auto drawer = [this](std::vector<std::unique_ptr<Object>>::value_type &o) {return o->draw(window);};
     std::for_each(objects.begin(), objects.end(), drawer);
-    if(spaceship != nullptr)
-        window.draw(spaceship->GetSprite());
-    if(menu.GetDifficulty() == 5)
+    window.draw(spaceship->GetSprite());
+    if(menu.GetDifficulty() == Menu::BOSS)
         enemy->draw(window);
 
 }
 
-void Game::updatePlayerPosition() {
+void Game::updatePlayer() {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         spaceship->checkMove(Player::UP);
 
@@ -192,6 +220,7 @@ void Game::updatePlayerPosition() {
         spaceship->GetTexture().loadFromFile("images/spaceship.png");
         spaceship->GetSprite().setTexture(spaceship->GetTexture());
     }
+    spaceship->checkMove(Player::DOWN);
 }
 
 bool Game::isAnyKeyPressed() {
@@ -205,7 +234,6 @@ bool Game::isAnyKeyPressed() {
 void Game::initTextures() {
     tBackground.loadFromFile("images/space.jpg");
     textFont.loadFromFile("fonts/Symtext.ttf");
-    score.setString("Score: " + std::to_string(points));
     score.setFont(textFont);
     score.setCharacterSize(50);
     score.setPosition(0, -10);
@@ -214,11 +242,11 @@ void Game::initTextures() {
 
 void Game::initSprites() {
     sBackground.setTexture(tBackground);
+    sBackground.scale(window.getSize().x / 1920.0, window.getSize().y / 1200.0);
 }
 
 void Game::initSounds() {
     gameMusic.openFromFile(Arcade_Bit_Rush);
-    gameMusic.play();
     gameMusic.setLoop(true);
     buffer.loadFromFile("sounds/ja_brorsan.ogg");
     asteroidDeath.setBuffer(buffer);

@@ -4,14 +4,17 @@
 
 #include "Object.h"
 
-//int Object::count = 0;
+unsigned int Object::windowWidth = 0;
+unsigned int Object::windowHeight = 0;
 
 Object::Object(float x, float y, float angle, float radius):
 coords({x, y}), angle(angle), radius(radius), life(true) {}
 
-void Object::setBorder(const unsigned int width, const unsigned int height) {
-    windowWidth = width;
-    windowHeight = height;
+bool Object::checkCollision(std::unique_ptr<Object> &object) {
+    float x2 = pow(coords.first - object->coords.first, 2);
+    float y2 = pow(coords.second - object->coords.second, 2);
+    float r2 = pow(radius + object->radius, 2);
+    return x2 + y2 < r2;
 }
 
 void Object::draw(sf::RenderWindow &window) {
@@ -20,11 +23,14 @@ void Object::draw(sf::RenderWindow &window) {
     window.draw(sprite);
 }
 
-bool Object::checkCollision(std::unique_ptr<Object> &object) {
-    float x2 = pow(coords.first - object->coords.first, 2);
-    float y2 = pow(coords.second - object->coords.second, 2);
-    float r2 = pow(radius + object->radius, 2);
-    return x2 + y2 < r2;
+void Object::setName(std::string name) {
+    this->name = name;
+}
+
+
+void Object::setBorder(const unsigned int width, const unsigned int height) {
+    windowWidth = width;
+    windowHeight = height;
 }
 
 sf::Sprite& Object::GetSprite() {

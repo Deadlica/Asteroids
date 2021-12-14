@@ -50,11 +50,11 @@ void Player::checkMove(Player::Movement move) {
 
     //Rotate right
     if(move == Movement::RIGHT)
-        angle += 3;
+        angle += 6;
 
     //Rotate left
     if(move == Movement::LEFT)
-        angle -= 3;
+        angle -= 6;
 
     //Accelerate
     if(move == Movement::UP) {

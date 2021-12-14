@@ -14,17 +14,21 @@ public:
     Enemy();
 
     void update() override;
-    void changeDirection();
+    bool changeDirection();
+    void updateAnimation();
+    void damageAnimation();
+    void attack(std::vector<std::unique_ptr<Object>> &objects);
 
     void GetPlayerCoordinates(float x, float y);
-    void detectCollision(std::unique_ptr<Object> &projectile);
+    bool checkCollision(std::unique_ptr<Object> &object) override;
+    const unsigned int GetHP() const;
 
 private:
-    std::pair<float, float> playerCoords, offset;
+    std::pair<float, float> playerCoords;
     unsigned int HP;
-    std::chrono::time_point<std::chrono::high_resolution_clock> start;
-    std::chrono::time_point<std::chrono::high_resolution_clock> stop;
-    std::chrono::duration<double> time;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start, animationStart;
+    std::chrono::time_point<std::chrono::high_resolution_clock> stop, animationStop;
+    std::chrono::duration<double> time, animationTime;
 };
 
 

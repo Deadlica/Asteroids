@@ -4,40 +4,37 @@
 
 #include "Menu.h"
 
-Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height) {
-    position = PLAY;
-    difficulty = ASTEROIDS;
+Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS) {
     initSounds();
     textFont.loadFromFile("fonts/Symtext.ttf");
-    initButton("Asteroids", width / 2, 50);
-    initButton("Play", width / 2, height / 2 - 150);
-    initButton("Gamemode", width / 2, height / 2);
-    initButton("Quit", width / 2, height / 2 + 150);
-    buttons[position - 1].first.setOutlineColor(sf::Color::Transparent);
-    buttons[position].second.setFillColor(sf::Color::Cyan);
+    tBackground.loadFromFile("images/space.jpg");
+    sBackground.setTexture(tBackground);
+    sBackground.scale(windowWidth / 1920.0, windowHeight / 1200.0);
+
+    // Setup menu buttons
+    createButtons();
+
+    showMainMenu();
+
+    buttons[0].first.setOutlineColor(sf::Color::Transparent);
 }
 
-void Menu::subMenu(sf::RenderWindow &window) {
-    hideMainMenu();
-    window.clear();
-    initButton("Asteroids", windowWidth / 2, windowHeight / 2 - 75);
-    initButton("Boss", windowWidth / 2, windowHeight / 2 + 75);
-    position = difficulty;
-    buttons[position].second.setFillColor(sf::Color::Cyan);
-
-}
-
-void Menu::start(sf::RenderWindow &window) {
+void Menu::run(sf::RenderWindow &window) {
     theme.play();
     sf::Event event;
     while(window.isOpen()) {
+        buttons[0].first.setOutlineColor(sf::Color::Transparent);
+        //buttons[0].second.setFillColor(sf::Color::White);
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed)
-                if (event.key.code == sf::Keyboard::Escape)
-                    window.close();
             if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Escape) {
+                    if(position == ASTEROIDS || position == BOSS || position == BACK)
+                        showMainMenu();
+                    else
+                        window.close();
+                }
                 if (event.key.code == sf::Keyboard::Up) {
                     up();
                     break;
@@ -47,13 +44,14 @@ void Menu::start(sf::RenderWindow &window) {
                     break;
                 }
                 if (event.key.code == sf::Keyboard::Return) {
+                    enter.play();
                     if(GetPosition() == PLAY) {
                         theme.stop();
                         return;
                     }
                     else if(GetPosition() == GAMEMODE) {
                         buttons[position].second.setFillColor(sf::Color::White);
-                        subMenu(window);
+                        showSubMenu(window);
                     }
                     else if (GetPosition() == QUIT) {
                         window.close();
@@ -67,6 +65,11 @@ void Menu::start(sf::RenderWindow &window) {
                         showMainMenu();
                         difficulty = BOSS;
                     }
+                    else if(GetPosition() == SUBMIT)
+                        submitScore();
+                    else if(GetPosition() == BACK) {
+                        showMainMenu();
+                    }
                 }
             }
         }
@@ -76,11 +79,32 @@ void Menu::start(sf::RenderWindow &window) {
     }
 }
 
-void Menu::stop(sf::RenderWindow &window) {
+void Menu::displayWin(sf::RenderWindow &window) {
+    hideButtons();
+    buttons[WIN].first.setOutlineColor(sf::Color::Transparent);
+    buttons[WIN].second.setFillColor(sf::Color::White);
+    buttons[position].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+    buttons[position].second.setFillColor(sf::Color::Cyan);
+}
 
+void Menu::displayLoss(sf::RenderWindow &window, unsigned int score) {
+    this->score = score;
+    hideButtons();
+    if(difficulty == ASTEROIDS) {
+        position = SUBMIT;
+        buttons[BACK].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+        buttons[BACK].second.setFillColor(sf::Color::White);
+    }
+    else
+        position = BACK;
+    buttons[LOSE].first.setOutlineColor(sf::Color::Transparent);
+    buttons[LOSE].second.setFillColor(sf::Color::White);
+    buttons[position].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+    buttons[position].second.setFillColor(sf::Color::Cyan);
 }
 
 void Menu::draw(sf::RenderWindow &window) {
+    window.draw(sBackground);
     for(auto e: buttons) {
         window.draw(e.first);
         window.draw(e.second);
@@ -88,7 +112,7 @@ void Menu::draw(sf::RenderWindow &window) {
 }
 
 void Menu::up() {
-    if(position != PLAY && position != ASTEROIDS) {
+    if(position != PLAY && position != ASTEROIDS && (position != SUBMIT && difficulty == ASTEROIDS)) {
         hover.play();
         buttons[position].second.setFillColor(sf::Color::White);
         buttons[--position].second.setFillColor(sf::Color::Cyan);
@@ -96,32 +120,47 @@ void Menu::up() {
 }
 
 void Menu::down() {
-    if(position != QUIT && position != BOSS) {
+    if(position != QUIT && position != BOSS && position != BACK) {
         hover.play();
         buttons[position].second.setFillColor(sf::Color::White);
         buttons[++position].second.setFillColor(sf::Color::Cyan);
     }
 }
 
-void Menu::hideMainMenu() {
-    for(auto &e: buttons) {
-        if(e.second.getString() != "Asteriods") {
-            e.first.setOutlineColor(sf::Color::Transparent);
-            e.second.setFillColor(sf::Color::Transparent);
-        }
+void Menu::hideButtons() {
+    for(int i = 0; i < buttons.size(); i++) {
+        buttons[i].first.setOutlineColor(sf::Color::Transparent);
+        buttons[i].second.setFillColor(sf::Color::Transparent);
     }
 }
 
 void Menu::showMainMenu() {
-    buttons.erase(buttons.begin() + 4, buttons.begin() + 6);
-    for(auto &e: buttons) {
-        if(e.second.getString() != "Asteriods") {
-            e.first.setOutlineColor(sf::Color(54, 173, 207 ,100));
-            e.second.setFillColor(sf::Color::White);
-        }
+    hideButtons();
+    for(int i = 0; i < 4; i++) {
+            buttons[i].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+            buttons[i].second.setFillColor(sf::Color::White);
     }
     position = PLAY;
     buttons[position].second.setFillColor(sf::Color::Cyan);
+}
+
+void Menu::showSubMenu(sf::RenderWindow &window) {
+    hideButtons();
+    buttons[0].second.setFillColor(sf::Color::Transparent);
+    for(int i = 4; i < 6; i++) {
+        buttons[i].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+        buttons[i].second.setFillColor(sf::Color::White);
+    }
+    position = difficulty;
+    buttons[position].second.setFillColor(sf::Color::Cyan);
+
+}
+
+void Menu::submitScore() {
+    std::ofstream file("highscores.txt", std::ios_base::app);
+    if(file.is_open()) {
+        file << score << std::endl;
+    }
 }
 
 const int Menu::GetPosition() const {
@@ -130,6 +169,19 @@ const int Menu::GetPosition() const {
 
 const unsigned int Menu::GetDifficulty() const {
     return difficulty;
+}
+
+void Menu::createButtons() {
+    initButton("Asteroids", windowWidth / 2, 50);
+    initButton("Play", windowWidth / 2, windowHeight / 2 - 150);
+    initButton("Gamemode", windowWidth / 2, windowHeight / 2);
+    initButton("Quit", windowWidth / 2, windowHeight / 2 + 150);
+    initButton("Asteroids", windowWidth / 2, windowHeight / 2 - 75);
+    initButton("Boss", windowWidth / 2, windowHeight / 2 + 75);
+    initButton("You Win!!", windowWidth / 2, windowHeight / 2 - 250);
+    initButton("GAME OVER", windowWidth / 2, windowHeight / 2 - 250);
+    initButton("Submit", windowWidth / 2, windowHeight / 2 - 125);
+    initButton("Back", windowWidth / 2, windowHeight / 2);
 }
 
 void Menu::initButton(std::string text, const unsigned int x, const unsigned int y) {
@@ -165,5 +217,3 @@ void Menu::initSounds() {
     hover.setBuffer(buffer1);
     enter.setBuffer(buffer2);
 }
-
-
