@@ -65,12 +65,13 @@ private:
 };
 
 struct createScore {
-    sf::Font font;
+    std::vector<int> scores;
+    int index = 0;
 
-    sf::Text operator()(int value) {
-        font.loadFromFile("fonts/Symtext.ttf");
-        std::string temp = std::to_string(value);
-        sf::Text text(temp, font, 30);
+    sf::Text operator()() {
+        sf::Text text;
+        text.setString(std::to_string(scores[index]));
+        text.setCharacterSize(30);
         text.setFillColor(sf::Color::White);
         return text;
     }

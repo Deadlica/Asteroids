@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 
-Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS), startGame(false) {
+Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS), startGame(false), topScores(5) {
     initSounds();
     textFont.loadFromFile("fonts/Symtext.ttf");
     tBackground.loadFromFile("images/space.jpg");
@@ -69,8 +69,8 @@ void Menu::draw(sf::RenderWindow &window) {
         window.draw(e.second);
     }
     if(difficulty == ASTEROIDS && (position == BACK || position == SUBMIT)) {
-        for(int i = 0; i < 5; i++) {
-            window.draw(topScores[i]);
+        for(auto e: topScores) {
+            window.draw(e);
         }
     }
 }
@@ -132,13 +132,11 @@ void Menu::fetchTopScores() {
     }
     file.close();
     std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
-    for(int i = 0; i < 5; i++) {
-        sf::Font lol;
-        lol.loadFromFile("fonts/Symtext.ttf");
-        sf::Text lolzer("String", lol, 30);
-        topScores.push_back(lolzer);
-    }
-    std::transform(tempScores.begin(), tempScores.end(), topScores.begin(), createScore());
+    std::generate_n(topScores.begin(), 5, createScore() = {tempScores});
+    auto generator = [this](std::vector<sf::Text>::value_type &t) {
+        t.setFont(textFont);
+    };
+    std::for_each(topScores.begin(), topScores.end(), generator);
 }
 
 void Menu::submitScore() {
