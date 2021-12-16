@@ -19,7 +19,9 @@ class Menu {
 public:
     Menu(const unsigned int width, const unsigned int height);
 
-    enum Button {PLAY = 1, GAMEMODE = 2, QUIT = 3, ASTEROIDS = 4, BOSS = 5, WIN = 6, LOSE = 7, SUBMIT = 8, BACK = 9};
+    enum Button {PLAY = 1, GAMEMODE = 2, QUIT = 3,
+                 ASTEROIDS = 4, BOSS = 5, WIN = 6,
+                 LOSE = 7, SUBMIT = 8, BACK = 9};
 
     void run(sf::RenderWindow &window);
     void displayWin(sf::RenderWindow &window);
@@ -36,8 +38,12 @@ private:
     void down();
     void hideButtons();
     void showMainMenu();
-    void showSubMenu(sf::RenderWindow &window);
+    void showGamemodeMenu(sf::RenderWindow &window);
+    void topScoresPlacement();
+    void fetchTopScores();
     void submitScore();
+    void keyAction(sf::RenderWindow &window, sf::Event &event);
+    void checkPosition(sf::RenderWindow &window);
 
     void createButtons();
     void initButton(std::string text, const unsigned int x, const unsigned int y);
@@ -46,6 +52,7 @@ private:
     void initSounds();
     unsigned int position, difficulty, score;
     unsigned int windowWidth, windowHeight;
+    bool startGame;
 
     sf::Font textFont;
     std::vector<std::pair<sf::RectangleShape, sf::Text>> buttons;
@@ -55,8 +62,43 @@ private:
     sf::Sound hover, enter;
     sf::Texture tBackground;
     sf::Sprite sBackground;
-
 };
 
+struct createScore {
+    sf::Font font;
+
+    sf::Text operator()(int value) {
+        font.loadFromFile("fonts/Symtext.ttf");
+        std::string temp = std::to_string(value);
+        sf::Text text(temp, font, 30);
+        text.setFillColor(sf::Color::White);
+        return text;
+    }
+};
+
+struct showMain {
+    bool doOnce = true;
+    void operator()(std::pair<sf::RectangleShape, sf::Text> &b) {
+        if(doOnce) {
+            b.second.setFillColor(sf::Color::White);
+            doOnce = false;
+        }
+        if(b.second.getString() == "Play" || b.second.getString() == "Gamemode" || b.second.getString() == "Quit") {
+            b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+            b.second.setFillColor(sf::Color::White);
+        }
+    }
+};
+
+struct showGamemode {
+    void operator()(std::pair<sf::RectangleShape, sf::Text> &b) {
+        if(b.second.getString() == "Asteroids" || b.second.getString() == "Boss") {
+            b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));
+            b.second.setFillColor(sf::Color::White);
+        }
+        else if(b.second.getString() == "ASTEROIDS")
+            b.second.setFillColor(sf::Color::Transparent);
+    }
+};
 
 #endif //SFML_GAME_MENU_H

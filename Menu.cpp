@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 
-Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS) {
+Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS), startGame(false) {
     initSounds();
     textFont.loadFromFile("fonts/Symtext.ttf");
     tBackground.loadFromFile("images/space.jpg");
@@ -15,67 +15,18 @@ Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(wid
     createButtons();
 
     showMainMenu();
-
-    buttons[0].first.setOutlineColor(sf::Color::Transparent);
 }
 
 void Menu::run(sf::RenderWindow &window) {
     theme.play();
+    startGame = false;
     sf::Event event;
-    while(window.isOpen()) {
-        buttons[0].first.setOutlineColor(sf::Color::Transparent);
-        //buttons[0].second.setFillColor(sf::Color::White);
+    while(window.isOpen() && !startGame) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Escape) {
-                    if(position == ASTEROIDS || position == BOSS || position == BACK)
-                        showMainMenu();
-                    else
-                        window.close();
-                }
-                if (event.key.code == sf::Keyboard::Up) {
-                    up();
-                    break;
-                }
-                if (event.key.code == sf::Keyboard::Down) {
-                    down();
-                    break;
-                }
-                if (event.key.code == sf::Keyboard::Return) {
-                    enter.play();
-                    if(GetPosition() == PLAY) {
-                        theme.stop();
-                        return;
-                    }
-                    else if(GetPosition() == GAMEMODE) {
-                        buttons[position].second.setFillColor(sf::Color::White);
-                        showSubMenu(window);
-                    }
-                    else if (GetPosition() == QUIT) {
-                        window.close();
-                        return;
-                    }
-                    else if(GetPosition() == ASTEROIDS) {
-                        showMainMenu();
-                        difficulty = ASTEROIDS;
-                    }
-                    else if(GetPosition() == BOSS) {
-                        showMainMenu();
-                        difficulty = BOSS;
-                    }
-                    else if(GetPosition() == SUBMIT) {
-                        submitScore();
-                        showMainMenu();
-                        topScores.clear();
-                    }
-                    else if(GetPosition() == BACK) {
-                        showMainMenu();
-                        topScores.clear();
-                    }
-                }
-            }
+            if (event.type == sf::Event::KeyPressed)
+                keyAction(window, event);
         }
         window.clear();
         draw(window);
@@ -95,13 +46,16 @@ void Menu::displayWin(sf::RenderWindow &window) {
 void Menu::displayLoss(sf::RenderWindow &window, unsigned int score) {
     this->score = score;
     hideButtons();
+
     if(difficulty == ASTEROIDS) {
         position = SUBMIT;
         buttons[BACK].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
         buttons[BACK].second.setFillColor(sf::Color::White);
+        fetchTopScores();
     }
     else
         position = BACK;
+
     buttons[LOSE].first.setOutlineColor(sf::Color::Transparent);
     buttons[LOSE].second.setFillColor(sf::Color::White);
     buttons[position].first.setOutlineColor(sf::Color(54, 173, 207, 100));
@@ -114,13 +68,20 @@ void Menu::draw(sf::RenderWindow &window) {
         window.draw(e.first);
         window.draw(e.second);
     }
+    if(difficulty == ASTEROIDS && (position == BACK || position == SUBMIT)) {
+        for(int i = 0; i < 5; i++) {
+            window.draw(topScores[i]);
+        }
+    }
 }
 
 void Menu::up() {
-    if(position != PLAY && position != ASTEROIDS && (position != SUBMIT && difficulty == ASTEROIDS)) {
-        hover.play();
-        buttons[position].second.setFillColor(sf::Color::White);
-        buttons[--position].second.setFillColor(sf::Color::Cyan);
+    if((position != PLAY && position != ASTEROIDS &&
+       (position != SUBMIT && difficulty == ASTEROIDS)) ||
+       (position == BOSS || position == GAMEMODE  || position == QUIT)) {
+            hover.play();
+            buttons[position].second.setFillColor(sf::Color::White);
+            buttons[--position].second.setFillColor(sf::Color::Cyan);
     }
 }
 
@@ -133,38 +94,110 @@ void Menu::down() {
 }
 
 void Menu::hideButtons() {
-    for(int i = 0; i < buttons.size(); i++) {
-        buttons[i].first.setOutlineColor(sf::Color::Transparent);
-        buttons[i].second.setFillColor(sf::Color::Transparent);
-    }
+    auto hider = [](std::pair<sf::RectangleShape, sf::Text> &b) {
+        b.first.setOutlineColor(sf::Color::Transparent);
+        b.second.setFillColor(sf::Color::Transparent);
+    };
+    std::for_each(buttons.begin(), buttons.end(), hider);
 }
 
 void Menu::showMainMenu() {
     hideButtons();
-    for(int i = 0; i < 4; i++) {
-            buttons[i].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
-            buttons[i].second.setFillColor(sf::Color::White);
-    }
+    std::for_each(buttons.begin(), buttons.end(), showMain());
     position = PLAY;
     buttons[position].second.setFillColor(sf::Color::Cyan);
 }
 
-void Menu::showSubMenu(sf::RenderWindow &window) {
+void Menu::showGamemodeMenu(sf::RenderWindow &window) {
     hideButtons();
-    buttons[0].second.setFillColor(sf::Color::Transparent);
-    for(int i = 4; i < 6; i++) {
-        buttons[i].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
-        buttons[i].second.setFillColor(sf::Color::White);
-    }
+    std::for_each(buttons.begin(), buttons.end(), showGamemode());
     position = difficulty;
     buttons[position].second.setFillColor(sf::Color::Cyan);
 
+}
+
+void Menu::topScoresPlacement() {
+
+}
+
+void Menu::fetchTopScores() {
+    std::vector<int> tempScores;
+    int temp;
+    std::ifstream file("highscores.txt");
+    while(file.is_open()) {
+        file >> temp;
+        if(file.eof())
+            break;
+        tempScores.push_back(temp);
+    }
+    file.close();
+    std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
+    for(int i = 0; i < 5; i++) {
+        sf::Font lol;
+        lol.loadFromFile("fonts/Symtext.ttf");
+        sf::Text lolzer("String", lol, 30);
+        topScores.push_back(lolzer);
+    }
+    std::transform(tempScores.begin(), tempScores.end(), topScores.begin(), createScore());
 }
 
 void Menu::submitScore() {
     std::ofstream file("highscores.txt", std::ios_base::app);
     if(file.is_open()) {
         file << score << std::endl;
+        file.close();
+    }
+}
+
+void Menu::keyAction(sf::RenderWindow &window, sf::Event &event) {
+    if (event.key.code == sf::Keyboard::Escape) {
+        if(position == ASTEROIDS || position == BOSS || position == BACK || position == SUBMIT)
+            showMainMenu();
+        else
+            window.close();
+    }
+    if (event.key.code == sf::Keyboard::Up) {
+        up();
+    }
+    if (event.key.code == sf::Keyboard::Down) {
+        down();
+    }
+    if (event.key.code == sf::Keyboard::Return) {
+        checkPosition(window);
+    }
+}
+
+void Menu::checkPosition(sf::RenderWindow &window) {
+    enter.play();
+    if(GetPosition() == PLAY) {
+        theme.stop();
+        startGame = true;
+        return;
+    }
+    else if(GetPosition() == GAMEMODE) {
+        buttons[position].second.setFillColor(sf::Color::White);
+        showGamemodeMenu(window);
+    }
+    else if (GetPosition() == QUIT) {
+        window.close();
+        return;
+    }
+    else if(GetPosition() == ASTEROIDS) {
+        showMainMenu();
+        difficulty = ASTEROIDS;
+    }
+    else if(GetPosition() == BOSS) {
+        showMainMenu();
+        difficulty = BOSS;
+    }
+    else if(GetPosition() == SUBMIT) {
+        submitScore();
+        showMainMenu();
+        topScores.clear();
+    }
+    else if(GetPosition() == BACK) {
+        showMainMenu();
+        topScores.clear();
     }
 }
 
@@ -177,7 +210,7 @@ const unsigned int Menu::GetDifficulty() const {
 }
 
 void Menu::createButtons() {
-    initButton("Asteroids", windowWidth / 2, 50);
+    initButton("ASTEROIDS", windowWidth / 2, 50);
     initButton("Play", windowWidth / 2, windowHeight / 2 - 150);
     initButton("Gamemode", windowWidth / 2, windowHeight / 2);
     initButton("Quit", windowWidth / 2, windowHeight / 2 + 150);
