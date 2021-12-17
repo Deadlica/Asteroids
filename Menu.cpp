@@ -51,7 +51,7 @@ void Menu::displayLoss(sf::RenderWindow &window, unsigned int score) {
         position = SUBMIT;
         buttons[BACK].first.setOutlineColor(sf::Color(54, 173, 207 ,100));
         buttons[BACK].second.setFillColor(sf::Color::White);
-        fetchTopScores();
+        generateTopScoresText();
     }
     else
         position = BACK;
@@ -69,7 +69,10 @@ void Menu::draw(sf::RenderWindow &window) {
         window.draw(e.second);
     }
     if(difficulty == ASTEROIDS && (position == BACK || position == SUBMIT)) {
-        for(auto e: topScores) {
+        float y = 100;
+        for(auto &e: topScores) {
+            e.setPosition(window.getSize().x / 2 - 600, y);
+            y += 50;
             window.draw(e);
         }
     }
@@ -116,11 +119,7 @@ void Menu::showGamemodeMenu(sf::RenderWindow &window) {
 
 }
 
-void Menu::topScoresPlacement() {
-
-}
-
-void Menu::fetchTopScores() {
+std::vector<int> Menu::fetchScoresFromFile() {
     std::vector<int> tempScores;
     int temp;
     std::ifstream file("highscores.txt");
@@ -131,12 +130,21 @@ void Menu::fetchTopScores() {
         tempScores.push_back(temp);
     }
     file.close();
+    return tempScores;
+}
+
+void Menu::generateTopScoresText() {
+    std::vector<int> tempScores = fetchScoresFromFile();
     std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
-    std::generate_n(topScores.begin(), 5, createScore() = {tempScores});
-    auto generator = [this](std::vector<sf::Text>::value_type &t) {
-        t.setFont(textFont);
+
+    size_t index = 0;
+
+    auto generator = [this, &tempScores, &index]() {
+        sf::Text text(std::to_string(tempScores[index++]), textFont, 30);
+        text.setFillColor(sf::Color::White);
+        return text;
     };
-    std::for_each(topScores.begin(), topScores.end(), generator);
+    std::generate_n(topScores.begin(), 5, generator);
 }
 
 void Menu::submitScore() {

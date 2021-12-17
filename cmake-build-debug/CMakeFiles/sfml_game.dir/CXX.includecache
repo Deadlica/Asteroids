@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/samuel/Documents/c++/DT079G/Asteroids/Menu.cpp
+Menu.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Menu.h
+
+/home/samuel/Documents/c++/DT079G/Asteroids/Menu.h
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
+string
+-
+vector
+-
+iostream
+-
+fstream
+-
+

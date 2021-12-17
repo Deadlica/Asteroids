@@ -39,8 +39,8 @@ private:
     void hideButtons();
     void showMainMenu();
     void showGamemodeMenu(sf::RenderWindow &window);
-    void topScoresPlacement();
-    void fetchTopScores();
+    std::vector<int> fetchScoresFromFile();
+    void generateTopScoresText();
     void submitScore();
     void keyAction(sf::RenderWindow &window, sf::Event &event);
     void checkPosition(sf::RenderWindow &window);
@@ -62,19 +62,6 @@ private:
     sf::Sound hover, enter;
     sf::Texture tBackground;
     sf::Sprite sBackground;
-};
-
-struct createScore {
-    std::vector<int> scores;
-    int index = 0;
-
-    sf::Text operator()() {
-        sf::Text text;
-        text.setString(std::to_string(scores[index]));
-        text.setCharacterSize(30);
-        text.setFillColor(sf::Color::White);
-        return text;
-    }
 };
 
 struct showMain {
