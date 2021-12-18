@@ -1,0 +1,45 @@
+\hypertarget{Enemy_8h_source}{}\doxysection{Enemy.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by samuel on 12/11/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef SFML\_GAME\_ENEMY\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define SFML\_GAME\_ENEMY\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Projectile.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classEnemy}{Enemy}}: \textcolor{keyword}{public} \mbox{\hyperlink{classPlayer}{Player}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classEnemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEnemy_aa70d742da02995011f1618acc9e303db}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}{changeDirection}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEnemy_a2e3a565f935bfe599468398429872ae1}{updateAnimation}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEnemy_a21e6c628507ae2b8d5fbd75acbd75caa}{damageAnimation}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEnemy_a686310455ab3dd232f7912871ec07dba}{attack}}(std::vector<std::unique\_ptr<Object>> \&objects);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classEnemy_a026487d96c550bd2c89c8cc426324d60}{GetPlayerCoordinates}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEnemy_a3181799dc587417e54a4a9e00213619c}{checkCollision}}(std::unique\_ptr<Object> \&\textcolor{keywordtype}{object}) \textcolor{keyword}{override};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{66     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba}{GetHP}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{69     std::pair<float, float> playerCoords;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} HP;}
+\DoxyCodeLine{71     std::chrono::time\_point<std::chrono::high\_resolution\_clock> start, animationStart;}
+\DoxyCodeLine{72     std::chrono::time\_point<std::chrono::high\_resolution\_clock> stop, animationStop;}
+\DoxyCodeLine{73     std::chrono::duration<double> time, animationTime;}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ENEMY\_H}}
+
+\end{DoxyCode}

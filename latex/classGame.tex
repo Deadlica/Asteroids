@@ -1,0 +1,74 @@
+\hypertarget{classGame}{}\doxysection{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame_a5c8b2ecefb6a0629011b266c3b3dd6bc}{Game}} (const unsigned int width, const unsigned int height)
+\item 
+const bool \mbox{\hyperlink{classGame_a3c75e92470139f175402030782794d34}{running}} () const
+\item 
+void \mbox{\hyperlink{classGame_a8ea4777fdc751b40f778997b76ee7cf9}{poll\+Events}} ()
+\item 
+void \mbox{\hyperlink{classGame_a79df6376b332d63c9eca0dcee30305c3}{update}} ()
+\item 
+void \mbox{\hyperlink{classGame_a15ddd769261d923827a3cdf41499c843}{render}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Can be considered a wapper class or game engine for the Asteroids game. It\textquotesingle{}s responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame_a5c8b2ecefb6a0629011b266c3b3dd6bc}\label{classGame_a5c8b2ecefb6a0629011b266c3b3dd6bc}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height }\end{DoxyParamCaption})}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the application window(in pixels). \\
+\hline
+{\em height} & Height of the application window(in pixels). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_a8ea4777fdc751b40f778997b76ee7cf9}\label{classGame_a8ea4777fdc751b40f778997b76ee7cf9}} 
+\index{Game@{Game}!pollEvents@{pollEvents}}
+\index{pollEvents@{pollEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{pollEvents()}{pollEvents()}}
+{\footnotesize\ttfamily void Game\+::poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Handles all keyboard inputs, mouse clicks etc.. \mbox{\Hypertarget{classGame_a15ddd769261d923827a3cdf41499c843}\label{classGame_a15ddd769261d923827a3cdf41499c843}} 
+\index{Game@{Game}!render@{render}}
+\index{render@{render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Renders all the \mbox{\hyperlink{classGame}{Game}} objects to the application window. \mbox{\Hypertarget{classGame_a3c75e92470139f175402030782794d34}\label{classGame_a3c75e92470139f175402030782794d34}} 
+\index{Game@{Game}!running@{running}}
+\index{running@{running}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{running()}{running()}}
+{\footnotesize\ttfamily const bool Game\+::running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks if the application window is open. \begin{DoxyReturn}{Returns}
+True if the window isn\textquotesingle{}t closed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_a79df6376b332d63c9eca0dcee30305c3}\label{classGame_a79df6376b332d63c9eca0dcee30305c3}} 
+\index{Game@{Game}!update@{update}}
+\index{update@{update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates all members, objects belonging to the \mbox{\hyperlink{classGame}{Game}} class. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game.\+h\item 
+Game.\+cpp\end{DoxyCompactItemize}

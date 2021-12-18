@@ -248,7 +248,7 @@ void Game::initSprites() {
 void Game::initSounds() {
     gameMusic.openFromFile(Arcade_Bit_Rush);
     gameMusic.setLoop(true);
-    buffer.loadFromFile("sounds/ja_brorsan.ogg");
+    buffer.loadFromFile("sounds/boom4.ogg");
     asteroidDeath.setBuffer(buffer);
     buffer2.loadFromFile("sounds/Laser Gun.ogg");
     projectileFired.setBuffer(buffer2);

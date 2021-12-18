@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 
-Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS), startGame(false), topScores(5) {
+Menu::Menu(const unsigned int width, const unsigned int height): windowWidth(width), windowHeight(height), position(PLAY), difficulty(ASTEROIDS), startGame(false) {
     initSounds();
     textFont.loadFromFile("fonts/Symtext.ttf");
     tBackground.loadFromFile("images/space.jpg");
@@ -137,6 +137,8 @@ void Menu::generateTopScoresText() {
     std::vector<int> tempScores = fetchScoresFromFile();
     std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
 
+    topScores.clear();
+    topScores.resize(5);
     size_t index = 0;
 
     auto generator = [this, &tempScores, &index]() {

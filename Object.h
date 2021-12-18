@@ -15,33 +15,114 @@
 #include <ctime>
 #include <cmath>
 
+/**
+ * Abstract base class for all moving entities.
+ */
 class Object {
 public:
+    /**
+     * Default constructor.
+     * @param x x-coordinate position.
+     * @param y y-coordinate position.
+     * @param angle Objects starting rotation.
+     * @param radius Objects radius.
+     */
     Object(float x, float y, float angle, float radius);
 
+    /**
+     * Destructor. Destroys the object, all its children.
+     */
     virtual ~Object() = default;
 
+    /**
+     * Updates the objects private members.
+     */
     virtual void update() = 0;
+
+    /**
+     * Checks if object has collided with another object.
+     * @param object Other object to check collision with.
+     * @return Whether there is a collision or not.
+     */
     virtual bool checkCollision(std::unique_ptr<Object> &object);
+
+    /**
+     * Draws the object to a window.
+     * @param window The window to draw the object on.
+     */
     void draw(sf::RenderWindow &window);
 
-    // Setters
+    /**
+     * Gives the object an identifying name.
+     * @param name The name to be given.
+     */
     void setName(std::string name);
+
+    /**
+     * Tells the object its windows borders.
+     * @param width RenderWindows width.
+     * @param height RenderWindows height.
+     */
     virtual void setBorder(const unsigned int width, const unsigned int height);
 
     // Getters
+    /**
+     * Gets the current amount of objects created.
+     * @return Reference to amount of given object that's alive.
+     */
     virtual int& GetCount() const = 0;
+
+    /**
+     * Gets the objects sprite.
+     * @return Reference to the sprite member.
+     */
     sf::Sprite& GetSprite();
+
+    /**
+     * Gets the objects texture.
+     * @return Reference to the texture member.
+     */
     sf::Texture& GetTexture();
+
+    /**
+     * Gets the objects name.
+     * @return The objects name.
+     */
     const std::string GetName() const;
+
+    /**
+     * Gets the objects coordinate position.
+     * @return A pair of its x, y-coordinate.
+     */
     const std::pair<float, float> GetPosition() const;
+
+    /**
+     * Gets the objects angle.
+     * @return The objects angle.
+     */
     const float GetAngle() const;
+
+    /**
+     * Gets the objects radius.
+     * @return The objects radius.
+     */
     const float GetRadius() const;
 
+    /**
+     * Checks if the object is alive.
+     * @return True if the object is alive.
+     */
     bool Alive();
+
+    /**
+     * Kills the object.
+     */
     void kill();
 
 protected:
+    /**
+     * Checks the objects coordinates in relation to the windows size, resets it if the object is out of bounds
+     */
     void checkBorderCoordinates();
     sf::Texture texture;
     sf::Sprite sprite;

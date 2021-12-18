@@ -1,0 +1,137 @@
+\hypertarget{classEnemy}{}\doxysection{Enemy Class Reference}
+\label{classEnemy}\index{Enemy@{Enemy}}
+
+
+{\ttfamily \#include $<$Enemy.\+h$>$}
+
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classEnemy}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}} ()
+\item 
+void \mbox{\hyperlink{classEnemy_aa70d742da02995011f1618acc9e303db}{update}} () override
+\item 
+bool \mbox{\hyperlink{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}{change\+Direction}} ()
+\item 
+void \mbox{\hyperlink{classEnemy_a2e3a565f935bfe599468398429872ae1}{update\+Animation}} ()
+\item 
+void \mbox{\hyperlink{classEnemy_a21e6c628507ae2b8d5fbd75acbd75caa}{damage\+Animation}} ()
+\item 
+void \mbox{\hyperlink{classEnemy_a686310455ab3dd232f7912871ec07dba}{attack}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&objects)
+\item 
+void \mbox{\hyperlink{classEnemy_a026487d96c550bd2c89c8cc426324d60}{Get\+Player\+Coordinates}} (float x, float y)
+\item 
+bool \mbox{\hyperlink{classEnemy_a3181799dc587417e54a4a9e00213619c}{check\+Collision}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ \&object) override
+\item 
+const unsigned int \mbox{\hyperlink{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba}{Get\+HP}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classObject}{Object}} that represents a the enemy boss. It inherit from \mbox{\hyperlink{classObject}{Object}} and \mbox{\hyperlink{classPlayer}{Player}}. It handles its own movement based on where the player is and attacks everytime its direction is updated. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnemy_a94f30d348b6d2840fd71675472ba38dd}\label{classEnemy_a94f30d348b6d2840fd71675472ba38dd}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_a686310455ab3dd232f7912871ec07dba}\label{classEnemy_a686310455ab3dd232f7912871ec07dba}} 
+\index{Enemy@{Enemy}!attack@{attack}}
+\index{attack@{attack}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Enemy\+::attack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&}]{objects }\end{DoxyParamCaption})}
+
+Makes the enemy shoot 3 projectiles aimed at the player. 
+\begin{DoxyParams}{Parameters}
+{\em objects} & The container holding all the instantiated objects (projectiles, asteroids etc...). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}\label{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}} 
+\index{Enemy@{Enemy}!changeDirection@{changeDirection}}
+\index{changeDirection@{changeDirection}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{changeDirection()}{changeDirection()}}
+{\footnotesize\ttfamily bool Enemy\+::change\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+After a random time it gives the enemy a new direction to move in. \begin{DoxyReturn}{Returns}
+True if the direction has been changed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_a3181799dc587417e54a4a9e00213619c}\label{classEnemy_a3181799dc587417e54a4a9e00213619c}} 
+\index{Enemy@{Enemy}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
+{\footnotesize\ttfamily bool Enemy\+::check\+Collision (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks if the enemy has been hit by a projectile from the player. 
+\begin{DoxyParams}{Parameters}
+{\em object} & The list holding all the instantiated objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the enemy has been hit by a bullet 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a9dababca57f28dd60d216e0b65081c22}{Object}}.
+
+\mbox{\Hypertarget{classEnemy_a21e6c628507ae2b8d5fbd75acbd75caa}\label{classEnemy_a21e6c628507ae2b8d5fbd75acbd75caa}} 
+\index{Enemy@{Enemy}!damageAnimation@{damageAnimation}}
+\index{damageAnimation@{damageAnimation}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{damageAnimation()}{damageAnimation()}}
+{\footnotesize\ttfamily void Enemy\+::damage\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates the enemy\textquotesingle{}s texture when its taken damage. \mbox{\Hypertarget{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba}\label{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba}} 
+\index{Enemy@{Enemy}!GetHP@{GetHP}}
+\index{GetHP@{GetHP}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetHP()}{GetHP()}}
+{\footnotesize\ttfamily const unsigned int Enemy\+::\+Get\+HP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the enemy\textquotesingle{}s current health. \begin{DoxyReturn}{Returns}
+The enemy\textquotesingle{}s health. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnemy_a026487d96c550bd2c89c8cc426324d60}\label{classEnemy_a026487d96c550bd2c89c8cc426324d60}} 
+\index{Enemy@{Enemy}!GetPlayerCoordinates@{GetPlayerCoordinates}}
+\index{GetPlayerCoordinates@{GetPlayerCoordinates}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetPlayerCoordinates()}{GetPlayerCoordinates()}}
+{\footnotesize\ttfamily void Enemy\+::\+Get\+Player\+Coordinates (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+Gives the enemy the current location of the player. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The players x-\/coordinate \\
+\hline
+{\em y} & The players y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEnemy_aa70d742da02995011f1618acc9e303db}\label{classEnemy_aa70d742da02995011f1618acc9e303db}} 
+\index{Enemy@{Enemy}!update@{update}}
+\index{update@{update}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Enemy\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adjusts the angle based on the players position, checks out of bounds, updates animation frame. 
+
+Implements \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{Object}}.
+
+\mbox{\Hypertarget{classEnemy_a2e3a565f935bfe599468398429872ae1}\label{classEnemy_a2e3a565f935bfe599468398429872ae1}} 
+\index{Enemy@{Enemy}!updateAnimation@{updateAnimation}}
+\index{updateAnimation@{updateAnimation}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{updateAnimation()}{updateAnimation()}}
+{\footnotesize\ttfamily void Enemy\+::update\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks if its time to update the animation frame. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Enemy.\+h\item 
+Enemy.\+cpp\end{DoxyCompactItemize}

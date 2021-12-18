@@ -1,0 +1,123 @@
+\hypertarget{classPlayer}{}\doxysection{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPlayer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Movement}} \{ {\bfseries UP}
+, {\bfseries DOWN}
+, {\bfseries LEFT}
+, {\bfseries RIGHT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_a51dd7ca88ebaa261b0cec428e8af5b47}{Player}} (std\+::string file, float x=0, float y=0, float angle=0, float radius=20)
+\item 
+int \& \mbox{\hyperlink{classPlayer_a337327c9e59fed2dfd12a1567e41494a}{Get\+Count}} () const override
+\item 
+void \mbox{\hyperlink{classPlayer_ada668523a8ac43b3054acff23ad0b191}{set\+Border}} (const unsigned int width, const unsigned int height) override
+\item 
+void \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{check\+Move}} (\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player\+::\+Movement}} move)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlayer_a3b6ab190ef31299d60a48c9cfa90f753}\label{classPlayer_a3b6ab190ef31299d60a48c9cfa90f753}} 
+static constexpr float {\bfseries DTR} = 0.\+0174532925
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classObject}{Object}} that represents a the player. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an angle, speed and rotation etc... 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}\label{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}} 
+\index{Player@{Player}!Movement@{Movement}}
+\index{Movement@{Movement}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Movement}{Movement}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player\+::\+Movement}}}
+
+Players keyboard input for movement 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_a51dd7ca88ebaa261b0cec428e8af5b47}\label{classPlayer_a51dd7ca88ebaa261b0cec428e8af5b47}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{file,  }\item[{float}]{x = {\ttfamily 0},  }\item[{float}]{y = {\ttfamily 0},  }\item[{float}]{angle = {\ttfamily 0},  }\item[{float}]{radius = {\ttfamily 20} }\end{DoxyParamCaption})}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em file} & Image file for the texture. \\
+\hline
+{\em x} & x-\/coordinate position. \\
+\hline
+{\em y} & y-\/coordinate position. \\
+\hline
+{\em angle} & Players starting rotation. \\
+\hline
+{\em radius} & Players radius \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}\label{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}} 
+\index{Player@{Player}!checkMove@{checkMove}}
+\index{checkMove@{checkMove}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{checkMove()}{checkMove()}}
+{\footnotesize\ttfamily void Player\+::check\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player\+::\+Movement}}}]{move }\end{DoxyParamCaption})}
+
+Updates players movement depending on what keyboard input was received. 
+\begin{DoxyParams}{Parameters}
+{\em move} & Keyboard input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a337327c9e59fed2dfd12a1567e41494a}\label{classPlayer_a337327c9e59fed2dfd12a1567e41494a}} 
+\index{Player@{Player}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetCount()}{GetCount()}}
+{\footnotesize\ttfamily int \& Player\+::\+Get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the amount of players that are currently alive. \begin{DoxyReturn}{Returns}
+Reference of the counter. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{Object}}.
+
+\mbox{\Hypertarget{classPlayer_ada668523a8ac43b3054acff23ad0b191}\label{classPlayer_ada668523a8ac43b3054acff23ad0b191}} 
+\index{Player@{Player}!setBorder@{setBorder}}
+\index{setBorder@{setBorder}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setBorder()}{setBorder()}}
+{\footnotesize\ttfamily void Player\+::set\+Border (\begin{DoxyParamCaption}\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the players border for checking out of bounds, as well as updates the players position to be centered. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Render\+Window\textquotesingle{}s width. \\
+\hline
+{\em height} & Render\+Window\textquotesingle{}s height. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classObject_afb3a6b3d4201c9bbb52e779e5fd21849}{Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+h\item 
+Player.\+cpp\end{DoxyCompactItemize}

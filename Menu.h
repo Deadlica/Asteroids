@@ -14,21 +14,54 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
+/**
+ * This class represents all the games menus, menu states. Such as the start menu, sub menus, handling navigation throughout all the different states etc...
+ */
 class Menu {
 public:
+    /**
+     * Default constructor
+     * @param width The width of the menu.
+     * @param height The height of the menu.
+     */
     Menu(const unsigned int width, const unsigned int height);
 
+    /**
+     * Enum for all menu's button positions.
+     */
     enum Button {PLAY = 1, GAMEMODE = 2, QUIT = 3,
                  ASTEROIDS = 4, BOSS = 5, WIN = 6,
                  LOSE = 7, SUBMIT = 8, BACK = 9};
 
+    /**
+     * Starts the menu loop.
+     * @param window The sf::RenderWindow to run the menu on.
+     */
     void run(sf::RenderWindow &window);
+
+    /**
+     * Displays the menu state of a win.
+     * @param window The sf::RenderWindow to display it on.
+     */
     void displayWin(sf::RenderWindow &window);
+
+    /**
+     * Displays the menu state of a loss.
+     * @param window The sf::RenderWindow to display it on.
+     * @param score The score that the player got during the game.
+     */
     void displayLoss(sf::RenderWindow &window, unsigned int score);
 
-
+    /**
+     * Gets the current button position in the menu.
+     * @return The number representing the current button position.
+     */
     const int GetPosition() const;
+
+    /**
+     * Gets the current difficulty setting
+     * @return The number representing the current difficulty setting.
+     */
     const unsigned int GetDifficulty() const;
 
 private:
@@ -64,8 +97,15 @@ private:
     sf::Sprite sBackground;
 };
 
+/**
+ * Predicate predicate for displaying the Main menu buttons.
+ */
 struct showMain {
     bool doOnce = true;
+    /**
+     * The operator() which is used by std::for_each function.
+     * @param b The std::pair which is seen as a button.
+     */
     void operator()(std::pair<sf::RectangleShape, sf::Text> &b) {
         if(doOnce) {
             b.second.setFillColor(sf::Color::White);
@@ -78,7 +118,14 @@ struct showMain {
     }
 };
 
+/*
+ * Predicate functor for displaying the Gamemode menu buttons.
+ */
 struct showGamemode {
+    /**
+     * The operator() which is used by std::for_each function.
+     * @param b The std::pair which is seen as a button.
+     */
     void operator()(std::pair<sf::RectangleShape, sf::Text> &b) {
         if(b.second.getString() == "Asteroids" || b.second.getString() == "Boss") {
             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));

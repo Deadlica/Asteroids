@@ -13,18 +13,38 @@
 #include "Enemy.h"
 #include <vector>
 #include <algorithm>
-
+/**
+ * Can be considered a wapper class or game engine for the Asteroids game. It's responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs.
+ */
 class Game {
 public:
-    //Constructor
+    /**
+     * Default constructor
+     * @param width Width of the application window(in pixels).
+     * @param height Height of the application window(in pixels).
+     */
     Game(const unsigned int width, const unsigned int height);
 
-    //Accessors
+    /**
+     * Checks if the application window is open.
+     * @return True if the window isn't closed.
+     */
     const bool running() const;
 
     //Functions
+    /**
+     * Handles all keyboard inputs, mouse clicks etc..
+     */
     void pollEvents();
+
+    /**
+     * Updates all members, objects belonging to the Game class.
+     */
     void update();
+
+    /**
+     * Renders all the Game objects to the application window.
+     */
     void render();
 private:
     //Members

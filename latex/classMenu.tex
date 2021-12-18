@@ -1,0 +1,128 @@
+\hypertarget{classMenu}{}\doxysection{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} \{ \newline
+{\bfseries PLAY} = 1
+, {\bfseries GAMEMODE} = 2
+, {\bfseries QUIT} = 3
+, {\bfseries ASTEROIDS} = 4
+, \newline
+{\bfseries BOSS} = 5
+, {\bfseries WIN} = 6
+, {\bfseries LOSE} = 7
+, {\bfseries SUBMIT} = 8
+, \newline
+{\bfseries BACK} = 9
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenu_a2492780dc7b118df039d5aba30d7be2b}{Menu}} (const unsigned int width, const unsigned int height)
+\item 
+void \mbox{\hyperlink{classMenu_ab4adec6e5575f9d0abcb6eba7b7dcef9}{run}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{classMenu_a8e8eaad0b70545a11d7c28eff11ffdf9}{display\+Win}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{classMenu_aa61467a146b82702d7623034dd1eb2e2}{display\+Loss}} (sf\+::\+Render\+Window \&window, unsigned int score)
+\item 
+const int \mbox{\hyperlink{classMenu_a372878fdba1ca2364eca0def389fff27}{Get\+Position}} () const
+\item 
+const unsigned int \mbox{\hyperlink{classMenu_afd4a850fb73af9404e541d936605460a}{Get\+Difficulty}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents all the games menus, menu states. Such as the start menu, sub menus, handling navigation throughout all the different states etc... 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}\label{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}} 
+\index{Menu@{Menu}!Button@{Button}}
+\index{Button@{Button}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Button}{Button}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Menu\+::\+Button}}}
+
+Enum for all menu\textquotesingle{}s button positions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenu_a2492780dc7b118df039d5aba30d7be2b}\label{classMenu_a2492780dc7b118df039d5aba30d7be2b}} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height }\end{DoxyParamCaption})}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the menu. \\
+\hline
+{\em height} & The height of the menu. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu_aa61467a146b82702d7623034dd1eb2e2}\label{classMenu_aa61467a146b82702d7623034dd1eb2e2}} 
+\index{Menu@{Menu}!displayLoss@{displayLoss}}
+\index{displayLoss@{displayLoss}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayLoss()}{displayLoss()}}
+{\footnotesize\ttfamily void Menu\+::display\+Loss (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{unsigned int}]{score }\end{DoxyParamCaption})}
+
+Displays the menu state of a loss. 
+\begin{DoxyParams}{Parameters}
+{\em window} & The sf\+::\+Render\+Window to display it on. \\
+\hline
+{\em score} & The score that the player got during the game. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a8e8eaad0b70545a11d7c28eff11ffdf9}\label{classMenu_a8e8eaad0b70545a11d7c28eff11ffdf9}} 
+\index{Menu@{Menu}!displayWin@{displayWin}}
+\index{displayWin@{displayWin}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayWin()}{displayWin()}}
+{\footnotesize\ttfamily void Menu\+::display\+Win (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+Displays the menu state of a win. 
+\begin{DoxyParams}{Parameters}
+{\em window} & The sf\+::\+Render\+Window to display it on. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_afd4a850fb73af9404e541d936605460a}\label{classMenu_afd4a850fb73af9404e541d936605460a}} 
+\index{Menu@{Menu}!GetDifficulty@{GetDifficulty}}
+\index{GetDifficulty@{GetDifficulty}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{GetDifficulty()}{GetDifficulty()}}
+{\footnotesize\ttfamily const unsigned int Menu\+::\+Get\+Difficulty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current difficulty setting \begin{DoxyReturn}{Returns}
+The number representing the current difficulty setting. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_a372878fdba1ca2364eca0def389fff27}\label{classMenu_a372878fdba1ca2364eca0def389fff27}} 
+\index{Menu@{Menu}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily const int Menu\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current button position in the menu. \begin{DoxyReturn}{Returns}
+The number representing the current button position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_ab4adec6e5575f9d0abcb6eba7b7dcef9}\label{classMenu_ab4adec6e5575f9d0abcb6eba7b7dcef9}} 
+\index{Menu@{Menu}!run@{run}}
+\index{run@{run}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Menu\+::run (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+Starts the menu loop. 
+\begin{DoxyParams}{Parameters}
+{\em window} & The sf\+::\+Render\+Window to run the menu on. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Menu.\+h\item 
+Menu.\+cpp\end{DoxyCompactItemize}

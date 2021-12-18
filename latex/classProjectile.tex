@@ -1,0 +1,93 @@
+\hypertarget{classProjectile}{}\doxysection{Projectile Class Reference}
+\label{classProjectile}\index{Projectile@{Projectile}}
+
+
+{\ttfamily \#include $<$Projectile.\+h$>$}
+
+Inheritance diagram for Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProjectile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}{Projectile}} (float x, float y, float angle, float radius, float speed)
+\item 
+int \& \mbox{\hyperlink{classProjectile_a270acf63ee6b4ce33aae497b525780f4}{Get\+Count}} () const override
+\item 
+void \mbox{\hyperlink{classProjectile_ac41ad56034b53e739619fabbd5e49652}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classProjectile_a0d54dd9019937d76f6483ec76c4a5976}{count}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classObject}{Object}} that represents a bullet/projectile. It inherit from \mbox{\hyperlink{classObject}{Object}}, has an angle and speed etc... 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}\label{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{Projectile()}{Projectile()}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{angle,  }\item[{float}]{radius,  }\item[{float}]{speed }\end{DoxyParamCaption})}
+
+Default constructor. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate position. \\
+\hline
+{\em y} & y-\/coordinate position. \\
+\hline
+{\em angle} & Projectiles starting rotation. \\
+\hline
+{\em radius} & Projectiles radius. \\
+\hline
+{\em speed} & Projectiles speed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProjectile_a270acf63ee6b4ce33aae497b525780f4}\label{classProjectile_a270acf63ee6b4ce33aae497b525780f4}} 
+\index{Projectile@{Projectile}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{GetCount()}{GetCount()}}
+{\footnotesize\ttfamily int \& Projectile\+::\+Get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the amount of projectiles that are currently alive. \begin{DoxyReturn}{Returns}
+Reference of the counter. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{Object}}.
+
+\mbox{\Hypertarget{classProjectile_ac41ad56034b53e739619fabbd5e49652}\label{classProjectile_ac41ad56034b53e739619fabbd5e49652}} 
+\index{Projectile@{Projectile}!update@{update}}
+\index{update@{update}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Projectile\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks the projectiles current position, updates it given its speed. It also checks if the projectile is out of bounds. 
+
+Implements \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classProjectile_a0d54dd9019937d76f6483ec76c4a5976}\label{classProjectile_a0d54dd9019937d76f6483ec76c4a5976}} 
+\index{Projectile@{Projectile}!count@{count}}
+\index{count@{count}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int Projectile\+::count = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+Counter for the amount of instantiated projectiles. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Projectile.\+h\item 
+Projectile.\+cpp\end{DoxyCompactItemize}
