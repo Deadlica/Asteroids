@@ -17,8 +17,9 @@ public:
      * @param y y-coordinate position.
      * @param angle Asteroids starting rotation.
      * @param radius Asteroids radius
+     * @param playerPosition The player sprite's coordinates
      */
-    Asteroid(float x, float y, float angle, float radius);
+    Asteroid(float x, float y, float angle, float radius, std::pair<float, float> playerPosition);
 
     /**
      * Gets the amount of asteroids that are currently alive.
@@ -32,11 +33,16 @@ public:
     void update() override;
 
     /**
+     * Makes sure that the asteroid doesn't spawn on the player
+     * @param playerPosition The player sprite's coordinates
+     */
+    void dontSpawnOnPlayer(std::pair<float, float> &playerPosition);
+
+    /**
      * Counter for the amount of instantiated asteroids.
      */
     static int count;
 private:
-
 
 };
 

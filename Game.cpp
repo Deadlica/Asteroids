@@ -139,8 +139,8 @@ void Game::clearGame() {
 }
 
 void Game::generateAsteroids() {
-    while(Asteroid::count < 15)
-        objects.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25));
+    while(Asteroid::count < 25)
+        objects.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25, spaceship->GetPosition()));
 }
 
 void Game::generateProjectile() {

@@ -65,6 +65,13 @@ public:
      */
     virtual void setBorder(const unsigned int width, const unsigned int height);
 
+    /**
+     * Sets the objects x, y coordinate
+     * @param x x-coordinate
+     * @param y y-coordinate
+     */
+    void setPosition(const float x, const float y);
+
     // Getters
     /**
      * Gets the current amount of objects created.

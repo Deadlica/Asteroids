@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/samuel/Documents/c++/DT079G/Asteroids/Asteroid.cpp
+Asteroid.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Asteroid.h
+
 /home/samuel/Documents/c++/DT079G/Asteroids/Asteroid.h
 Object.h
 /home/samuel/Documents/c++/DT079G/Asteroids/Object.h
+
+/home/samuel/Documents/c++/DT079G/Asteroids/Enemy.cpp
+Enemy.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Enemy.h
 
 /home/samuel/Documents/c++/DT079G/Asteroids/Enemy.h
 Player.h
@@ -60,6 +68,10 @@ iostream
 fstream
 -
 
+/home/samuel/Documents/c++/DT079G/Asteroids/Object.cpp
+Object.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Object.h
+
 /home/samuel/Documents/c++/DT079G/Asteroids/Object.h
 SFML/Graphics.hpp
 -
@@ -80,11 +92,25 @@ ctime
 cmath
 -
 
+/home/samuel/Documents/c++/DT079G/Asteroids/Player.cpp
+Player.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Player.h
+
 /home/samuel/Documents/c++/DT079G/Asteroids/Player.h
 Object.h
 /home/samuel/Documents/c++/DT079G/Asteroids/Object.h
 
+/home/samuel/Documents/c++/DT079G/Asteroids/Projectile.cpp
+Projectile.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Projectile.h
+
 /home/samuel/Documents/c++/DT079G/Asteroids/Projectile.h
 Object.h
 /home/samuel/Documents/c++/DT079G/Asteroids/Object.h
+
+/home/samuel/Documents/c++/DT079G/Asteroids/main.cpp
+iostream
+-
+Game.h
+/home/samuel/Documents/c++/DT079G/Asteroids/Game.h
 

@@ -33,6 +33,11 @@ void Object::setBorder(const unsigned int width, const unsigned int height) {
     windowHeight = height;
 }
 
+void Object::setPosition(const float x, const float y) {
+    coords.first = x;
+    coords.second = y;
+}
+
 sf::Sprite& Object::GetSprite() {
     return sprite;
 }
