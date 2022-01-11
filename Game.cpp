@@ -6,7 +6,7 @@
 
 Game::Game(const unsigned int width, const unsigned int height):
 window(sf::VideoMode(width, height), "Asteroids", sf::Style::Titlebar | sf::Style::Close),
-menu(width, height) {
+menu(width, height), animations(0) {
     window.setFramerateLimit(60);
     centerWindowPosition();
 
@@ -55,6 +55,7 @@ void Game::update() {
     // Updates
     updatePlayer();
     updateObjects();
+    updateAnimations();
     updateEnemy();
     updateScore();
 }
@@ -80,6 +81,10 @@ void Game::checkObjectCollision() {
                         asteroidDeath.play();
                         p->kill();
                         a->kill();
+                        Animation temp;
+                        temp.setTexture(tExplosion);
+                        temp.setPosition(a->GetPosition().first, a->GetPosition().second);
+                        animations.push_back(temp);
                         points += 10;
                     }
                 }
@@ -162,8 +167,9 @@ void Game::updateObjects() {
             o->update();
             if (!o->Alive()) {
                 o->GetCount() -= 1;
-                if(o->GetName() == "asteroid")
+                if(o->GetName() == "asteroid") {
                     generateAsteroids();
+                }
                 auto temp = std::move(o);
                 objects.erase(std::find(objects.begin(), objects.end(), nullptr));
             }
@@ -197,13 +203,23 @@ void Game::updateScore() {
         score.setString("BOSS HP: " + std::to_string(enemy->GetHP()));
 }
 
+void Game::updateAnimations() {
+    for(auto &a: animations) {
+        a.update();
+        if(a.frame > 48.0)
+            animations.erase(animations.begin());
+    }
+}
+
 void Game::drawObjects() {
     auto drawer = [this](std::vector<std::unique_ptr<Object>>::value_type &o) {return o->draw(window);};
     std::for_each(objects.begin(), objects.end(), drawer);
     window.draw(spaceship->GetSprite());
     if(menu.GetDifficulty() == Menu::BOSS)
         enemy->draw(window);
-
+    for(auto &a: animations) {
+        a.draw(window);
+    }
 }
 
 void Game::updatePlayer() {
@@ -218,7 +234,6 @@ void Game::updatePlayer() {
 
     if(!isAnyKeyPressed()) {
         spaceship->GetTexture().loadFromFile("images/spaceship.png");
-        spaceship->GetSprite().setTexture(spaceship->GetTexture());
     }
     spaceship->checkMove(Player::DOWN);
 }
@@ -232,6 +247,7 @@ bool Game::isAnyKeyPressed() {
 }
 
 void Game::initTextures() {
+    tExplosion.loadFromFile("images/explosion.png");
     tBackground.loadFromFile("images/space.jpg");
     textFont.loadFromFile("fonts/Symtext.ttf");
     score.setFont(textFont);

@@ -11,19 +11,20 @@
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Object.h"{}}}
 \DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classAsteroid}{Asteroid}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObject}{Object}} \{}
 \DoxyCodeLine{13 \textcolor{keyword}{public}:}
-\DoxyCodeLine{21     \mbox{\hyperlink{classAsteroid_a999060292c5b7269c4a4e2b3e00815e8}{Asteroid}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius);}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{27     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{GetCount}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aabe3a75b05df4749a69469a1204b8382}{update}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{count}};}
-\DoxyCodeLine{38 \textcolor{keyword}{private}:}
-\DoxyCodeLine{39 }
+\DoxyCodeLine{22     \mbox{\hyperlink{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}{Asteroid}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius, std::pair<float, float> playerPosition);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{GetCount}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aabe3a75b05df4749a69469a1204b8382}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aea8e966c42149c12fc5592e0d0c26e5e}{dontSpawnOnPlayer}}(std::pair<float, float> \&playerPosition);}
 \DoxyCodeLine{40 }
-\DoxyCodeLine{41 \};}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ASTEROID\_H}}
+\DoxyCodeLine{44     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{count}};}
+\DoxyCodeLine{45 \textcolor{keyword}{private}:}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ASTEROID\_H}}
 
 \end{DoxyCode}

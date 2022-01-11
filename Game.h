@@ -11,6 +11,7 @@
 #include "Projectile.h"
 #include "Menu.h"
 #include "Enemy.h"
+#include "Animation.h"
 #include <vector>
 #include <algorithm>
 /**
@@ -59,13 +60,14 @@ private:
     //Player spaceship;
     std::unique_ptr<Player> spaceship;
     std::unique_ptr<Enemy> enemy;
-    sf::Texture tBackground;
+    sf::Texture tBackground, tExplosion;
 
     //Sprites
     sf::Sprite sBackground;
 
     //Container for objects
     std::vector<std::unique_ptr<Object>> objects;
+    std::vector<Animation> animations;
 
     //Game music
     sf::Music gameMusic;
@@ -93,6 +95,7 @@ private:
     void updateObjects();
     void updateEnemy();
     void updateScore();
+    void updateAnimations();
     void drawObjects();
 
     //Player

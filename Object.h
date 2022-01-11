@@ -14,6 +14,7 @@
 #include <string>
 #include <ctime>
 #include <cmath>
+#include "Animation.h"
 
 /**
  * Abstract base class for all moving entities.

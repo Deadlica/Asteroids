@@ -9,6 +9,7 @@ Enemy::Enemy(): Player("images/boss.png", 120, 120, 0, 60), HP(10) {
     sprite.scale(1.5, 1.5);
     coords.first = windowWidth - spriteWidth;
     coords.second = windowHeight / 2;
+    texture.setSmooth(true);
 }
 
 void Enemy::update() {
@@ -34,18 +35,13 @@ bool Enemy::changeDirection() {
 }
 
 void Enemy::updateAnimation() {
-    animationStop = std::chrono::high_resolution_clock::now();
     animationTime = std::chrono::duration<double>(stop - start);
-    if(animationTime.count() > 0.05) {
+    if(animationTime.count() > 0.05)
         texture.loadFromFile("images/boss.png");
-        sprite.setTexture(texture);
-    }
 }
 
 void Enemy::damageAnimation() {
-    animationStart = std::chrono::high_resolution_clock::now();
     texture.loadFromFile("images/boss_damaged.png");
-    sprite.setTexture(texture);
 }
 
 void Enemy::attack(std::vector<std::unique_ptr<Object>> &objects) {

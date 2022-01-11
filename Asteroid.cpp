@@ -9,6 +9,7 @@ int Asteroid::count = 0;
 Asteroid::Asteroid(float x, float y, float angle, float radius, std::pair<float, float> playerPosition): Object(x, y, angle, radius) {
     count++;
     texture.loadFromFile("images/asteroid.png");
+    texture.setSmooth(true);
     sprite.setTexture(texture);
     spriteWidth = texture.getSize().x;
     spriteHeight = texture.getSize().y;
@@ -30,7 +31,7 @@ void Asteroid::update() {
 }
 
 void Asteroid::dontSpawnOnPlayer(std::pair<float, float> &playerPosition) {
-    while(pow(GetPosition().first - playerPosition.first, 2) + pow(GetPosition().second - playerPosition.second, 2) < pow(70, 2)) {
+    while(pow(GetPosition().first - playerPosition.first, 2) + pow(GetPosition().second - playerPosition.second, 2) < pow(120, 2)) {
         setPosition(rand() % windowWidth, rand() % windowHeight);
     }
 }

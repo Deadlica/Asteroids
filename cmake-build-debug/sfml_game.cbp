@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug"/>
+				<Option working_dir="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug"/>
+				<Option working_dir="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug"/>
+				<Option working_dir="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sfml_game">
-				<Option output="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug"/>
+				<Option output="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game"/>
+					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sfml_game/fast">
-				<Option output="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug"/>
+				<Option output="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/sfml_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,74 +75,80 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/samuel/Documents/c++/DT079G/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 sfml_game/fast"/>
+					<CompileFile command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j3 -f &quot;/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Asteroid.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Animation.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Asteroid.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Animation.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Enemy.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Asteroid.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Enemy.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Asteroid.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Game.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Enemy.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Game.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Enemy.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Menu.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Game.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Menu.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Game.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Object.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Menu.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Object.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Menu.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Player.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Object.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Player.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Object.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Projectile.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Player.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/Projectile.h">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Player.h">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/main.cpp">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Projectile.cpp">
 			<Option target="sfml_game"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/CMakeLists.txt">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/Projectile.h">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/main.cpp">
+			<Option target="sfml_game"/>
+		</Unit>
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/samuel/Documents/c++/DT079G/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
+		<Unit filename="/home/samuel/Documents/c++/programmeringsmetodik/Asteroids/../../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
 	</Project>

@@ -9,6 +9,7 @@ int Projectile::count = 0;
 Projectile::Projectile(float x, float y, float angle, float radius, float speed): Object(x, y, angle, radius), speed(speed) {
     count++;
     texture.loadFromFile("images/laser_beam.png");
+    texture.setSmooth(true);
     sprite.setTexture(texture);
     spriteWidth = texture.getSize().x;
     spriteHeight = texture.getSize().y;

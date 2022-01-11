@@ -9,6 +9,7 @@ int Player::count = 0;
 Player::Player(std::string file, float x, float y, float angle, float radius): Object(x, y, angle, radius), accelerate(false), maxSpeed(5), speed(0) {
     count++;
     texture.loadFromFile(file);
+    texture.setSmooth(true);
     sprite.setTexture(texture);
     name = "spaceship";
     sprite.setOrigin(radius, radius);
