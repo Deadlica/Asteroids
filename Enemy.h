@@ -8,9 +8,8 @@
 #include "Player.h"
 #include "Projectile.h"
 #include <chrono>
-/**
- * Object that represents the enemy boss. It inherits from Player which inherits from Object. It handles its own movement based on where the player is and attacks everytime its direction is changed.
- */
+
+//! Object that represents the enemy boss. It inherits from Player which inherits from Object. It handles its own movement based on where the player is and attacks everytime its direction is changed.
 class Enemy: public Player {
 public:
     /**

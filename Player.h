@@ -6,9 +6,8 @@
 #define SFML_GAME_PLAYER_H
 
 #include "Object.h"
-/**
- * Object that represents the player. It inherits from Object, has an rotation angle, speed etc...
- */
+
+//! Object that represents the player. It inherits from Object, has an rotation angle, speed etc...
 class Player : public Object {
 public:
     /**

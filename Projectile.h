@@ -6,9 +6,8 @@
 #define SFML_GAME_PROJECTILE_H
 
 #include "Object.h"
-/**
- * Object that represents a bullet/projectile. It inherits from Object, has an rotation angle and speed etc...
- */
+
+//! Object that represents a bullet/projectile. It inherits from Object, has an rotation angle and speed etc...
 class Projectile : public Object {
 public:
     /**

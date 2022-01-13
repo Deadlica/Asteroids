@@ -7,7 +7,7 @@
 
 #include "SFML/Graphics.hpp"
 
-
+//! This acts as an animated sequence
 class Animation {
 public:
     /**

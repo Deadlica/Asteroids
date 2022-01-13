@@ -6,9 +6,8 @@
 #define SFML_GAME_ASTEROID_H
 
 #include "Object.h"
-/**
- * Object that represents an asteroid. It inherits from Object.
- */
+
+//! Object that represents an asteroid. It inherits from Object.
 class Asteroid : public Object {
 public:
     /**

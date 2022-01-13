@@ -9,40 +9,41 @@
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#define SFML\_GAME\_PLAYER\_H}}
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Object.h"{}}}
-\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classPlayer}{Player}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObject}{Object}} \{}
-\DoxyCodeLine{13 \textcolor{keyword}{public}:}
-\DoxyCodeLine{22     \mbox{\hyperlink{classPlayer_a51dd7ca88ebaa261b0cec428e8af5b47}{Player}}(std::string file, \textcolor{keywordtype}{float} x = 0, \textcolor{keywordtype}{float} y = 0, \textcolor{keywordtype}{float} angle = 0, \textcolor{keywordtype}{float} radius = 20);}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{27     \textcolor{keyword}{enum} \mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Movement}} \{UP, DOWN, LEFT, RIGHT\};}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{33     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classPlayer_a337327c9e59fed2dfd12a1567e41494a}{GetCount}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_ada668523a8ac43b3054acff23ad0b191}{setBorder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height) \textcolor{keyword}{override};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_a3bb250229f788c748ed7aa27284d119c}{setTexture}}(std::string t);}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{checkMove}}(\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player::Movement}} move);}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{55     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{float} DTR = 0.0174532925;}
-\DoxyCodeLine{56     sf::Texture texture;}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \textcolor{keyword}{private}:}
-\DoxyCodeLine{59     \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
-\DoxyCodeLine{60     \textcolor{keywordtype}{void} updateOffset();}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62     \textcolor{keywordtype}{void} updateSpeed();}
-\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keywordtype}{int} count;}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65     \textcolor{comment}{//Player  movement}}
-\DoxyCodeLine{66     \textcolor{keywordtype}{bool} accelerate;}
-\DoxyCodeLine{67     \textcolor{keywordtype}{int} maxSpeed;}
-\DoxyCodeLine{68     \textcolor{keywordtype}{float} speed;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classPlayer}{Player}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObject}{Object}} \{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{classPlayer_a51dd7ca88ebaa261b0cec428e8af5b47}{Player}}(std::string file, \textcolor{keywordtype}{float} x = 0, \textcolor{keywordtype}{float} y = 0, \textcolor{keywordtype}{float} angle = 0, \textcolor{keywordtype}{float} radius = 20);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26     \textcolor{keyword}{enum} \mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Movement}} \{UP, DOWN, LEFT, RIGHT\};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classPlayer_a337327c9e59fed2dfd12a1567e41494a}{GetCount}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_ada668523a8ac43b3054acff23ad0b191}{setBorder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height) \textcolor{keyword}{override};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_a3bb250229f788c748ed7aa27284d119c}{setTexture}}(std::string t);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{checkMove}}(\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player::Movement}} move);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{float} DTR = 0.0174532925;}
+\DoxyCodeLine{55     sf::Texture texture;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} updateOffset();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} updateSpeed();}
+\DoxyCodeLine{62     \textcolor{keyword}{static} \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{//Player  movement}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} accelerate;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} maxSpeed;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{float} speed;}
+\DoxyCodeLine{68 }
 \DoxyCodeLine{69 }
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71 \};}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
 \DoxyCodeLine{72 }
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_PLAYER\_H}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_PLAYER\_H}}
 
 \end{DoxyCode}

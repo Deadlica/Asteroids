@@ -14,9 +14,8 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-/**
- * This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc...
- */
+
+//! This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc...
 class Menu {
 public:
     /**

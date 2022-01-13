@@ -16,9 +16,8 @@
 #include <cmath>
 #include "Animation.h"
 
-/**
- * Abstract base class for all moving entities.
- */
+
+//! Abstract base class for all moving entities.
 class Object {
 public:
     /**

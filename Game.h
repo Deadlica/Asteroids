@@ -14,9 +14,8 @@
 #include "Animation.h"
 #include <vector>
 #include <algorithm>
-/**
- * Can be considered a wrapper class or game engine for the Asteroids game. It's responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs.
- */
+
+//! Can be considered a wrapper class or game engine for the Asteroids game. It's responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs.
 class Game {
 public:
     /**

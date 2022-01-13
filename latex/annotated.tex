@@ -1,13 +1,13 @@
 \doxysection{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
-\item\contentsline{section}{\mbox{\hyperlink{classAnimation}{Animation}} }{\pageref{classAnimation}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classAsteroid}{Asteroid}} }{\pageref{classAsteroid}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classEnemy}{Enemy}} }{\pageref{classEnemy}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classGame}{Game}} }{\pageref{classGame}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classMenu}{Menu}} }{\pageref{classMenu}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classObject}{Object}} }{\pageref{classObject}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classPlayer}{Player}} }{\pageref{classPlayer}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classProjectile}{Projectile}} }{\pageref{classProjectile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAnimation}{Animation}} \\*This acts as an animated sequence }{\pageref{classAnimation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAsteroid}{Asteroid}} \\*\mbox{\hyperlink{classObject}{Object}} that represents an asteroid. It inherits from \mbox{\hyperlink{classObject}{Object}} }{\pageref{classAsteroid}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEnemy}{Enemy}} \\*\mbox{\hyperlink{classObject}{Object}} that represents the enemy boss. It inherits from \mbox{\hyperlink{classPlayer}{Player}} which inherits from \mbox{\hyperlink{classObject}{Object}}. It handles its own movement based on where the player is and attacks everytime its direction is changed }{\pageref{classEnemy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGame}{Game}} \\*Can be considered a wrapper class or game engine for the Asteroids game. It\textquotesingle{}s responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs }{\pageref{classGame}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMenu}{Menu}} \\*This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc.. }{\pageref{classMenu}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classObject}{Object}} \\*Abstract base class for all moving entities }{\pageref{classObject}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPlayer}{Player}} \\*\mbox{\hyperlink{classObject}{Object}} that represents the player. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an rotation angle, speed etc.. }{\pageref{classPlayer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProjectile}{Projectile}} \\*\mbox{\hyperlink{classObject}{Object}} that represents a bullet/projectile. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an rotation angle and speed etc.. }{\pageref{classProjectile}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structshowGamemode}{show\+Gamemode}} }{\pageref{structshowGamemode}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structshowMain}{show\+Main}} }{\pageref{structshowMain}}{}
 \end{DoxyCompactList}
