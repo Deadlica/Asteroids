@@ -40,6 +40,12 @@ public:
     void setBorder(const unsigned int width, const unsigned int height) override;
 
     /**
+     * Sets the texture for the player sprite.
+     * @param t The texture of the player.
+     */
+    void setTexture(std::string t);
+
+    /**
      * Updates the players movement depending on what keyboard input was received.
      * @param move Keyboard input.
      */
@@ -47,12 +53,13 @@ public:
 
 protected:
     static constexpr float DTR = 0.0174532925;
+    sf::Texture texture;
 
 private:
     void update() override;
     void updateOffset();
-    void updateSpeed();
 
+    void updateSpeed();
     static int count;
 
     //Player  movement

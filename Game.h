@@ -60,7 +60,7 @@ private:
     //Player spaceship;
     std::unique_ptr<Player> spaceship;
     std::unique_ptr<Enemy> enemy;
-    sf::Texture tBackground, tExplosion;
+    sf::Texture tBackground, tExplosion, tAsteroid, tProjectile;
 
     //Sprites
     sf::Sprite sBackground;

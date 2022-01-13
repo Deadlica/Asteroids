@@ -44,12 +44,12 @@ void Enemy::damageAnimation() {
     texture.loadFromFile("images/boss_damaged.png");
 }
 
-void Enemy::attack(std::vector<std::unique_ptr<Object>> &objects) {
-    objects.push_back(std::make_unique<Projectile> (GetPosition().first, GetPosition().second,GetAngle(),10, 6.0));
+void Enemy::attack(std::vector<std::unique_ptr<Object>> &objects, sf::Texture &t) {
+    objects.push_back(std::make_unique<Projectile> (t, GetPosition().first, GetPosition().second,GetAngle(),10, 6.0));
     objects.back()->setName("enemy_projectile");
-    objects.push_back(std::make_unique<Projectile> (GetPosition().first, GetPosition().second,GetAngle() + 20,10, 6.0));
+    objects.push_back(std::make_unique<Projectile> (t, GetPosition().first, GetPosition().second,GetAngle() + 20,10, 6.0));
     objects.back()->setName("enemy_projectile");
-    objects.push_back(std::make_unique<Projectile> (GetPosition().first, GetPosition().second,GetAngle() - 20,10, 6.0));
+    objects.push_back(std::make_unique<Projectile> (t, GetPosition().first, GetPosition().second,GetAngle() - 20,10, 6.0));
     objects.back()->setName("enemy_projectile");
 }
 

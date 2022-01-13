@@ -23,7 +23,7 @@ void \mbox{\hyperlink{classEnemy_a2e3a565f935bfe599468398429872ae1}{update\+Anim
 \item 
 void \mbox{\hyperlink{classEnemy_a21e6c628507ae2b8d5fbd75acbd75caa}{damage\+Animation}} ()
 \item 
-void \mbox{\hyperlink{classEnemy_a686310455ab3dd232f7912871ec07dba}{attack}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&objects)
+void \mbox{\hyperlink{classEnemy_af34730d5dfc897fef22fd62bcbf04124}{attack}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&objects, sf\+::\+Texture \&t)
 \item 
 void \mbox{\hyperlink{classEnemy_a026487d96c550bd2c89c8cc426324d60}{Get\+Player\+Coordinates}} (float x, float y)
 \item 
@@ -47,15 +47,17 @@ const unsigned int \mbox{\hyperlink{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba
 Default constructor. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classEnemy_a686310455ab3dd232f7912871ec07dba}\label{classEnemy_a686310455ab3dd232f7912871ec07dba}} 
+\mbox{\Hypertarget{classEnemy_af34730d5dfc897fef22fd62bcbf04124}\label{classEnemy_af34730d5dfc897fef22fd62bcbf04124}} 
 \index{Enemy@{Enemy}!attack@{attack}}
 \index{attack@{attack}!Enemy@{Enemy}}
 \doxysubsubsection{\texorpdfstring{attack()}{attack()}}
-{\footnotesize\ttfamily void Enemy\+::attack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&}]{objects }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Enemy\+::attack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ $>$ \&}]{objects,  }\item[{sf\+::\+Texture \&}]{t }\end{DoxyParamCaption})}
 
 Makes the enemy shoot 3 projectiles aimed at the player. 
 \begin{DoxyParams}{Parameters}
 {\em objects} & The container holding all the instantiated objects (projectiles, asteroids etc...). \\
+\hline
+{\em t} & The texture of the projectile. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}\label{classEnemy_a9f4433ef9a4ca82356024f3bd9e25e88}} 

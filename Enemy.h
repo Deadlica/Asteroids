@@ -42,8 +42,9 @@ public:
     /**
      * Makes the enemy shoot 3 projectiles aimed at the player.
      * @param objects The container holding all the instantiated objects (projectiles, asteroids etc...).
+     * @param t The texture of the projectile.
      */
-    void attack(std::vector<std::unique_ptr<Object>> &objects);
+    void attack(std::vector<std::unique_ptr<Object>> &objects, sf::Texture &t);
 
     /**
      * Gives the enemy the current location of the player.

@@ -6,13 +6,11 @@
 
 int Projectile::count = 0;
 
-Projectile::Projectile(float x, float y, float angle, float radius, float speed): Object(x, y, angle, radius), speed(speed) {
+Projectile::Projectile(sf::Texture &t, float x, float y, float angle, float radius, float speed): Object(x, y, angle, radius), speed(speed) {
     count++;
-    texture.loadFromFile("images/laser_beam.png");
-    texture.setSmooth(true);
-    sprite.setTexture(texture);
-    spriteWidth = texture.getSize().x;
-    spriteHeight = texture.getSize().y;
+    sprite.setTexture(t);
+    spriteWidth = t.getSize().x;
+    spriteHeight = t.getSize().y;
     sprite.setOrigin(spriteWidth / 2, spriteHeight / 2);
     name = "projectile";
     coordsDelta = {0, 0};

@@ -93,8 +93,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2e3a565f935bfe599468398429872ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e6c628507ae2b8d5fbd75acbd75caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a21e6c628507ae2b8d5fbd75acbd75caa">damageAnimation</a> ()</td></tr>
 <tr class="separator:a21e6c628507ae2b8d5fbd75acbd75caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a686310455ab3dd232f7912871ec07dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a686310455ab3dd232f7912871ec07dba">attack</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classObject.html">Object</a> &gt; &gt; &amp;objects)</td></tr>
-<tr class="separator:a686310455ab3dd232f7912871ec07dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34730d5dfc897fef22fd62bcbf04124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#af34730d5dfc897fef22fd62bcbf04124">attack</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classObject.html">Object</a> &gt; &gt; &amp;objects, sf::Texture &amp;t)</td></tr>
+<tr class="separator:af34730d5dfc897fef22fd62bcbf04124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026487d96c550bd2c89c8cc426324d60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a026487d96c550bd2c89c8cc426324d60">GetPlayerCoordinates</a> (float x, float y)</td></tr>
 <tr class="separator:a026487d96c550bd2c89c8cc426324d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3181799dc587417e54a4a9e00213619c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a3181799dc587417e54a4a9e00213619c">checkCollision</a> (std::unique_ptr&lt; <a class="el" href="classObject.html">Object</a> &gt; &amp;object) override</td></tr>
@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a337327c9e59fed2dfd12a1567e41494a inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada668523a8ac43b3054acff23ad0b191 inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ada668523a8ac43b3054acff23ad0b191">setBorder</a> (const unsigned int width, const unsigned int height) override</td></tr>
 <tr class="separator:ada668523a8ac43b3054acff23ad0b191 inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb250229f788c748ed7aa27284d119c inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a3bb250229f788c748ed7aa27284d119c">setTexture</a> (std::string t)</td></tr>
+<tr class="separator:a3bb250229f788c748ed7aa27284d119c inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc70e21054d59867c14b6f8ae20b98c inherit pub_methods_classPlayer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aadc70e21054d59867c14b6f8ae20b98c">checkMove</a> (<a class="el" href="classPlayer.html#af0fe41c43c8344fe70ae9dd26afc8a1e">Player::Movement</a> move)</td></tr>
 <tr class="separator:aadc70e21054d59867c14b6f8ae20b98c inherit pub_methods_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classObject.html">Object</a></td></tr>
@@ -131,8 +133,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a741f4a9f195b09dc7bbaf45dcbd6a671 inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ec21d9318cd277eba277810fcf4e33c inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a9ec21d9318cd277eba277810fcf4e33c">GetSprite</a> ()</td></tr>
 <tr class="separator:a9ec21d9318cd277eba277810fcf4e33c inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a195136ff4e77e6db11eeedfc4e80489b inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a195136ff4e77e6db11eeedfc4e80489b">GetTexture</a> ()</td></tr>
-<tr class="separator:a195136ff4e77e6db11eeedfc4e80489b inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afec3ba07d7e8830b60c5ca0e0b39242b inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#afec3ba07d7e8830b60c5ca0e0b39242b">GetName</a> () const</td></tr>
 <tr class="separator:afec3ba07d7e8830b60c5ca0e0b39242b inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af588bb11a42bdd1d0b09715652c22cb7 inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">const std::pair&lt; float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#af588bb11a42bdd1d0b09715652c22cb7">GetPosition</a> () const</td></tr>
@@ -158,10 +158,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classObject.html">Object</a></td></tr>
 <tr class="memitem:a701379a3b5bc510cee54378a9c6a4e00 inherit pro_methods_classObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a701379a3b5bc510cee54378a9c6a4e00">checkBorderCoordinates</a> ()</td></tr>
 <tr class="separator:a701379a3b5bc510cee54378a9c6a4e00 inherit pro_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classObject.html">Object</a></td></tr>
-<tr class="memitem:a8abc6192982ee39b2dc9d9b05cc155ee inherit pro_attribs_classObject"><td class="memItemLeft" align="right" valign="top"><a id="a8abc6192982ee39b2dc9d9b05cc155ee" name="a8abc6192982ee39b2dc9d9b05cc155ee"></a>
+<tr class="inherit_header pro_attribs_classPlayer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classPlayer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classPlayer.html">Player</a></td></tr>
+<tr class="memitem:a9c6c14b89a6f99031a0d677828f1fa1a inherit pro_attribs_classPlayer"><td class="memItemLeft" align="right" valign="top"><a id="a9c6c14b89a6f99031a0d677828f1fa1a" name="a9c6c14b89a6f99031a0d677828f1fa1a"></a>
 sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
-<tr class="separator:a8abc6192982ee39b2dc9d9b05cc155ee inherit pro_attribs_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a9c6c14b89a6f99031a0d677828f1fa1a inherit pro_attribs_classPlayer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classObject.html">Object</a></td></tr>
 <tr class="memitem:a65be09abc56e93e0154c3a0e37f97579 inherit pro_attribs_classObject"><td class="memItemLeft" align="right" valign="top"><a id="a65be09abc56e93e0154c3a0e37f97579" name="a65be09abc56e93e0154c3a0e37f97579"></a>
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
 <tr class="separator:a65be09abc56e93e0154c3a0e37f97579 inherit pro_attribs_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,8 +224,8 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a686310455ab3dd232f7912871ec07dba" name="a686310455ab3dd232f7912871ec07dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a686310455ab3dd232f7912871ec07dba">&#9670;&nbsp;</a></span>attack()</h2>
+<a id="af34730d5dfc897fef22fd62bcbf04124" name="af34730d5dfc897fef22fd62bcbf04124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34730d5dfc897fef22fd62bcbf04124">&#9670;&nbsp;</a></span>attack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,14 +234,25 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
           <td class="memname">void Enemy::attack </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classObject.html">Object</a> &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>objects</em></td><td>)</td>
+          <td class="paramname"><em>objects</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">sf::Texture &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Makes the enemy shoot 3 projectiles aimed at the player. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">objects</td><td>The container holding all the instantiated objects (projectiles, asteroids etc...). </td></tr>
+    <tr><td class="paramname">t</td><td>The texture of the projectile. </td></tr>
   </table>
   </dd>
 </dl>

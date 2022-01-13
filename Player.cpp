@@ -27,6 +27,10 @@ void Player::setBorder(const unsigned int width, const unsigned int height) {
     coords.second = windowHeight / 2;
 }
 
+void Player::setTexture(std::string t) {
+    texture.loadFromFile(t);
+}
+
 void Player::update() {
     updateOffset(); //Calculates the offset for the new x,y positions
     updateSpeed(); //Increases speed
@@ -71,8 +75,8 @@ void Player::checkMove(Player::Movement move) {
 
 void Player::updateOffset() {
     if(accelerate) {
-        GetTexture().loadFromFile("images/spaceship_boost.png");
-        GetSprite().setTexture(GetTexture());
+        setTexture("images/spaceship_boost.png");
+        GetSprite().setTexture(texture);
         coordsDelta.first += std::cos(angle * DTR) * 0.1;
         coordsDelta.second += std::sin(angle * DTR) * 0.1;
     }

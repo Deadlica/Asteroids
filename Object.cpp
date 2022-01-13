@@ -42,10 +42,6 @@ sf::Sprite& Object::GetSprite() {
     return sprite;
 }
 
-sf::Texture& Object::GetTexture() {
-    return texture;
-}
-
 const std::string Object::GetName() const {
     return name;
 }

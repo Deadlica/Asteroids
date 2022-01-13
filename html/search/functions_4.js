@@ -9,6 +9,5 @@ var searchData=
   ['getplayercoordinates_6',['GetPlayerCoordinates',['../classEnemy.html#a026487d96c550bd2c89c8cc426324d60',1,'Enemy']]],
   ['getposition_7',['GetPosition',['../classMenu.html#a63236a271d0eeff85640a66ec6993938',1,'Menu::GetPosition()'],['../classObject.html#af588bb11a42bdd1d0b09715652c22cb7',1,'Object::GetPosition() const']]],
   ['getradius_8',['GetRadius',['../classObject.html#ae177141f9e419493c483bb9c9963fa8a',1,'Object']]],
-  ['getsprite_9',['GetSprite',['../classObject.html#a9ec21d9318cd277eba277810fcf4e33c',1,'Object']]],
-  ['gettexture_10',['GetTexture',['../classObject.html#a195136ff4e77e6db11eeedfc4e80489b',1,'Object']]]
+  ['getsprite_9',['GetSprite',['../classObject.html#a9ec21d9318cd277eba277810fcf4e33c',1,'Object']]]
 ];

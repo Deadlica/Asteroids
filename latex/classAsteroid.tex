@@ -13,7 +13,7 @@ Inheritance diagram for Asteroid\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}{Asteroid}} (float x, float y, float angle, float radius, std\+::pair$<$ float, float $>$ player\+Position)
+\mbox{\hyperlink{classAsteroid_a9530726a7895c9d768f80fcae25de16f}{Asteroid}} (sf\+::\+Texture \&t, float x, float y, float angle, float radius, std\+::pair$<$ float, float $>$ player\+Position)
 \item 
 int \& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{Get\+Count}} () const override
 \item 
@@ -33,23 +33,25 @@ static int \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{cou
 \mbox{\hyperlink{classObject}{Object}} that represents an asteroid. It inherits from \mbox{\hyperlink{classObject}{Object}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}\label{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}} 
+\mbox{\Hypertarget{classAsteroid_a9530726a7895c9d768f80fcae25de16f}\label{classAsteroid_a9530726a7895c9d768f80fcae25de16f}} 
 \index{Asteroid@{Asteroid}!Asteroid@{Asteroid}}
 \index{Asteroid@{Asteroid}!Asteroid@{Asteroid}}
 \doxysubsubsection{\texorpdfstring{Asteroid()}{Asteroid()}}
-{\footnotesize\ttfamily Asteroid\+::\+Asteroid (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{angle,  }\item[{float}]{radius,  }\item[{std\+::pair$<$ float, float $>$}]{player\+Position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Asteroid\+::\+Asteroid (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{angle,  }\item[{float}]{radius,  }\item[{std\+::pair$<$ float, float $>$}]{player\+Position }\end{DoxyParamCaption})}
 
 Default constructor. 
 \begin{DoxyParams}{Parameters}
+{\em t} & The texture for the asteroid. \\
+\hline
 {\em x} & x-\/coordinate position. \\
 \hline
 {\em y} & y-\/coordinate position. \\
 \hline
 {\em angle} & Asteroids starting rotation. \\
 \hline
-{\em radius} & Asteroids radius \\
+{\em radius} & Asteroids radius. \\
 \hline
-{\em player\+Position} & The players coordinates \\
+{\em player\+Position} & The players coordinates. \\
 \hline
 \end{DoxyParams}
 

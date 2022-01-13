@@ -13,13 +13,14 @@ class Projectile : public Object {
 public:
     /**
      * Default constructor.
+     * @param t The texture for the projectile.
      * @param x x-coordinate position.
      * @param y y-coordinate position.
      * @param angle Projectiles starting rotation.
      * @param radius Projectiles radius.
      * @param speed Projectiles speed.
      */
-    Projectile(float x, float y, float angle, float radius, float speed);
+    Projectile(sf::Texture &t, float x, float y, float angle, float radius, float speed);
 
     /**
      * Gets the amount of projectiles that are currently alive.

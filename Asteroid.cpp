@@ -6,13 +6,11 @@
 
 int Asteroid::count = 0;
 
-Asteroid::Asteroid(float x, float y, float angle, float radius, std::pair<float, float> playerPosition): Object(x, y, angle, radius) {
+Asteroid::Asteroid(sf::Texture &t, float x, float y, float angle, float radius, std::pair<float, float> playerPosition): Object(x, y, angle, radius) {
     count++;
-    texture.loadFromFile("images/asteroid.png");
-    texture.setSmooth(true);
-    sprite.setTexture(texture);
-    spriteWidth = texture.getSize().x;
-    spriteHeight = texture.getSize().y;
+    sprite.setTexture(t);
+    spriteWidth = t.getSize().x;
+    spriteHeight = t.getSize().y;
     sprite.setOrigin(spriteWidth / 2, spriteHeight / 2);
     name = "asteroid";
     coordsDelta.first = (rand() % 8 - 4) + 1;

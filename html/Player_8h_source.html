@@ -83,33 +83,37 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#ada668523a8ac43b3054acff23ad0b191">setBorder</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#aadc70e21054d59867c14b6f8ae20b98c">checkMove</a>(<a class="code hl_enumeration" href="classPlayer.html#af0fe41c43c8344fe70ae9dd26afc8a1e">Player::Movement</a> move);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#a3bb250229f788c748ed7aa27284d119c">setTexture</a>(std::string t);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DTR = 0.0174532925;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> update() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> updateOffset();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> updateSpeed();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> count;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#aadc70e21054d59867c14b6f8ae20b98c">checkMove</a>(<a class="code hl_enumeration" href="classPlayer.html#af0fe41c43c8344fe70ae9dd26afc8a1e">Player::Movement</a> move);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DTR = 0.0174532925;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    sf::Texture texture;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">//Player  movement</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> accelerate;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> maxSpeed;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">float</span> speed;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">//SFML_GAME_PLAYER_H</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> update() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> updateOffset();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> updateSpeed();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> count;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">//Player  movement</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">bool</span> accelerate;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> maxSpeed;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">float</span> speed;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">//SFML_GAME_PLAYER_H</span></div>
 <div class="ttc" id="aclassObject_html"><div class="ttname"><a href="classObject.html">Object</a></div><div class="ttdef"><b>Definition:</b> Object.h:22</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:12</div></div>
 <div class="ttc" id="aclassPlayer_html_a337327c9e59fed2dfd12a1567e41494a"><div class="ttname"><a href="classPlayer.html#a337327c9e59fed2dfd12a1567e41494a">Player::GetCount</a></div><div class="ttdeci">int &amp; GetCount() const override</div><div class="ttdef"><b>Definition:</b> Player.cpp:19</div></div>
+<div class="ttc" id="aclassPlayer_html_a3bb250229f788c748ed7aa27284d119c"><div class="ttname"><a href="classPlayer.html#a3bb250229f788c748ed7aa27284d119c">Player::setTexture</a></div><div class="ttdeci">void setTexture(std::string t)</div><div class="ttdef"><b>Definition:</b> Player.cpp:30</div></div>
 <div class="ttc" id="aclassPlayer_html_a51dd7ca88ebaa261b0cec428e8af5b47"><div class="ttname"><a href="classPlayer.html#a51dd7ca88ebaa261b0cec428e8af5b47">Player::Player</a></div><div class="ttdeci">Player(std::string file, float x=0, float y=0, float angle=0, float radius=20)</div><div class="ttdef"><b>Definition:</b> Player.cpp:9</div></div>
-<div class="ttc" id="aclassPlayer_html_aadc70e21054d59867c14b6f8ae20b98c"><div class="ttname"><a href="classPlayer.html#aadc70e21054d59867c14b6f8ae20b98c">Player::checkMove</a></div><div class="ttdeci">void checkMove(Player::Movement move)</div><div class="ttdef"><b>Definition:</b> Player.cpp:49</div></div>
+<div class="ttc" id="aclassPlayer_html_aadc70e21054d59867c14b6f8ae20b98c"><div class="ttname"><a href="classPlayer.html#aadc70e21054d59867c14b6f8ae20b98c">Player::checkMove</a></div><div class="ttdeci">void checkMove(Player::Movement move)</div><div class="ttdef"><b>Definition:</b> Player.cpp:53</div></div>
 <div class="ttc" id="aclassPlayer_html_ada668523a8ac43b3054acff23ad0b191"><div class="ttname"><a href="classPlayer.html#ada668523a8ac43b3054acff23ad0b191">Player::setBorder</a></div><div class="ttdeci">void setBorder(const unsigned int width, const unsigned int height) override</div><div class="ttdef"><b>Definition:</b> Player.cpp:23</div></div>
 <div class="ttc" id="aclassPlayer_html_af0fe41c43c8344fe70ae9dd26afc8a1e"><div class="ttname"><a href="classPlayer.html#af0fe41c43c8344fe70ae9dd26afc8a1e">Player::Movement</a></div><div class="ttdeci">Movement</div><div class="ttdef"><b>Definition:</b> Player.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -87,12 +87,6 @@ public:
     sf::Sprite& GetSprite();
 
     /**
-     * Gets the objects texture.
-     * @return Reference to the texture member.
-     */
-    sf::Texture& GetTexture();
-
-    /**
      * Gets the objects name.
      * @return The objects name.
      */
@@ -132,7 +126,6 @@ protected:
      * Checks the objects coordinates in relation to the windows size, resets it if the object is out of bounds
      */
     void checkBorderCoordinates();
-    sf::Texture texture;
     sf::Sprite sprite;
     //Coordinates, offset coordinates
     std::pair<float, float> coords, coordsDelta;

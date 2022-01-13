@@ -13,13 +13,14 @@ class Asteroid : public Object {
 public:
     /**
      * Default constructor.
+     * @param t The texture for the asteroid.
      * @param x x-coordinate position.
      * @param y y-coordinate position.
      * @param angle Asteroids starting rotation.
-     * @param radius Asteroids radius
-     * @param playerPosition The players coordinates
+     * @param radius Asteroids radius.
+     * @param playerPosition The players coordinates.
      */
-    Asteroid(float x, float y, float angle, float radius, std::pair<float, float> playerPosition);
+    Asteroid(sf::Texture &t, float x, float y, float angle, float radius, std::pair<float, float> playerPosition);
 
     /**
      * Gets the amount of asteroids that are currently alive.

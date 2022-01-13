@@ -13,7 +13,7 @@ Inheritance diagram for Projectile\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}{Projectile}} (float x, float y, float angle, float radius, float speed)
+\mbox{\hyperlink{classProjectile_a9a9deeb7b3d9d6124063964a439a4803}{Projectile}} (sf\+::\+Texture \&t, float x, float y, float angle, float radius, float speed)
 \item 
 int \& \mbox{\hyperlink{classProjectile_a270acf63ee6b4ce33aae497b525780f4}{Get\+Count}} () const override
 \item 
@@ -31,14 +31,16 @@ static int \mbox{\hyperlink{classProjectile_a0d54dd9019937d76f6483ec76c4a5976}{c
 \mbox{\hyperlink{classObject}{Object}} that represents a bullet/projectile. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an rotation angle and speed etc... 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}\label{classProjectile_ac72d6f5799325f359c46fc2c58d65dcb}} 
+\mbox{\Hypertarget{classProjectile_a9a9deeb7b3d9d6124063964a439a4803}\label{classProjectile_a9a9deeb7b3d9d6124063964a439a4803}} 
 \index{Projectile@{Projectile}!Projectile@{Projectile}}
 \index{Projectile@{Projectile}!Projectile@{Projectile}}
 \doxysubsubsection{\texorpdfstring{Projectile()}{Projectile()}}
-{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{angle,  }\item[{float}]{radius,  }\item[{float}]{speed }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{angle,  }\item[{float}]{radius,  }\item[{float}]{speed }\end{DoxyParamCaption})}
 
 Default constructor. 
 \begin{DoxyParams}{Parameters}
+{\em t} & The texture for the projectile. \\
+\hline
 {\em x} & x-\/coordinate position. \\
 \hline
 {\em y} & y-\/coordinate position. \\

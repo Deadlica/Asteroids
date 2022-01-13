@@ -28,7 +28,15 @@ int \& \mbox{\hyperlink{classPlayer_a337327c9e59fed2dfd12a1567e41494a}{Get\+Coun
 \item 
 void \mbox{\hyperlink{classPlayer_ada668523a8ac43b3054acff23ad0b191}{set\+Border}} (const unsigned int width, const unsigned int height) override
 \item 
+void \mbox{\hyperlink{classPlayer_a3bb250229f788c748ed7aa27284d119c}{set\+Texture}} (std\+::string t)
+\item 
 void \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{check\+Move}} (\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player\+::\+Movement}} move)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlayer_a9c6c14b89a6f99031a0d677828f1fa1a}\label{classPlayer_a9c6c14b89a6f99031a0d677828f1fa1a}} 
+sf\+::\+Texture {\bfseries texture}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -115,6 +123,17 @@ Sets the players border for checking out of bounds in regards to the window, as 
 
 Reimplemented from \mbox{\hyperlink{classObject_afb3a6b3d4201c9bbb52e779e5fd21849}{Object}}.
 
+\mbox{\Hypertarget{classPlayer_a3bb250229f788c748ed7aa27284d119c}\label{classPlayer_a3bb250229f788c748ed7aa27284d119c}} 
+\index{Player@{Player}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily void Player\+::set\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{t }\end{DoxyParamCaption})}
+
+Sets the texture for the player sprite. 
+\begin{DoxyParams}{Parameters}
+{\em t} & The texture of the player. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

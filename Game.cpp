@@ -146,11 +146,11 @@ void Game::clearGame() {
 
 void Game::generateAsteroids() {
     while(Asteroid::count < 25)
-        objects.push_back(std::make_unique<Asteroid> (rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25, spaceship->GetPosition()));
+        objects.push_back(std::make_unique<Asteroid> (tAsteroid,rand() % window.getSize().x,rand() % window.getSize().y,rand() % 360, 25, spaceship->GetPosition()));
 }
 
 void Game::generateProjectile() {
-    objects.push_back(std::make_unique<Projectile> (spaceship->GetPosition().first, spaceship->GetPosition().second,spaceship->GetAngle(),10, 12.0));
+    objects.push_back(std::make_unique<Projectile> (tProjectile, spaceship->GetPosition().first, spaceship->GetPosition().second,spaceship->GetAngle(),10, 12.0));
 }
 
 void Game::generatePlayer() {
@@ -184,7 +184,7 @@ void Game::updateEnemy() {
         enemy->GetPlayerCoordinates(spaceship->GetPosition().first, spaceship->GetPosition().second);
         enemy->update();
         if(enemy->changeDirection())
-            enemy->attack(objects);
+            enemy->attack(objects, tProjectile);
         for(auto &p: objects) {
             enemy->checkCollision(p);
         }
@@ -234,7 +234,7 @@ void Game::updatePlayer() {
         spaceship->checkMove(Player::LEFT);
 
     if(!isAnyKeyPressed()) {
-        spaceship->GetTexture().loadFromFile("images/spaceship.png");
+        spaceship->setTexture("images/spaceship.png");
     }
     spaceship->checkMove(Player::DOWN);
 }
@@ -248,8 +248,12 @@ bool Game::isAnyKeyPressed() {
 }
 
 void Game::initTextures() {
-    tExplosion.loadFromFile("images/explosion.png");
     tBackground.loadFromFile("images/space.jpg");
+    tExplosion.loadFromFile("images/explosion.png");
+    tAsteroid.loadFromFile("images/asteroid.png");
+    tAsteroid.setSmooth(true);
+    tProjectile.loadFromFile("images/laser_beam.png");
+    tProjectile.setSmooth(true);
     textFont.loadFromFile("fonts/Symtext.ttf");
     score.setFont(textFont);
     score.setCharacterSize(50);

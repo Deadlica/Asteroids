@@ -19,27 +19,30 @@
 \DoxyCodeLine{34 }
 \DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_ada668523a8ac43b3054acff23ad0b191}{setBorder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height) \textcolor{keyword}{override};}
 \DoxyCodeLine{41 }
-\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{checkMove}}(\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player::Movement}} move);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_a3bb250229f788c748ed7aa27284d119c}{setTexture}}(std::string t);}
 \DoxyCodeLine{47 }
-\DoxyCodeLine{48 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{49     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{float} DTR = 0.0174532925;}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{private}:}
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
-\DoxyCodeLine{53     \textcolor{keywordtype}{void} updateOffset();}
-\DoxyCodeLine{54     \textcolor{keywordtype}{void} updateSpeed();}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     \textcolor{keyword}{static} \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayer_aadc70e21054d59867c14b6f8ae20b98c}{checkMove}}(\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player::Movement}} move);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{float} DTR = 0.0174532925;}
+\DoxyCodeLine{56     sf::Texture texture;}
 \DoxyCodeLine{57 }
-\DoxyCodeLine{58     \textcolor{comment}{//Player  movement}}
-\DoxyCodeLine{59     \textcolor{keywordtype}{bool} accelerate;}
-\DoxyCodeLine{60     \textcolor{keywordtype}{int} maxSpeed;}
-\DoxyCodeLine{61     \textcolor{keywordtype}{float} speed;}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 \};}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_PLAYER\_H}}
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} updateOffset();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} updateSpeed();}
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//Player  movement}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} accelerate;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} maxSpeed;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{float} speed;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_PLAYER\_H}}
 
 \end{DoxyCode}
