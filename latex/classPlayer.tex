@@ -40,7 +40,7 @@ static constexpr float {\bfseries DTR} = 0.\+0174532925
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{classObject}{Object}} that represents a the player. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an angle, speed and rotation etc... 
+\mbox{\hyperlink{classObject}{Object}} that represents the player. It inherits from \mbox{\hyperlink{classObject}{Object}}, has an rotation angle, speed etc... 
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}\label{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}} 
@@ -80,7 +80,7 @@ Default constructor
 \doxysubsubsection{\texorpdfstring{checkMove()}{checkMove()}}
 {\footnotesize\ttfamily void Player\+::check\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer_af0fe41c43c8344fe70ae9dd26afc8a1e}{Player\+::\+Movement}}}]{move }\end{DoxyParamCaption})}
 
-Updates players movement depending on what keyboard input was received. 
+Updates the players movement depending on what keyboard input was received. 
 \begin{DoxyParams}{Parameters}
 {\em move} & Keyboard input. \\
 \hline
@@ -104,7 +104,7 @@ Implements \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{Objec
 \doxysubsubsection{\texorpdfstring{setBorder()}{setBorder()}}
 {\footnotesize\ttfamily void Player\+::set\+Border (\begin{DoxyParamCaption}\item[{const unsigned int}]{width,  }\item[{const unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Sets the players border for checking out of bounds, as well as updates the players position to be centered. 
+Sets the players border for checking out of bounds in regards to the window, as well as settings the players starting position. 
 \begin{DoxyParams}{Parameters}
 {\em width} & Render\+Window\textquotesingle{}s width. \\
 \hline

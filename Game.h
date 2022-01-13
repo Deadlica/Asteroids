@@ -15,7 +15,7 @@
 #include <vector>
 #include <algorithm>
 /**
- * Can be considered a wapper class or game engine for the Asteroids game. It's responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs.
+ * Can be considered a wrapper class or game engine for the Asteroids game. It's responsible for all states of the game, updating, rendering. As well as handling the menu, keyboard inputs.
  */
 class Game {
 public:
@@ -28,13 +28,13 @@ public:
 
     /**
      * Checks if the application window is open.
-     * @return True if the window isn't closed.
+     * @return True if the window is open.
      */
     const bool running() const;
 
     //Functions
     /**
-     * Handles all keyboard inputs, mouse clicks etc..
+     * Handles all keyboard inputs.
      */
     void pollEvents();
 

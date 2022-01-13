@@ -4,7 +4,7 @@
 
 #include "Animation.h"
 
-Animation::Animation(): asteroidDied(false), speed(0.75), frame(0) {
+Animation::Animation(): speed(0.75), frame(0) {
     int width = 256, height = 256, totalFrames = 48;
     sprite.setOrigin(width / 2, height / 2);
     for(int i = 0; i < totalFrames; i++)
@@ -22,7 +22,7 @@ void Animation::setPosition(float x, float y) {
 
 }
 
-void Animation::setTexture(sf::Texture &t) {
+void Animation::setSpriteTexture(sf::Texture &t) {
     sprite.setTexture(t);
 }
 

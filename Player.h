@@ -7,7 +7,7 @@
 
 #include "Object.h"
 /**
- * Object that represents a the player. It inherits from Object, has an angle, speed and rotation etc...
+ * Object that represents the player. It inherits from Object, has an rotation angle, speed etc...
  */
 class Player : public Object {
 public:
@@ -33,14 +33,14 @@ public:
     int& GetCount() const override;
 
     /**
-     * Sets the players border for checking out of bounds, as well as updates the players position to be centered.
+     * Sets the players border for checking out of bounds in regards to the window, as well as settings the players starting position.
      * @param width RenderWindow's width.
      * @param height RenderWindow's height.
      */
     void setBorder(const unsigned int width, const unsigned int height) override;
 
     /**
-     * Updates players movement depending on what keyboard input was received.
+     * Updates the players movement depending on what keyboard input was received.
      * @param move Keyboard input.
      */
     void checkMove(Player::Movement move);

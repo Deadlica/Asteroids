@@ -15,7 +15,7 @@
 #include <iostream>
 #include <fstream>
 /**
- * This class represents all the games menus, menu states. Such as the start menu, sub menus, handling navigation throughout all the different states etc...
+ * This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc...
  */
 class Menu {
 public:
@@ -35,34 +35,34 @@ public:
 
     /**
      * Starts the menu loop.
-     * @param window The sf::RenderWindow to run the menu on.
+     * @param window The window to run the menu on.
      */
     void run(sf::RenderWindow &window);
 
     /**
-     * Displays the menu state of a win.
-     * @param window The sf::RenderWindow to display it on.
+     * Displays a winning menu state.
+     * @param window The window to display it on.
      */
     void displayWin(sf::RenderWindow &window);
 
     /**
-     * Displays the menu state of a loss.
-     * @param window The sf::RenderWindow to display it on.
+     * Displays a losing menu state.
+     * @param window The window to display it on.
      * @param score The score that the player got during the game.
      */
     void displayLoss(sf::RenderWindow &window, unsigned int score);
 
     /**
      * Gets the current button position in the menu.
-     * @return The number representing the current button position.
+     * @return The Button enum representing the current button position.
      */
-    const int GetPosition() const;
+    const Button GetPosition() const;
 
     /**
      * Gets the current difficulty setting
-     * @return The number representing the current difficulty setting.
+     * @return The Button enum representing the current difficulty setting.
      */
-    const unsigned int GetDifficulty() const;
+    const Button GetDifficulty() const;
 
 private:
     void draw(sf::RenderWindow &window);
@@ -83,7 +83,8 @@ private:
     void initText(sf::RectangleShape rect, sf::Text &label, std::string text, const unsigned int x, unsigned int y);
     void initRect(sf::RectangleShape &rect, const unsigned int x, const unsigned int y);
     void initSounds();
-    unsigned int position, difficulty, score;
+    Button position, difficulty;
+    unsigned int score;
     unsigned int windowWidth, windowHeight;
     bool startGame;
 
@@ -98,7 +99,7 @@ private:
 };
 
 /**
- * Predicate predicate for displaying the Main menu buttons.
+ * Predicate for displaying the Main menu buttons.
  */
 struct showMain {
     bool doOnce = true;

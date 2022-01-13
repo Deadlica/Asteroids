@@ -32,14 +32,14 @@ void \mbox{\hyperlink{classMenu_a8e8eaad0b70545a11d7c28eff11ffdf9}{display\+Win}
 \item 
 void \mbox{\hyperlink{classMenu_aa61467a146b82702d7623034dd1eb2e2}{display\+Loss}} (sf\+::\+Render\+Window \&window, unsigned int score)
 \item 
-const int \mbox{\hyperlink{classMenu_a372878fdba1ca2364eca0def389fff27}{Get\+Position}} () const
+const \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} \mbox{\hyperlink{classMenu_a63236a271d0eeff85640a66ec6993938}{Get\+Position}} () const
 \item 
-const unsigned int \mbox{\hyperlink{classMenu_afd4a850fb73af9404e541d936605460a}{Get\+Difficulty}} () const
+const \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} \mbox{\hyperlink{classMenu_afb6c56f93f13adf4ba7b1d70e2c5b8e2}{Get\+Difficulty}} () const
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This class represents all the games menus, menu states. Such as the start menu, sub menus, handling navigation throughout all the different states etc... 
+This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc... 
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}\label{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}} 
@@ -73,9 +73,9 @@ Default constructor
 \doxysubsubsection{\texorpdfstring{displayLoss()}{displayLoss()}}
 {\footnotesize\ttfamily void Menu\+::display\+Loss (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{unsigned int}]{score }\end{DoxyParamCaption})}
 
-Displays the menu state of a loss. 
+Displays a losing menu state. 
 \begin{DoxyParams}{Parameters}
-{\em window} & The sf\+::\+Render\+Window to display it on. \\
+{\em window} & The window to display it on. \\
 \hline
 {\em score} & The score that the player got during the game. \\
 \hline
@@ -86,28 +86,28 @@ Displays the menu state of a loss.
 \doxysubsubsection{\texorpdfstring{displayWin()}{displayWin()}}
 {\footnotesize\ttfamily void Menu\+::display\+Win (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
 
-Displays the menu state of a win. 
+Displays a winning menu state. 
 \begin{DoxyParams}{Parameters}
-{\em window} & The sf\+::\+Render\+Window to display it on. \\
+{\em window} & The window to display it on. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classMenu_afd4a850fb73af9404e541d936605460a}\label{classMenu_afd4a850fb73af9404e541d936605460a}} 
+\mbox{\Hypertarget{classMenu_afb6c56f93f13adf4ba7b1d70e2c5b8e2}\label{classMenu_afb6c56f93f13adf4ba7b1d70e2c5b8e2}} 
 \index{Menu@{Menu}!GetDifficulty@{GetDifficulty}}
 \index{GetDifficulty@{GetDifficulty}!Menu@{Menu}}
 \doxysubsubsection{\texorpdfstring{GetDifficulty()}{GetDifficulty()}}
-{\footnotesize\ttfamily const unsigned int Menu\+::\+Get\+Difficulty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Menu\+::\+Button}} Menu\+::\+Get\+Difficulty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Gets the current difficulty setting \begin{DoxyReturn}{Returns}
-The number representing the current difficulty setting. 
+The Button enum representing the current difficulty setting. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classMenu_a372878fdba1ca2364eca0def389fff27}\label{classMenu_a372878fdba1ca2364eca0def389fff27}} 
+\mbox{\Hypertarget{classMenu_a63236a271d0eeff85640a66ec6993938}\label{classMenu_a63236a271d0eeff85640a66ec6993938}} 
 \index{Menu@{Menu}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!Menu@{Menu}}
 \doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
-{\footnotesize\ttfamily const int Menu\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Menu\+::\+Button}} Menu\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Gets the current button position in the menu. \begin{DoxyReturn}{Returns}
-The number representing the current button position. 
+The Button enum representing the current button position. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classMenu_ab4adec6e5575f9d0abcb6eba7b7dcef9}\label{classMenu_ab4adec6e5575f9d0abcb6eba7b7dcef9}} 
 \index{Menu@{Menu}!run@{run}}
@@ -117,7 +117,7 @@ The number representing the current button position.
 
 Starts the menu loop. 
 \begin{DoxyParams}{Parameters}
-{\em window} & The sf\+::\+Render\+Window to run the menu on. \\
+{\em window} & The window to run the menu on. \\
 \hline
 \end{DoxyParams}
 

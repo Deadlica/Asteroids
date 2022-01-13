@@ -31,9 +31,9 @@
 \DoxyCodeLine{47 }
 \DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenu_aa61467a146b82702d7623034dd1eb2e2}{displayLoss}}(sf::RenderWindow \&window, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} score);}
 \DoxyCodeLine{54 }
-\DoxyCodeLine{59     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classMenu_a372878fdba1ca2364eca0def389fff27}{GetPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{59     \textcolor{keyword}{const} \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} \mbox{\hyperlink{classMenu_a63236a271d0eeff85640a66ec6993938}{GetPosition}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{60 }
-\DoxyCodeLine{65     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classMenu_afd4a850fb73af9404e541d936605460a}{GetDifficulty}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{65     \textcolor{keyword}{const} \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} \mbox{\hyperlink{classMenu_afb6c56f93f13adf4ba7b1d70e2c5b8e2}{GetDifficulty}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{66 }
 \DoxyCodeLine{67 \textcolor{keyword}{private}:}
 \DoxyCodeLine{68     \textcolor{keywordtype}{void} draw(sf::RenderWindow \&window);}
@@ -54,48 +54,49 @@
 \DoxyCodeLine{83     \textcolor{keywordtype}{void} initText(sf::RectangleShape rect, sf::Text \&label, std::string text, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} y);}
 \DoxyCodeLine{84     \textcolor{keywordtype}{void} initRect(sf::RectangleShape \&rect, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} x, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} y);}
 \DoxyCodeLine{85     \textcolor{keywordtype}{void} initSounds();}
-\DoxyCodeLine{86     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} position, difficulty, score;}
-\DoxyCodeLine{87     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowWidth, windowHeight;}
-\DoxyCodeLine{88     \textcolor{keywordtype}{bool} startGame;}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90     sf::Font textFont;}
-\DoxyCodeLine{91     std::vector<std::pair<sf::RectangleShape, sf::Text>> buttons;}
-\DoxyCodeLine{92     std::vector<sf::Text> topScores;}
-\DoxyCodeLine{93     sf::Music theme;}
-\DoxyCodeLine{94     sf::SoundBuffer buffer1, buffer2;}
-\DoxyCodeLine{95     sf::Sound hover, enter;}
-\DoxyCodeLine{96     sf::Texture tBackground;}
-\DoxyCodeLine{97     sf::Sprite sBackground;}
-\DoxyCodeLine{98 \};}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{103 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowMain}{showMain}} \{}
-\DoxyCodeLine{104     \textcolor{keywordtype}{bool} doOnce = \textcolor{keyword}{true};}
-\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowMain_a7df883c08fc9a937348cc2abb7e13f64}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
-\DoxyCodeLine{110         \textcolor{keywordflow}{if}(doOnce) \{}
-\DoxyCodeLine{111             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{112             doOnce = \textcolor{keyword}{false};}
-\DoxyCodeLine{113         \}}
-\DoxyCodeLine{114         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Play"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Gamemode"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Quit"{}}) \{}
-\DoxyCodeLine{115             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
-\DoxyCodeLine{116             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{117         \}}
-\DoxyCodeLine{118     \}}
-\DoxyCodeLine{119 \};}
-\DoxyCodeLine{120 }
-\DoxyCodeLine{121 \textcolor{comment}{/*}}
-\DoxyCodeLine{122 \textcolor{comment}{ * Predicate functor for displaying the Gamemode menu buttons.}}
-\DoxyCodeLine{123 \textcolor{comment}{ */}}
-\DoxyCodeLine{124 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowGamemode}{showGamemode}} \{}
-\DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowGamemode_ad55ae789884367ad66d9d001298018cc}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
-\DoxyCodeLine{130         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Asteroids"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Boss"{}}) \{}
-\DoxyCodeLine{131             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
-\DoxyCodeLine{132             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{133         \}}
-\DoxyCodeLine{134         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}ASTEROIDS"{}})}
-\DoxyCodeLine{135             b.second.setFillColor(sf::Color::Transparent);}
-\DoxyCodeLine{136     \}}
-\DoxyCodeLine{137 \};}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_MENU\_H}}
+\DoxyCodeLine{86     \mbox{\hyperlink{classMenu_a9f8f46042b3a16863e47bb14a97df9b3}{Button}} position, difficulty;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} score;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowWidth, windowHeight;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} startGame;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     sf::Font textFont;}
+\DoxyCodeLine{92     std::vector<std::pair<sf::RectangleShape, sf::Text>> buttons;}
+\DoxyCodeLine{93     std::vector<sf::Text> topScores;}
+\DoxyCodeLine{94     sf::Music theme;}
+\DoxyCodeLine{95     sf::SoundBuffer buffer1, buffer2;}
+\DoxyCodeLine{96     sf::Sound hover, enter;}
+\DoxyCodeLine{97     sf::Texture tBackground;}
+\DoxyCodeLine{98     sf::Sprite sBackground;}
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{104 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowMain}{showMain}} \{}
+\DoxyCodeLine{105     \textcolor{keywordtype}{bool} doOnce = \textcolor{keyword}{true};}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowMain_a7df883c08fc9a937348cc2abb7e13f64}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
+\DoxyCodeLine{111         \textcolor{keywordflow}{if}(doOnce) \{}
+\DoxyCodeLine{112             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{113             doOnce = \textcolor{keyword}{false};}
+\DoxyCodeLine{114         \}}
+\DoxyCodeLine{115         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Play"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Gamemode"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Quit"{}}) \{}
+\DoxyCodeLine{116             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
+\DoxyCodeLine{117             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120 \};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{/*}}
+\DoxyCodeLine{123 \textcolor{comment}{ * Predicate functor for displaying the Gamemode menu buttons.}}
+\DoxyCodeLine{124 \textcolor{comment}{ */}}
+\DoxyCodeLine{125 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowGamemode}{showGamemode}} \{}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowGamemode_ad55ae789884367ad66d9d001298018cc}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
+\DoxyCodeLine{131         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Asteroids"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Boss"{}}) \{}
+\DoxyCodeLine{132             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
+\DoxyCodeLine{133             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}ASTEROIDS"{}})}
+\DoxyCodeLine{136             b.second.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 \};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_MENU\_H}}
 
 \end{DoxyCode}

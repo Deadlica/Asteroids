@@ -100,13 +100,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e8eaad0b70545a11d7c28eff11ffdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa61467a146b82702d7623034dd1eb2e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#aa61467a146b82702d7623034dd1eb2e2">displayLoss</a> (sf::RenderWindow &amp;window, unsigned int score)</td></tr>
 <tr class="separator:aa61467a146b82702d7623034dd1eb2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a372878fdba1ca2364eca0def389fff27"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a372878fdba1ca2364eca0def389fff27">GetPosition</a> () const</td></tr>
-<tr class="separator:a372878fdba1ca2364eca0def389fff27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd4a850fb73af9404e541d936605460a"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#afd4a850fb73af9404e541d936605460a">GetDifficulty</a> () const</td></tr>
-<tr class="separator:afd4a850fb73af9404e541d936605460a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63236a271d0eeff85640a66ec6993938"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMenu.html#a9f8f46042b3a16863e47bb14a97df9b3">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a63236a271d0eeff85640a66ec6993938">GetPosition</a> () const</td></tr>
+<tr class="separator:a63236a271d0eeff85640a66ec6993938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6c56f93f13adf4ba7b1d70e2c5b8e2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMenu.html#a9f8f46042b3a16863e47bb14a97df9b3">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#afb6c56f93f13adf4ba7b1d70e2c5b8e2">GetDifficulty</a> () const</td></tr>
+<tr class="separator:afb6c56f93f13adf4ba7b1d70e2c5b8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This class represents all the games menus, menu states. Such as the start menu, sub menus, handling navigation throughout all the different states etc... </p>
+<div class="textblock"><p >This class represents all the games menus, states. Such as the start menu, sub menus, handling navigation throughout all the different states etc... </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a9f8f46042b3a16863e47bb14a97df9b3" name="a9f8f46042b3a16863e47bb14a97df9b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f8f46042b3a16863e47bb14a97df9b3">&#9670;&nbsp;</a></span>Button</h2>
@@ -185,9 +185,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Displays the menu state of a loss. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Displays a losing menu state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The sf::RenderWindow to display it on. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to display it on. </td></tr>
     <tr><td class="paramname">score</td><td>The score that the player got during the game. </td></tr>
   </table>
   </dd>
@@ -210,48 +210,48 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Displays the menu state of a win. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Displays a winning menu state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The sf::RenderWindow to display it on. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to display it on. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afd4a850fb73af9404e541d936605460a" name="afd4a850fb73af9404e541d936605460a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd4a850fb73af9404e541d936605460a">&#9670;&nbsp;</a></span>GetDifficulty()</h2>
+<a id="afb6c56f93f13adf4ba7b1d70e2c5b8e2" name="afb6c56f93f13adf4ba7b1d70e2c5b8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6c56f93f13adf4ba7b1d70e2c5b8e2">&#9670;&nbsp;</a></span>GetDifficulty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned int Menu::GetDifficulty </td>
+          <td class="memname">const <a class="el" href="classMenu.html#a9f8f46042b3a16863e47bb14a97df9b3">Menu::Button</a> Menu::GetDifficulty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Gets the current difficulty setting </p><dl class="section return"><dt>Returns</dt><dd>The number representing the current difficulty setting. </dd></dl>
+<p >Gets the current difficulty setting </p><dl class="section return"><dt>Returns</dt><dd>The Button enum representing the current difficulty setting. </dd></dl>
 
 </div>
 </div>
-<a id="a372878fdba1ca2364eca0def389fff27" name="a372878fdba1ca2364eca0def389fff27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a372878fdba1ca2364eca0def389fff27">&#9670;&nbsp;</a></span>GetPosition()</h2>
+<a id="a63236a271d0eeff85640a66ec6993938" name="a63236a271d0eeff85640a66ec6993938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63236a271d0eeff85640a66ec6993938">&#9670;&nbsp;</a></span>GetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int Menu::GetPosition </td>
+          <td class="memname">const <a class="el" href="classMenu.html#a9f8f46042b3a16863e47bb14a97df9b3">Menu::Button</a> Menu::GetPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Gets the current button position in the menu. </p><dl class="section return"><dt>Returns</dt><dd>The number representing the current button position. </dd></dl>
+<p >Gets the current button position in the menu. </p><dl class="section return"><dt>Returns</dt><dd>The Button enum representing the current button position. </dd></dl>
 
 </div>
 </div>
@@ -272,7 +272,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p >Starts the menu loop. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The sf::RenderWindow to run the menu on. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to run the menu on. </td></tr>
   </table>
   </dd>
 </dl>

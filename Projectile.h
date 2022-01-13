@@ -7,7 +7,7 @@
 
 #include "Object.h"
 /**
- * Object that represents a bullet/projectile. It inherit from Object, has an angle and speed etc...
+ * Object that represents a bullet/projectile. It inherits from Object, has an rotation angle and speed etc...
  */
 class Projectile : public Object {
 public:
@@ -28,7 +28,7 @@ public:
     int& GetCount() const override;
 
     /**
-     * Checks the projectiles current position, updates it given its speed. It also checks if the projectile is out of bounds.
+     * Checks the projectiles current position, updates it given its speed. If it's outside of the window, that projectile is deleted.
      */
     void update() override;
 

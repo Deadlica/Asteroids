@@ -202,7 +202,7 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
 <tr class="separator:a701a1117840eef68cd3b29bade25cccf inherit pro_static_attribs_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p ><a class="el" href="classObject.html">Object</a> that represents a the enemy boss. It inherit from <a class="el" href="classObject.html">Object</a> and <a class="el" href="classPlayer.html">Player</a>. It handles its own movement based on where the player is and attacks everytime its direction is updated. </p>
+<div class="textblock"><p ><a class="el" href="classObject.html">Object</a> that represents the enemy boss. It inherits from <a class="el" href="classPlayer.html">Player</a> which inherits from <a class="el" href="classObject.html">Object</a>. It handles its own movement based on where the player is and attacks everytime its direction is changed. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a94f30d348b6d2840fd71675472ba38dd" name="a94f30d348b6d2840fd71675472ba38dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94f30d348b6d2840fd71675472ba38dd">&#9670;&nbsp;</a></span>Enemy()</h2>
@@ -261,7 +261,7 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
         </tr>
       </table>
 </div><div class="memdoc">
-<p >After a random time it gives the enemy a new direction to move in. </p><dl class="section return"><dt>Returns</dt><dd>True if the direction has been changed. </dd></dl>
+<p >After a random time it will change direction to move in. </p><dl class="section return"><dt>Returns</dt><dd>True if the direction has been changed. </dd></dl>
 
 </div>
 </div>
@@ -288,13 +288,13 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Checks if the enemy has been hit by a projectile from the player. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Checks if the enemy has been hit by a projectile shot by the player. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">object</td><td>The list holding all the instantiated objects. </td></tr>
+    <tr><td class="paramname">object</td><td>The container holding all the instantiated objects. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the enemy has been hit by a bullet </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the enemy has been hit by a projectile. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classObject.html#a9dababca57f28dd60d216e0b65081c22">Object</a>.</p>
 
@@ -393,7 +393,7 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Adjusts the angle based on the players position, checks out of bounds, updates animation frame. </p>
+<p >Adjusts its rotation based on the players position, checks if it's outside of the window, updates animation frame. </p>
 
 <p>Implements <a class="el" href="classObject.html#a9c5d01b4624298d8602790d4e32f7521">Object</a>.</p>
 
@@ -413,7 +413,7 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Checks if its time to update the animation frame. </p>
+<p >Checks if it's time to update the animation frame. </p>
 
 </div>
 </div>

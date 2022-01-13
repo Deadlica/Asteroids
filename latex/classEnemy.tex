@@ -35,7 +35,7 @@ const unsigned int \mbox{\hyperlink{classEnemy_ae8f76936bc9e9ddfde1f0f3f1914a5ba
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{classObject}{Object}} that represents a the enemy boss. It inherit from \mbox{\hyperlink{classObject}{Object}} and \mbox{\hyperlink{classPlayer}{Player}}. It handles its own movement based on where the player is and attacks everytime its direction is updated. 
+\mbox{\hyperlink{classObject}{Object}} that represents the enemy boss. It inherits from \mbox{\hyperlink{classPlayer}{Player}} which inherits from \mbox{\hyperlink{classObject}{Object}}. It handles its own movement based on where the player is and attacks everytime its direction is changed. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classEnemy_a94f30d348b6d2840fd71675472ba38dd}\label{classEnemy_a94f30d348b6d2840fd71675472ba38dd}} 
@@ -64,7 +64,7 @@ Makes the enemy shoot 3 projectiles aimed at the player.
 \doxysubsubsection{\texorpdfstring{changeDirection()}{changeDirection()}}
 {\footnotesize\ttfamily bool Enemy\+::change\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-After a random time it gives the enemy a new direction to move in. \begin{DoxyReturn}{Returns}
+After a random time it will change direction to move in. \begin{DoxyReturn}{Returns}
 True if the direction has been changed. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classEnemy_a3181799dc587417e54a4a9e00213619c}\label{classEnemy_a3181799dc587417e54a4a9e00213619c}} 
@@ -73,13 +73,13 @@ True if the direction has been changed.
 \doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
 {\footnotesize\ttfamily bool Enemy\+::check\+Collision (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Checks if the enemy has been hit by a projectile from the player. 
+Checks if the enemy has been hit by a projectile shot by the player. 
 \begin{DoxyParams}{Parameters}
-{\em object} & The list holding all the instantiated objects. \\
+{\em object} & The container holding all the instantiated objects. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the enemy has been hit by a bullet 
+True if the enemy has been hit by a projectile. 
 \end{DoxyReturn}
 
 
@@ -119,7 +119,7 @@ Gives the enemy the current location of the player.
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void Enemy\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Adjusts the angle based on the players position, checks out of bounds, updates animation frame. 
+Adjusts its rotation based on the players position, checks if it\textquotesingle{}s outside of the window, updates animation frame. 
 
 Implements \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{Object}}.
 
@@ -129,7 +129,7 @@ Implements \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{Objec
 \doxysubsubsection{\texorpdfstring{updateAnimation()}{updateAnimation()}}
 {\footnotesize\ttfamily void Enemy\+::update\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Checks if its time to update the animation frame. 
+Checks if it\textquotesingle{}s time to update the animation frame. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

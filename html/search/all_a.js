@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['render_0',['render',['../classGame.html#a15ddd769261d923827a3cdf41499c843',1,'Game']]],
-  ['run_1',['run',['../classMenu.html#ab4adec6e5575f9d0abcb6eba7b7dcef9',1,'Menu']]],
-  ['running_2',['running',['../classGame.html#a3c75e92470139f175402030782794d34',1,'Game']]]
+  ['player_0',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#a51dd7ca88ebaa261b0cec428e8af5b47',1,'Player::Player()']]],
+  ['pollevents_1',['pollEvents',['../classGame.html#a8ea4777fdc751b40f778997b76ee7cf9',1,'Game']]],
+  ['projectile_2',['Projectile',['../classProjectile.html',1,'Projectile'],['../classProjectile.html#ac72d6f5799325f359c46fc2c58d65dcb',1,'Projectile::Projectile()']]]
 ];

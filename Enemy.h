@@ -9,7 +9,7 @@
 #include "Projectile.h"
 #include <chrono>
 /**
- * Object that represents a the enemy boss. It inherit from Object and Player. It handles its own movement based on where the player is and attacks everytime its direction is updated.
+ * Object that represents the enemy boss. It inherits from Player which inherits from Object. It handles its own movement based on where the player is and attacks everytime its direction is changed.
  */
 class Enemy: public Player {
 public:
@@ -19,18 +19,18 @@ public:
     Enemy();
 
     /**
-     * Adjusts the angle based on the players position, checks out of bounds, updates animation frame.
+     * Adjusts its rotation based on the players position, checks if it's outside of the window, updates animation frame.
      */
     void update() override;
 
     /**
-     * After a random time it gives the enemy a new direction to move in.
+     * After a random time it will change direction to move in.
      * @return True if the direction has been changed.
      */
     bool changeDirection();
 
     /**
-     * Checks if its time to update the animation frame.
+     * Checks if it's time to update the animation frame.
      */
     void updateAnimation();
 
@@ -53,9 +53,9 @@ public:
     void GetPlayerCoordinates(float x, float y);
 
     /**
-     * Checks if the enemy has been hit by a projectile from the player.
-     * @param object The list holding all the instantiated objects.
-     * @return True if the enemy has been hit by a bullet
+     * Checks if the enemy has been hit by a projectile shot by the player.
+     * @param object The container holding all the instantiated objects.
+     * @return True if the enemy has been hit by a projectile.
      */
     bool checkCollision(std::unique_ptr<Object> &object) override;
 

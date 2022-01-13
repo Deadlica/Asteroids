@@ -84,7 +84,8 @@ void Menu::up() {
        (position == BOSS || position == GAMEMODE  || position == QUIT)) {
             hover.play();
             buttons[position].second.setFillColor(sf::Color::White);
-            buttons[--position].second.setFillColor(sf::Color::Cyan);
+            position = Button(position - 1);
+            buttons[position].second.setFillColor(sf::Color::Cyan);
     }
 }
 
@@ -92,7 +93,8 @@ void Menu::down() {
     if(position != QUIT && position != BOSS && position != BACK) {
         hover.play();
         buttons[position].second.setFillColor(sf::Color::White);
-        buttons[++position].second.setFillColor(sf::Color::Cyan);
+        position = Button(position + 1);
+        buttons[position].second.setFillColor(sf::Color::Cyan);
     }
 }
 
@@ -209,11 +211,11 @@ void Menu::checkPosition(sf::RenderWindow &window) {
     }
 }
 
-const int Menu::GetPosition() const {
+const Menu::Button Menu::GetPosition() const {
     return position;
 }
 
-const unsigned int Menu::GetDifficulty() const {
+const Menu::Button Menu::GetDifficulty() const {
     return difficulty;
 }
 

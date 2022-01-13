@@ -82,7 +82,7 @@ void Game::checkObjectCollision() {
                         p->kill();
                         a->kill();
                         Animation temp;
-                        temp.setTexture(tExplosion);
+                        temp.setSpriteTexture(tExplosion);
                         temp.setPosition(a->GetPosition().first, a->GetPosition().second);
                         animations.push_back(temp);
                         points += 10;
@@ -110,6 +110,7 @@ void Game::checkPlayerCollision() {
 void Game::startGame() {
     // Resets score
     points = 0;
+    animations.clear();
 
     generatePlayer();
 

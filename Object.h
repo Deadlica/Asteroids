@@ -43,7 +43,7 @@ public:
     /**
      * Checks if object has collided with another object.
      * @param object Other object to check collision with.
-     * @return Whether there is a collision or not.
+     * @return True if there is a collision.
      */
     virtual bool checkCollision(std::unique_ptr<Object> &object);
 
@@ -61,8 +61,8 @@ public:
 
     /**
      * Tells the object its windows borders.
-     * @param width RenderWindows width.
-     * @param height RenderWindows height.
+     * @param width Window width.
+     * @param height Window height.
      */
     virtual void setBorder(const unsigned int width, const unsigned int height);
 
@@ -105,8 +105,8 @@ public:
     const std::pair<float, float> GetPosition() const;
 
     /**
-     * Gets the objects angle.
-     * @return The objects angle.
+     * Gets the objects rotation angle.
+     * @return The objects rotation angle.
      */
     const float GetAngle() const;
 

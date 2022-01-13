@@ -17,59 +17,60 @@
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#include <ctime>}}
 \DoxyCodeLine{16 \textcolor{preprocessor}{\#include <cmath>}}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classObject}{Object}} \{}
-\DoxyCodeLine{22 \textcolor{keyword}{public}:}
-\DoxyCodeLine{30     \mbox{\hyperlink{classObject_a95639c6c5b5562f9d6d30de4fbd097b1}{Object}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{35     \textcolor{keyword}{virtual} \mbox{\hyperlink{classObject_a226f2ae2af766b77d83c09a4d766b725}{\string~Object}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{update}}() = 0;}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classObject_a9dababca57f28dd60d216e0b65081c22}{checkCollision}}(std::unique\_ptr<Object> \&\textcolor{keywordtype}{object});}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a2dc4e330642f517aa1c299e272c0b364}{draw}}(sf::RenderWindow \&window);}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_ae30fea75683c2d149b6b6d17c09ecd0c}{setName}}(std::string name);}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_afb3a6b3d4201c9bbb52e779e5fd21849}{setBorder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height);}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a2c084a5a0db6acf16dd3b4191414f1cf}{setPosition}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} x, \textcolor{keyword}{const} \textcolor{keywordtype}{float} y);}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75     \textcolor{comment}{// Getters}}
-\DoxyCodeLine{80 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{GetCount}}() \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{86     sf::Sprite\& \mbox{\hyperlink{classObject_a9ec21d9318cd277eba277810fcf4e33c}{GetSprite}}();}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{92     sf::Texture\& \mbox{\hyperlink{classObject_a195136ff4e77e6db11eeedfc4e80489b}{GetTexture}}();}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{98     \textcolor{keyword}{const} std::string \mbox{\hyperlink{classObject_afec3ba07d7e8830b60c5ca0e0b39242b}{GetName}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{104     \textcolor{keyword}{const} std::pair<float, float> \mbox{\hyperlink{classObject_af588bb11a42bdd1d0b09715652c22cb7}{GetPosition}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{110     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classObject_a08a9cb98feaf9fba02a62d5f7c669aad}{GetAngle}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{116     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classObject_ae177141f9e419493c483bb9c9963fa8a}{GetRadius}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{122     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classObject_aa91b75102d7f18a1eaaf4dfa96995092}{Alive}}();}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a0257cfec008c4afa9749faaef47a3eab}{kill}}();}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a701379a3b5bc510cee54378a9c6a4e00}{checkBorderCoordinates}}();}
-\DoxyCodeLine{134     sf::Texture texture;}
-\DoxyCodeLine{135     sf::Sprite sprite;}
-\DoxyCodeLine{136     \textcolor{comment}{//Coordinates, offset coordinates}}
-\DoxyCodeLine{137     std::pair<float, float> coords, coordsDelta;}
-\DoxyCodeLine{138     \textcolor{keywordtype}{float} radius, angle, spriteWidth, spriteHeight;}
-\DoxyCodeLine{139     \textcolor{keywordtype}{bool} life;}
-\DoxyCodeLine{140     std::string name;}
-\DoxyCodeLine{141     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowWidth, windowHeight;}
-\DoxyCodeLine{142 \textcolor{keyword}{private}:}
-\DoxyCodeLine{143 }
-\DoxyCodeLine{144 \};}
-\DoxyCodeLine{145 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}Animation.h"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classObject}{Object}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{classObject_a95639c6c5b5562f9d6d30de4fbd097b1}{Object}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \mbox{\hyperlink{classObject_a226f2ae2af766b77d83c09a4d766b725}{\string~Object}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{update}}() = 0;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classObject_a9dababca57f28dd60d216e0b65081c22}{checkCollision}}(std::unique\_ptr<Object> \&\textcolor{keywordtype}{object});}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a2dc4e330642f517aa1c299e272c0b364}{draw}}(sf::RenderWindow \&window);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_ae30fea75683c2d149b6b6d17c09ecd0c}{setName}}(std::string name);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_afb3a6b3d4201c9bbb52e779e5fd21849}{setBorder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a2c084a5a0db6acf16dd3b4191414f1cf}{setPosition}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} x, \textcolor{keyword}{const} \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// Getters}}
+\DoxyCodeLine{81 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{GetCount}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{87     sf::Sprite\& \mbox{\hyperlink{classObject_a9ec21d9318cd277eba277810fcf4e33c}{GetSprite}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{93     sf::Texture\& \mbox{\hyperlink{classObject_a195136ff4e77e6db11eeedfc4e80489b}{GetTexture}}();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{99     \textcolor{keyword}{const} std::string \mbox{\hyperlink{classObject_afec3ba07d7e8830b60c5ca0e0b39242b}{GetName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{105     \textcolor{keyword}{const} std::pair<float, float> \mbox{\hyperlink{classObject_af588bb11a42bdd1d0b09715652c22cb7}{GetPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{111     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classObject_a08a9cb98feaf9fba02a62d5f7c669aad}{GetAngle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{117     \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{classObject_ae177141f9e419493c483bb9c9963fa8a}{GetRadius}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classObject_aa91b75102d7f18a1eaaf4dfa96995092}{Alive}}();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a0257cfec008c4afa9749faaef47a3eab}{kill}}();}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{classObject_a701379a3b5bc510cee54378a9c6a4e00}{checkBorderCoordinates}}();}
+\DoxyCodeLine{135     sf::Texture texture;}
+\DoxyCodeLine{136     sf::Sprite sprite;}
+\DoxyCodeLine{137     \textcolor{comment}{//Coordinates, offset coordinates}}
+\DoxyCodeLine{138     std::pair<float, float> coords, coordsDelta;}
+\DoxyCodeLine{139     \textcolor{keywordtype}{float} radius, angle, spriteWidth, spriteHeight;}
+\DoxyCodeLine{140     \textcolor{keywordtype}{bool} life;}
+\DoxyCodeLine{141     std::string name;}
+\DoxyCodeLine{142     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} windowWidth, windowHeight;}
+\DoxyCodeLine{143 \textcolor{keyword}{private}:}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \};}
 \DoxyCodeLine{146 }
-\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_OBJECT\_H}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_OBJECT\_H}}
 
 \end{DoxyCode}

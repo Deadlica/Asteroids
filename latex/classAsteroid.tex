@@ -30,7 +30,7 @@ static int \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{cou
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{classObject}{Object}} that represents an asteroid. It inherit from \mbox{\hyperlink{classObject}{Object}}. 
+\mbox{\hyperlink{classObject}{Object}} that represents an asteroid. It inherits from \mbox{\hyperlink{classObject}{Object}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}\label{classAsteroid_a95056bd8d9c06c43ea7ab7d442b7a9d9}} 
@@ -49,7 +49,7 @@ Default constructor.
 \hline
 {\em radius} & Asteroids radius \\
 \hline
-{\em player\+Position} & The player sprite\textquotesingle{}s coordinates \\
+{\em player\+Position} & The players coordinates \\
 \hline
 \end{DoxyParams}
 
@@ -61,9 +61,9 @@ Default constructor.
 \doxysubsubsection{\texorpdfstring{dontSpawnOnPlayer()}{dontSpawnOnPlayer()}}
 {\footnotesize\ttfamily void Asteroid\+::dont\+Spawn\+On\+Player (\begin{DoxyParamCaption}\item[{std\+::pair$<$ float, float $>$ \&}]{player\+Position }\end{DoxyParamCaption})}
 
-Makes sure that the asteroid doesn\textquotesingle{}t spawn on the player 
+Makes sure that the asteroid doesn\textquotesingle{}t spawn on the player. 
 \begin{DoxyParams}{Parameters}
-{\em player\+Position} & The player sprite\textquotesingle{}s coordinates \\
+{\em player\+Position} & The players coordinates. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}\label{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}} 
@@ -85,7 +85,7 @@ Implements \mbox{\hyperlink{classObject_a741f4a9f195b09dc7bbaf45dcbd6a671}{Objec
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void Asteroid\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Updates the asteroids position, checks if it is out of bounds. 
+Updates the asteroids position, checks if it is outside of the window. 
 
 Implements \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{Object}}.
 

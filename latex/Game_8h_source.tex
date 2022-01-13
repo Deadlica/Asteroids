@@ -14,80 +14,83 @@
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}Projectile.h"{}}}
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}Menu.h"{}}}
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}Enemy.h"{}}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classGame}{Game}} \{}
-\DoxyCodeLine{20 \textcolor{keyword}{public}:}
-\DoxyCodeLine{26     \mbox{\hyperlink{classGame_a5c8b2ecefb6a0629011b266c3b3dd6bc}{Game}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height);}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{32     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGame_a3c75e92470139f175402030782794d34}{running}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     \textcolor{comment}{//Functions}}
-\DoxyCodeLine{38 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a8ea4777fdc751b40f778997b76ee7cf9}{pollEvents}}();}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a79df6376b332d63c9eca0dcee30305c3}{update}}();}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a15ddd769261d923827a3cdf41499c843}{render}}();}
-\DoxyCodeLine{49 \textcolor{keyword}{private}:}
-\DoxyCodeLine{50     \textcolor{comment}{//Members}}
-\DoxyCodeLine{51     sf::RenderWindow window;}
-\DoxyCodeLine{52     sf::Event event;}
-\DoxyCodeLine{53     sf::Text score;}
-\DoxyCodeLine{54     \textcolor{keywordtype}{int} points = 0;}
-\DoxyCodeLine{55     sf::Font textFont;}
-\DoxyCodeLine{56     \mbox{\hyperlink{classMenu}{Menu}} menu;}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58     \textcolor{comment}{//Textures}}
-\DoxyCodeLine{59     \textcolor{comment}{//Player spaceship;}}
-\DoxyCodeLine{60     std::unique\_ptr<Player> spaceship;}
-\DoxyCodeLine{61     std::unique\_ptr<Enemy> enemy;}
-\DoxyCodeLine{62     sf::Texture tBackground;}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     \textcolor{comment}{//Sprites}}
-\DoxyCodeLine{65     sf::Sprite sBackground;}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67     \textcolor{comment}{//Container for objects}}
-\DoxyCodeLine{68     std::vector<std::unique\_ptr<Object>> objects;}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{comment}{//Game music}}
-\DoxyCodeLine{71     sf::Music gameMusic;}
-\DoxyCodeLine{72     sf::SoundBuffer buffer;}
-\DoxyCodeLine{73     sf::SoundBuffer buffer2;}
-\DoxyCodeLine{74     sf::Sound asteroidDeath;}
-\DoxyCodeLine{75     sf::Sound projectileFired;}
-\DoxyCodeLine{76     std::string Space\_Invaders = \textcolor{stringliteral}{"{}sounds/Teminite \& MDK -\/ Space Invaders [Monstercat Remake].ogg"{}};}
-\DoxyCodeLine{77     std::string Arcade\_Bit\_Rush = \textcolor{stringliteral}{"{}sounds/Bit Rush -\/ Arcade 2015 \_ Login Screen -\/ League of Legends.ogg"{}};}
-\DoxyCodeLine{78     std::string cigg\_pk = \textcolor{stringliteral}{"{}sounds/cigg\_pk.ogg"{}};}
-\DoxyCodeLine{79     std::string Hopes\_And\_Dreams = \textcolor{stringliteral}{"{}sounds/Undertale Ost -\/ 087 -\/ Hopes and Dreams.ogg"{}};}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81     \textcolor{comment}{// State checkers}}
-\DoxyCodeLine{82     \textcolor{keywordtype}{void} centerWindowPosition();}
-\DoxyCodeLine{83     \textcolor{keywordtype}{void} checkObjectCollision();}
-\DoxyCodeLine{84     \textcolor{keywordtype}{void} checkPlayerCollision();}
-\DoxyCodeLine{85     \textcolor{keywordtype}{void} startGame();}
-\DoxyCodeLine{86     \textcolor{keywordtype}{void} clearGame();}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88     \textcolor{comment}{//Objects}}
-\DoxyCodeLine{89     \textcolor{keywordtype}{void} generateAsteroids();}
-\DoxyCodeLine{90     \textcolor{keywordtype}{void} generateProjectile();}
-\DoxyCodeLine{91     \textcolor{keywordtype}{void} generatePlayer();}
-\DoxyCodeLine{92     \textcolor{keywordtype}{void} generateBoss();}
-\DoxyCodeLine{93     \textcolor{keywordtype}{void} updateObjects();}
-\DoxyCodeLine{94     \textcolor{keywordtype}{void} updateEnemy();}
-\DoxyCodeLine{95     \textcolor{keywordtype}{void} updateScore();}
-\DoxyCodeLine{96     \textcolor{keywordtype}{void} drawObjects();}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98     \textcolor{comment}{//Player}}
-\DoxyCodeLine{99     \textcolor{keywordtype}{void} updatePlayer();}
-\DoxyCodeLine{100     \textcolor{keywordtype}{bool} isAnyKeyPressed();}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102     \textcolor{comment}{//Initialization}}
-\DoxyCodeLine{103     \textcolor{keywordtype}{void} initTextures();}
-\DoxyCodeLine{104     \textcolor{keywordtype}{void} initSprites();}
-\DoxyCodeLine{105     \textcolor{keywordtype}{void} initSounds();}
-\DoxyCodeLine{106 \};}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_GAME\_H}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Animation.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classGame}{Game}} \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGame_a5c8b2ecefb6a0629011b266c3b3dd6bc}{Game}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{33     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGame_a3c75e92470139f175402030782794d34}{running}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{//Functions}}
+\DoxyCodeLine{39 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a8ea4777fdc751b40f778997b76ee7cf9}{pollEvents}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a79df6376b332d63c9eca0dcee30305c3}{update}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGame_a15ddd769261d923827a3cdf41499c843}{render}}();}
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51     \textcolor{comment}{//Members}}
+\DoxyCodeLine{52     sf::RenderWindow window;}
+\DoxyCodeLine{53     sf::Event event;}
+\DoxyCodeLine{54     sf::Text score;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} points = 0;}
+\DoxyCodeLine{56     sf::Font textFont;}
+\DoxyCodeLine{57     \mbox{\hyperlink{classMenu}{Menu}} menu;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{//Textures}}
+\DoxyCodeLine{60     \textcolor{comment}{//Player spaceship;}}
+\DoxyCodeLine{61     std::unique\_ptr<Player> spaceship;}
+\DoxyCodeLine{62     std::unique\_ptr<Enemy> enemy;}
+\DoxyCodeLine{63     sf::Texture tBackground, tExplosion;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//Sprites}}
+\DoxyCodeLine{66     sf::Sprite sBackground;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{//Container for objects}}
+\DoxyCodeLine{69     std::vector<std::unique\_ptr<Object>> objects;}
+\DoxyCodeLine{70     std::vector<Animation> animations;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{//Game music}}
+\DoxyCodeLine{73     sf::Music gameMusic;}
+\DoxyCodeLine{74     sf::SoundBuffer buffer;}
+\DoxyCodeLine{75     sf::SoundBuffer buffer2;}
+\DoxyCodeLine{76     sf::Sound asteroidDeath;}
+\DoxyCodeLine{77     sf::Sound projectileFired;}
+\DoxyCodeLine{78     std::string Space\_Invaders = \textcolor{stringliteral}{"{}sounds/Teminite \& MDK -\/ Space Invaders [Monstercat Remake].ogg"{}};}
+\DoxyCodeLine{79     std::string Arcade\_Bit\_Rush = \textcolor{stringliteral}{"{}sounds/Bit Rush -\/ Arcade 2015 \_ Login Screen -\/ League of Legends.ogg"{}};}
+\DoxyCodeLine{80     std::string cigg\_pk = \textcolor{stringliteral}{"{}sounds/cigg\_pk.ogg"{}};}
+\DoxyCodeLine{81     std::string Hopes\_And\_Dreams = \textcolor{stringliteral}{"{}sounds/Undertale Ost -\/ 087 -\/ Hopes and Dreams.ogg"{}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// State checkers}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} centerWindowPosition();}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} checkObjectCollision();}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} checkPlayerCollision();}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} startGame();}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} clearGame();}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{comment}{//Objects}}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} generateAsteroids();}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} generateProjectile();}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} generatePlayer();}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} generateBoss();}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} updateObjects();}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} updateEnemy();}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} updateScore();}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} updateAnimations();}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} drawObjects();}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{//Player}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} updatePlayer();}
+\DoxyCodeLine{103     \textcolor{keywordtype}{bool} isAnyKeyPressed();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{//Initialization}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} initTextures();}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} initSprites();}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} initSounds();}
+\DoxyCodeLine{109 \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_GAME\_H}}
 
 \end{DoxyCode}

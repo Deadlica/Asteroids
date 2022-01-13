@@ -7,7 +7,7 @@
 
 #include "Object.h"
 /**
- * Object that represents an asteroid. It inherit from Object.
+ * Object that represents an asteroid. It inherits from Object.
  */
 class Asteroid : public Object {
 public:
@@ -17,7 +17,7 @@ public:
      * @param y y-coordinate position.
      * @param angle Asteroids starting rotation.
      * @param radius Asteroids radius
-     * @param playerPosition The player sprite's coordinates
+     * @param playerPosition The players coordinates
      */
     Asteroid(float x, float y, float angle, float radius, std::pair<float, float> playerPosition);
 
@@ -28,13 +28,13 @@ public:
     int& GetCount() const override;
 
     /**
-     * Updates the asteroids position, checks if it is out of bounds.
+     * Updates the asteroids position, checks if it is outside of the window.
      */
     void update() override;
 
     /**
-     * Makes sure that the asteroid doesn't spawn on the player
-     * @param playerPosition The player sprite's coordinates
+     * Makes sure that the asteroid doesn't spawn on the player.
+     * @param playerPosition The players coordinates.
      */
     void dontSpawnOnPlayer(std::pair<float, float> &playerPosition);
 
