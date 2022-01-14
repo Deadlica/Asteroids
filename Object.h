@@ -50,7 +50,7 @@ public:
      * Draws the object to a window.
      * @param window The window to draw the object on.
      */
-    void draw(sf::RenderWindow &window);
+    virtual void draw(sf::RenderWindow &window);
 
     /**
      * Gives the object an identifying name.

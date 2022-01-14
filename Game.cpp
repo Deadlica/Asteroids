@@ -81,7 +81,7 @@ void Game::checkObjectCollision() {
                         asteroidDeath.play();
                         p->kill();
                         a->kill();
-                        Animation temp;
+                        Animation temp(256, 256, 0.75, 48);
                         temp.setSpriteTexture(tExplosion);
                         temp.setPosition(a->GetPosition().first, a->GetPosition().second);
                         animations.push_back(temp);
@@ -213,7 +213,9 @@ void Game::updateAnimations() {
 }
 
 void Game::drawObjects() {
-    auto drawer = [this](std::vector<std::unique_ptr<Object>>::value_type &o) {return o->draw(window);};
+    auto drawer = [this](std::vector<std::unique_ptr<Object>>::value_type &o) {
+        return o->draw(window);
+    };
     std::for_each(objects.begin(), objects.end(), drawer);
     window.draw(spaceship->GetSprite());
     if(menu.GetDifficulty() == Menu::BOSS)
@@ -250,7 +252,7 @@ bool Game::isAnyKeyPressed() {
 void Game::initTextures() {
     tBackground.loadFromFile("images/space.jpg");
     tExplosion.loadFromFile("images/explosion.png");
-    tAsteroid.loadFromFile("images/asteroid.png");
+    tAsteroid.loadFromFile("images/rock.png");
     tAsteroid.setSmooth(true);
     tProjectile.loadFromFile("images/laser_beam.png");
     tProjectile.setSmooth(true);

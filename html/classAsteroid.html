@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0e59db90f0c2a4020de6be5e44cd4003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabe3a75b05df4749a69469a1204b8382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsteroid.html#aabe3a75b05df4749a69469a1204b8382">update</a> () override</td></tr>
 <tr class="separator:aabe3a75b05df4749a69469a1204b8382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde8d4f0b2e5d5abd04ce97f9f6ea527"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsteroid.html#afde8d4f0b2e5d5abd04ce97f9f6ea527">draw</a> (sf::RenderWindow &amp;window) override</td></tr>
+<tr class="separator:afde8d4f0b2e5d5abd04ce97f9f6ea527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea8e966c42149c12fc5592e0d0c26e5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsteroid.html#aea8e966c42149c12fc5592e0d0c26e5e">dontSpawnOnPlayer</a> (std::pair&lt; float, float &gt; &amp;playerPosition)</td></tr>
 <tr class="separator:aea8e966c42149c12fc5592e0d0c26e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classObject.html">Object</a></td></tr>
@@ -103,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9c5d01b4624298d8602790d4e32f7521 inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dababca57f28dd60d216e0b65081c22 inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a9dababca57f28dd60d216e0b65081c22">checkCollision</a> (std::unique_ptr&lt; <a class="el" href="classObject.html">Object</a> &gt; &amp;object)</td></tr>
 <tr class="separator:a9dababca57f28dd60d216e0b65081c22 inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dc4e330642f517aa1c299e272c0b364 inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a2dc4e330642f517aa1c299e272c0b364">draw</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memitem:a2dc4e330642f517aa1c299e272c0b364 inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a2dc4e330642f517aa1c299e272c0b364">draw</a> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="separator:a2dc4e330642f517aa1c299e272c0b364 inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae30fea75683c2d149b6b6d17c09ecd0c inherit pub_methods_classObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae30fea75683c2d149b6b6d17c09ecd0c">setName</a> (std::string name)</td></tr>
 <tr class="separator:ae30fea75683c2d149b6b6d17c09ecd0c inherit pub_methods_classObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,6 +264,40 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>window
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afde8d4f0b2e5d5abd04ce97f9f6ea527" name="afde8d4f0b2e5d5abd04ce97f9f6ea527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde8d4f0b2e5d5abd04ce97f9f6ea527">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Draws the asteroid to a window. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window to draw the asteroid on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classObject.html#a2dc4e330642f517aa1c299e272c0b364">Object</a>.</p>
 
 </div>
 </div>

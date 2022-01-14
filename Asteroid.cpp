@@ -6,12 +6,10 @@
 
 int Asteroid::count = 0;
 
-Asteroid::Asteroid(sf::Texture &t, float x, float y, float angle, float radius, std::pair<float, float> playerPosition): Object(x, y, angle, radius) {
+Asteroid::Asteroid(sf::Texture &t, float x, float y, float angle, float radius, std::pair<float, float> playerPosition):
+Object(x, y, angle, radius), rock(64, 64, ((rand() % 5) + 2) / 10.0, 16, true) {
     count++;
-    sprite.setTexture(t);
-    spriteWidth = t.getSize().x;
-    spriteHeight = t.getSize().y;
-    sprite.setOrigin(spriteWidth / 2, spriteHeight / 2);
+    rock.setSpriteTexture(t);
     name = "asteroid";
     coordsDelta.first = (rand() % 8 - 4) + 1;
     coordsDelta.second = (rand() % 8 - 4) + 1;
@@ -25,7 +23,13 @@ int& Asteroid::GetCount() const {
 void Asteroid::update() {
     coords.first += coordsDelta.first;
     coords.second += coordsDelta.second;
+    rock.setPosition(coords.first, coords.second);
+    rock.update();
     checkBorderCoordinates();
+}
+
+void Asteroid::draw(sf::RenderWindow &window) {
+    rock.draw(window);
 }
 
 void Asteroid::dontSpawnOnPlayer(std::pair<float, float> &playerPosition) {

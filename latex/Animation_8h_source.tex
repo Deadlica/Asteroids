@@ -12,26 +12,29 @@
 \DoxyCodeLine{9 }
 \DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classAnimation}{Animation}} \{}
 \DoxyCodeLine{12 \textcolor{keyword}{public}:}
-\DoxyCodeLine{16     \mbox{\hyperlink{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}}();}
+\DoxyCodeLine{16     \mbox{\hyperlink{classAnimation_a4c294d8ee848291f5da25a7d6360601f}{Animation}}() = \textcolor{keywordflow}{default};}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a4318baf0b0735e7da87b2c6d3d3a2705}{update}}();}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a17a17d12a1c0cf4e20a2c43482d4f943}{setPosition}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a6f8f8111210c4f5bcb1a701c1ef0ad3b}{setSpriteTexture}}(sf::Texture \&t);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a511d540f76373b64f1161e257fdd879d}{draw}}(sf::RenderWindow \&window);}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{45     \textcolor{keywordtype}{float} \mbox{\hyperlink{classAnimation_a09316a47af3c9d91153925d51859a1d9}{frame}};}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{keyword}{private}:}
-\DoxyCodeLine{48     sf::Sprite sprite;}
-\DoxyCodeLine{49     \textcolor{keywordtype}{float} speed;}
-\DoxyCodeLine{50     std::pair<float, float> coords;}
-\DoxyCodeLine{51     std::vector<sf::IntRect> frames;}
-\DoxyCodeLine{52 \};}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ANIMATION\_H}}
+\DoxyCodeLine{26     \mbox{\hyperlink{classAnimation_a4c294d8ee848291f5da25a7d6360601f}{Animation}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{float} speed, \textcolor{keywordtype}{int} totalFrames, \textcolor{keywordtype}{bool} loop = \textcolor{keyword}{false});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a4318baf0b0735e7da87b2c6d3d3a2705}{update}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a17a17d12a1c0cf4e20a2c43482d4f943}{setPosition}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a6f8f8111210c4f5bcb1a701c1ef0ad3b}{setSpriteTexture}}(sf::Texture \&t);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAnimation_a511d540f76373b64f1161e257fdd879d}{draw}}(sf::RenderWindow \&window);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{float} \mbox{\hyperlink{classAnimation_a09316a47af3c9d91153925d51859a1d9}{frame}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     sf::Sprite sprite;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{float} speed;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{bool} loop;}
+\DoxyCodeLine{61     std::pair<float, float> coords;}
+\DoxyCodeLine{62     std::vector<sf::IntRect> frames;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ANIMATION\_H}}
 
 \end{DoxyCode}

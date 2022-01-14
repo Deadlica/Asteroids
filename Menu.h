@@ -97,9 +97,7 @@ private:
     sf::Sprite sBackground;
 };
 
-/**
- * Predicate for displaying the Main menu buttons.
- */
+//! Predicate for displaying the Main menu buttons.
 struct showMain {
     bool doOnce = true;
     /**
@@ -118,9 +116,8 @@ struct showMain {
     }
 };
 
-/*
- * Predicate functor for displaying the Gamemode menu buttons.
- */
+
+//! Predicate functor for displaying the Gamemode menu buttons.
 struct showGamemode {
     /**
      * The operator() which is used by std::for_each function.

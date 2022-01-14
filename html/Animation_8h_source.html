@@ -76,34 +76,37 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classAnimation.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classAnimation.html">Animation</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="classAnimation.html#a83f0a16cef7117f187ad596de38dd9d6">Animation</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classAnimation.html#a4c294d8ee848291f5da25a7d6360601f">   16</a></span>    <a class="code hl_function" href="classAnimation.html#a4c294d8ee848291f5da25a7d6360601f">Animation</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a4318baf0b0735e7da87b2c6d3d3a2705">update</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a17a17d12a1c0cf4e20a2c43482d4f943">setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a6f8f8111210c4f5bcb1a701c1ef0ad3b">setSpriteTexture</a>(sf::Texture &amp;t);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a511d540f76373b64f1161e257fdd879d">draw</a>(sf::RenderWindow &amp;window);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">   45</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">frame</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    sf::Sprite sprite;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">float</span> speed;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::pair&lt;float, float&gt; coords;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::vector&lt;sf::IntRect&gt; frames;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">//SFML_GAME_ANIMATION_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="classAnimation.html#a4c294d8ee848291f5da25a7d6360601f">Animation</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">float</span> speed, <span class="keywordtype">int</span> totalFrames, <span class="keywordtype">bool</span> loop = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a4318baf0b0735e7da87b2c6d3d3a2705">update</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a17a17d12a1c0cf4e20a2c43482d4f943">setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a6f8f8111210c4f5bcb1a701c1ef0ad3b">setSpriteTexture</a>(sf::Texture &amp;t);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classAnimation.html#a511d540f76373b64f1161e257fdd879d">draw</a>(sf::RenderWindow &amp;window);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">   55</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">frame</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    sf::Sprite sprite;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">float</span> speed;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> loop;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::pair&lt;float, float&gt; coords;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::vector&lt;sf::IntRect&gt; frames;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">//SFML_GAME_ANIMATION_H</span></div>
 <div class="ttc" id="aclassAnimation_html"><div class="ttname"><a href="classAnimation.html">Animation</a></div><div class="ttdoc">This acts as an animated sequence.</div><div class="ttdef"><b>Definition:</b> Animation.h:11</div></div>
-<div class="ttc" id="aclassAnimation_html_a09316a47af3c9d91153925d51859a1d9"><div class="ttname"><a href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">Animation::frame</a></div><div class="ttdeci">float frame</div><div class="ttdef"><b>Definition:</b> Animation.h:45</div></div>
-<div class="ttc" id="aclassAnimation_html_a17a17d12a1c0cf4e20a2c43482d4f943"><div class="ttname"><a href="classAnimation.html#a17a17d12a1c0cf4e20a2c43482d4f943">Animation::setPosition</a></div><div class="ttdeci">void setPosition(float x, float y)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:20</div></div>
-<div class="ttc" id="aclassAnimation_html_a4318baf0b0735e7da87b2c6d3d3a2705"><div class="ttname"><a href="classAnimation.html#a4318baf0b0735e7da87b2c6d3d3a2705">Animation::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> Animation.cpp:14</div></div>
-<div class="ttc" id="aclassAnimation_html_a511d540f76373b64f1161e257fdd879d"><div class="ttname"><a href="classAnimation.html#a511d540f76373b64f1161e257fdd879d">Animation::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:29</div></div>
-<div class="ttc" id="aclassAnimation_html_a6f8f8111210c4f5bcb1a701c1ef0ad3b"><div class="ttname"><a href="classAnimation.html#a6f8f8111210c4f5bcb1a701c1ef0ad3b">Animation::setSpriteTexture</a></div><div class="ttdeci">void setSpriteTexture(sf::Texture &amp;t)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:25</div></div>
-<div class="ttc" id="aclassAnimation_html_a83f0a16cef7117f187ad596de38dd9d6"><div class="ttname"><a href="classAnimation.html#a83f0a16cef7117f187ad596de38dd9d6">Animation::Animation</a></div><div class="ttdeci">Animation()</div><div class="ttdef"><b>Definition:</b> Animation.cpp:7</div></div>
+<div class="ttc" id="aclassAnimation_html_a09316a47af3c9d91153925d51859a1d9"><div class="ttname"><a href="classAnimation.html#a09316a47af3c9d91153925d51859a1d9">Animation::frame</a></div><div class="ttdeci">float frame</div><div class="ttdef"><b>Definition:</b> Animation.h:55</div></div>
+<div class="ttc" id="aclassAnimation_html_a17a17d12a1c0cf4e20a2c43482d4f943"><div class="ttname"><a href="classAnimation.html#a17a17d12a1c0cf4e20a2c43482d4f943">Animation::setPosition</a></div><div class="ttdeci">void setPosition(float x, float y)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:22</div></div>
+<div class="ttc" id="aclassAnimation_html_a4318baf0b0735e7da87b2c6d3d3a2705"><div class="ttname"><a href="classAnimation.html#a4318baf0b0735e7da87b2c6d3d3a2705">Animation::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> Animation.cpp:13</div></div>
+<div class="ttc" id="aclassAnimation_html_a4c294d8ee848291f5da25a7d6360601f"><div class="ttname"><a href="classAnimation.html#a4c294d8ee848291f5da25a7d6360601f">Animation::Animation</a></div><div class="ttdeci">Animation()=default</div></div>
+<div class="ttc" id="aclassAnimation_html_a511d540f76373b64f1161e257fdd879d"><div class="ttname"><a href="classAnimation.html#a511d540f76373b64f1161e257fdd879d">Animation::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:31</div></div>
+<div class="ttc" id="aclassAnimation_html_a6f8f8111210c4f5bcb1a701c1ef0ad3b"><div class="ttname"><a href="classAnimation.html#a6f8f8111210c4f5bcb1a701c1ef0ad3b">Animation::setSpriteTexture</a></div><div class="ttdeci">void setSpriteTexture(sf::Texture &amp;t)</div><div class="ttdef"><b>Definition:</b> Animation.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

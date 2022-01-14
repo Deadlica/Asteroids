@@ -12,7 +12,9 @@ This acts as an animated sequence.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\mbox{\hyperlink{classAnimation_a4c294d8ee848291f5da25a7d6360601f}{Animation}} ()=default
+\item 
+\mbox{\hyperlink{classAnimation_ac29b28959ef4f2d74c8fa3c9cd82d298}{Animation}} (int width, int height, float speed, int total\+Frames, bool loop=false)
 \item 
 void \mbox{\hyperlink{classAnimation_a4318baf0b0735e7da87b2c6d3d3a2705}{update}} ()
 \item 
@@ -33,13 +35,32 @@ float \mbox{\hyperlink{classAnimation_a09316a47af3c9d91153925d51859a1d9}{frame}}
 This acts as an animated sequence. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}\label{classAnimation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\mbox{\Hypertarget{classAnimation_a4c294d8ee848291f5da25a7d6360601f}\label{classAnimation_a4c294d8ee848291f5da25a7d6360601f}} 
 \index{Animation@{Animation}!Animation@{Animation}}
 \index{Animation@{Animation}!Animation@{Animation}}
-\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}}
-{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-Default constructor. 
+Default constructor. \mbox{\Hypertarget{classAnimation_ac29b28959ef4f2d74c8fa3c9cd82d298}\label{classAnimation_ac29b28959ef4f2d74c8fa3c9cd82d298}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{float}]{speed,  }\item[{int}]{total\+Frames,  }\item[{bool}]{loop = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Parameterized constructor. 
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the frames. \\
+\hline
+{\em height} & The height of the frames. \\
+\hline
+{\em speed} & The update speed of the frames. \\
+\hline
+{\em total\+Frames} & The totals frames for the animation. \\
+\hline
+{\em loop} & If the animation should be looped. \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classAnimation_a511d540f76373b64f1161e257fdd879d}\label{classAnimation_a511d540f76373b64f1161e257fdd879d}} 

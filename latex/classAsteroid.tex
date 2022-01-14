@@ -24,6 +24,8 @@ int \& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{Get\+Co
 \item 
 void \mbox{\hyperlink{classAsteroid_aabe3a75b05df4749a69469a1204b8382}{update}} () override
 \item 
+void \mbox{\hyperlink{classAsteroid_afde8d4f0b2e5d5abd04ce97f9f6ea527}{draw}} (sf\+::\+Render\+Window \&window) override
+\item 
 void \mbox{\hyperlink{classAsteroid_aea8e966c42149c12fc5592e0d0c26e5e}{dont\+Spawn\+On\+Player}} (std\+::pair$<$ float, float $>$ \&player\+Position)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
@@ -73,6 +75,21 @@ Makes sure that the asteroid doesn\textquotesingle{}t spawn on the player.
 {\em player\+Position} & The players coordinates. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAsteroid_afde8d4f0b2e5d5abd04ce97f9f6ea527}\label{classAsteroid_afde8d4f0b2e5d5abd04ce97f9f6ea527}} 
+\index{Asteroid@{Asteroid}!draw@{draw}}
+\index{draw@{draw}!Asteroid@{Asteroid}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Asteroid\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draws the asteroid to a window. 
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the asteroid on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a2dc4e330642f517aa1c299e272c0b364}{Object}}.
+
 \mbox{\Hypertarget{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}\label{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}} 
 \index{Asteroid@{Asteroid}!GetCount@{GetCount}}
 \index{GetCount@{GetCount}!Asteroid@{Asteroid}}

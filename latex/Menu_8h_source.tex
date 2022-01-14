@@ -70,34 +70,32 @@
 \DoxyCodeLine{97     sf::Sprite sBackground;}
 \DoxyCodeLine{98 \};}
 \DoxyCodeLine{99 }
-\DoxyCodeLine{103 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowMain}{showMain}} \{}
-\DoxyCodeLine{104     \textcolor{keywordtype}{bool} doOnce = \textcolor{keyword}{true};}
-\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowMain_a7df883c08fc9a937348cc2abb7e13f64}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
-\DoxyCodeLine{110         \textcolor{keywordflow}{if}(doOnce) \{}
-\DoxyCodeLine{111             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{112             doOnce = \textcolor{keyword}{false};}
-\DoxyCodeLine{113         \}}
-\DoxyCodeLine{114         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Play"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Gamemode"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Quit"{}}) \{}
-\DoxyCodeLine{115             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
-\DoxyCodeLine{116             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{117         \}}
-\DoxyCodeLine{118     \}}
-\DoxyCodeLine{119 \};}
-\DoxyCodeLine{120 }
-\DoxyCodeLine{121 \textcolor{comment}{/*}}
-\DoxyCodeLine{122 \textcolor{comment}{ * Predicate functor for displaying the Gamemode menu buttons.}}
-\DoxyCodeLine{123 \textcolor{comment}{ */}}
-\DoxyCodeLine{124 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowGamemode}{showGamemode}} \{}
-\DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowGamemode_ad55ae789884367ad66d9d001298018cc}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
-\DoxyCodeLine{130         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Asteroids"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Boss"{}}) \{}
-\DoxyCodeLine{131             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
-\DoxyCodeLine{132             b.second.setFillColor(sf::Color::White);}
-\DoxyCodeLine{133         \}}
-\DoxyCodeLine{134         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}ASTEROIDS"{}})}
-\DoxyCodeLine{135             b.second.setFillColor(sf::Color::Transparent);}
-\DoxyCodeLine{136     \}}
-\DoxyCodeLine{137 \};}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_MENU\_H}}
+\DoxyCodeLine{101 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowMain}{showMain}} \{}
+\DoxyCodeLine{102     \textcolor{keywordtype}{bool} doOnce = \textcolor{keyword}{true};}
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowMain_a7df883c08fc9a937348cc2abb7e13f64}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
+\DoxyCodeLine{108         \textcolor{keywordflow}{if}(doOnce) \{}
+\DoxyCodeLine{109             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{110             doOnce = \textcolor{keyword}{false};}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Play"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Gamemode"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Quit"{}}) \{}
+\DoxyCodeLine{113             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
+\DoxyCodeLine{114             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121 \textcolor{keyword}{struct }\mbox{\hyperlink{structshowGamemode}{showGamemode}} \{}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{structshowGamemode_ad55ae789884367ad66d9d001298018cc}{operator()}}(std::pair<sf::RectangleShape, sf::Text> \&b) \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}Asteroids"{}} || b.second.getString() == \textcolor{stringliteral}{"{}Boss"{}}) \{}
+\DoxyCodeLine{128             b.first.setOutlineColor(sf::Color(54, 173, 207 ,100));}
+\DoxyCodeLine{129             b.second.setFillColor(sf::Color::White);}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b.second.getString() == \textcolor{stringliteral}{"{}ASTEROIDS"{}})}
+\DoxyCodeLine{132             b.second.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134 \};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_MENU\_H}}
 
 \end{DoxyCode}

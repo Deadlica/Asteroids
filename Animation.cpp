@@ -4,8 +4,7 @@
 
 #include "Animation.h"
 
-Animation::Animation(): speed(0.75), frame(0) {
-    int width = 256, height = 256, totalFrames = 48;
+Animation::Animation(int width, int height, float speed, int totalFrames, bool loop): speed(speed), frame(0), loop(loop) {
     sprite.setOrigin(width / 2, height / 2);
     for(int i = 0; i < totalFrames; i++)
         frames.push_back(sf::IntRect(i * width, 0, width, height));
@@ -13,6 +12,9 @@ Animation::Animation(): speed(0.75), frame(0) {
 
 void Animation::update() {
     frame += speed;
+    if(frame >= frames.size() && loop) {
+        frame -= frames.size();
+    }
     if(frames.size() > 0)
         sprite.setTextureRect(frames[int(frame)]);
 }

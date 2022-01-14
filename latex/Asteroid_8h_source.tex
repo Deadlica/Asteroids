@@ -9,23 +9,26 @@
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#define SFML\_GAME\_ASTEROID\_H}}
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Object.h"{}}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classAsteroid}{Asteroid}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObject}{Object}} \{}
-\DoxyCodeLine{12 \textcolor{keyword}{public}:}
-\DoxyCodeLine{22     \mbox{\hyperlink{classAsteroid_a9530726a7895c9d768f80fcae25de16f}{Asteroid}}(sf::Texture \&t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius, std::pair<float, float> playerPosition);}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{28     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{GetCount}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aabe3a75b05df4749a69469a1204b8382}{update}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aea8e966c42149c12fc5592e0d0c26e5e}{dontSpawnOnPlayer}}(std::pair<float, float> \&playerPosition);}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{44     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{count}};}
-\DoxyCodeLine{45 \textcolor{keyword}{private}:}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \};}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ASTEROID\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Animation.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classAsteroid}{Asteroid}} : \textcolor{keyword}{public} \mbox{\hyperlink{classObject}{Object}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{classAsteroid_a9530726a7895c9d768f80fcae25de16f}{Asteroid}}(sf::Texture \&t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} radius, std::pair<float, float> playerPosition);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{int}\& \mbox{\hyperlink{classAsteroid_a0e59db90f0c2a4020de6be5e44cd4003}{GetCount}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aabe3a75b05df4749a69469a1204b8382}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_afde8d4f0b2e5d5abd04ce97f9f6ea527}{draw}}(sf::RenderWindow \&window) \textcolor{keyword}{override};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAsteroid_aea8e966c42149c12fc5592e0d0c26e5e}{dontSpawnOnPlayer}}(std::pair<float, float> \&playerPosition);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{51     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classAsteroid_a6f7c88026a386cc338241b90af9bb6f2}{count}};}
+\DoxyCodeLine{52 \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{classAnimation}{Animation}} rock;}
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SFML\_GAME\_ASTEROID\_H}}
 
 \end{DoxyCode}

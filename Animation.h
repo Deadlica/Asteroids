@@ -13,7 +13,17 @@ public:
     /**
      * Default constructor.
      */
-    Animation();
+    Animation() = default;
+
+    /**
+     * Parameterized constructor.
+     * @param width The width of the frames.
+     * @param height The height of the frames.
+     * @param speed The update speed of the frames.
+     * @param totalFrames The total frames for the animation.
+     * @param loop If the animation should be looped.
+     */
+    Animation(int width, int height, float speed, int totalFrames, bool loop = false);
 
     /**
      * Updates the frames of the animation.
@@ -47,6 +57,7 @@ public:
 private:
     sf::Sprite sprite;
     float speed;
+    bool loop;
     std::pair<float, float> coords;
     std::vector<sf::IntRect> frames;
 };

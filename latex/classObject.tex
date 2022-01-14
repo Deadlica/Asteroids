@@ -26,7 +26,7 @@ virtual void \mbox{\hyperlink{classObject_a9c5d01b4624298d8602790d4e32f7521}{upd
 \item 
 virtual bool \mbox{\hyperlink{classObject_a9dababca57f28dd60d216e0b65081c22}{check\+Collision}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classObject}{Object}} $>$ \&object)
 \item 
-void \mbox{\hyperlink{classObject_a2dc4e330642f517aa1c299e272c0b364}{draw}} (sf\+::\+Render\+Window \&window)
+virtual void \mbox{\hyperlink{classObject_a2dc4e330642f517aa1c299e272c0b364}{draw}} (sf\+::\+Render\+Window \&window)
 \item 
 void \mbox{\hyperlink{classObject_ae30fea75683c2d149b6b6d17c09ecd0c}{set\+Name}} (std\+::string name)
 \item 
@@ -163,13 +163,17 @@ Reimplemented in \mbox{\hyperlink{classEnemy_a3181799dc587417e54a4a9e00213619c}{
 \index{Object@{Object}!draw@{draw}}
 \index{draw@{draw}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Draws the object to a window. 
 \begin{DoxyParams}{Parameters}
 {\em window} & The window to draw the object on. \\
 \hline
 \end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classAsteroid_afde8d4f0b2e5d5abd04ce97f9f6ea527}{Asteroid}}.
+
 \mbox{\Hypertarget{classObject_a08a9cb98feaf9fba02a62d5f7c669aad}\label{classObject_a08a9cb98feaf9fba02a62d5f7c669aad}} 
 \index{Object@{Object}!GetAngle@{GetAngle}}
 \index{GetAngle@{GetAngle}!Object@{Object}}
