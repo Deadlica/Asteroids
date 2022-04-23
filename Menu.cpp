@@ -137,18 +137,24 @@ std::vector<int> Menu::fetchScoresFromFile() {
 
 void Menu::generateTopScoresText() {
     std::vector<int> tempScores = fetchScoresFromFile();
-    std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
+    if(!tempScores.empty()) {
+        std::sort(tempScores.begin(), tempScores.end(), std::greater<>());
 
-    topScores.clear();
-    topScores.resize(5);
-    size_t index = 0;
+        topScores.clear();
+        topScores.resize(5);
+        size_t index = 0;
 
-    auto generator = [this, &tempScores, &index]() {
-        sf::Text text(std::to_string(tempScores[index++]), textFont, 30);
-        text.setFillColor(sf::Color::White);
-        return text;
-    };
-    std::generate_n(topScores.begin(), 5, generator);
+        auto generator = [this, &tempScores, &index]() {
+            sf::Text text(std::to_string(tempScores[index++]), textFont, 30);
+            text.setFillColor(sf::Color::White);
+            return text;
+        };
+        size_t nrOfScores = tempScores.size();
+        if(nrOfScores > 5) {
+            nrOfScores = 5;
+        }
+        std::generate_n(topScores.begin(), nrOfScores, generator);
+    }
 }
 
 void Menu::submitScore() {

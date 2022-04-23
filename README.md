@@ -5,17 +5,20 @@ This is a game inspired by the classical retro game Asteroids. It's built in c++
 ## Setup
 
 It can be run either through Cmake, or using a regular make command.
-For regular makefile command type the following in the terminal
+For regular makefile command type the following in the terminal for first time setup
 
 ```bash
-make
+make install
 ```
 
-Once it's compiled, you're good to go to launch throught the terminal with
+once the SFML libraries are installed, enter to command
 
 ```
-./main
+make run
 ```
+
+To compile and launch the game.
+
 
 ## Gamemodes
 
